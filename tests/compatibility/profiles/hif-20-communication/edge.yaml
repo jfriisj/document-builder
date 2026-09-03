@@ -1,0 +1,51 @@
+owner_committee: Fælles / Tværgående
+version_label: 2.0-special
+updated_at: '2026-11-10'
+approved_by: Bestyrelsen v/ Kommunikationsansvarlig <presse@example.com>
+title: 'Pressemeddelelse: Nye Baneanlæg & Klimasikring (Æ, Ø, Å & Specialtegn: < >
+  & " '')'
+purpose: Orientere lokalpressen og medlemmerne om kommunal bevilling {{ edge_tag }}
+target_audience: Lokalavisen, regionale nyheder samt foreningens medlemmer
+sender: Hashøj IF Hovedbestyrelse
+channels:
+- Hjemmeside
+- Facebook
+- Presse
+- Andet
+publish_date: '2026-11-15'
+responsible_person: Testperson Æ-Ø-Å (tlf. 00 00 00 01)
+key_message: Hashøj IF modtager 450.000 kr. i kommunal anlægsstøtte til fremtidssikring
+  af idrætsfaciliteter.
+call_to_action: Læs hele projektbeskrivelsen og se tidsplanen på example.com/anlaeg
+deadline_practical_info: Anlægsarbejdet påbegyndes marts 2027 og afsluttes juni 2027.
+draft_body: 'Pressemeddelelse – til omgående offentliggørelse:
+
+
+  Hashøj IF har med stor glæde modtaget meddelelse om en markant bevilling fra Eksempel
+  Kommune til renovering af foreningens udendørsarealer.
+
+
+  Formand (Testperson A) udtaler: ''Dette er et kæmpe skridt for vores lokalsamfund
+  og børneidrætten!'''
+links_contact_signup: 'Pressekontakt: Formand Testperson A, tlf. 00 00 00 01, formand@example.com'
+media_graphics: Pressefoto af bestyrelsen foran klubhuset (foto_presse_hoejoploesning.tif)
+sponsor_partner_mention: I samarbejde med Eksempel Kommune og Eksempel Fonden.
+check_datetime_status: OK
+check_datetime_notes: Tidsplan verificeret med forvaltning
+check_links_status: OK
+check_links_notes: Pressekontakt tjekket
+check_spelling_status: OK
+check_spelling_notes: Journalistisk gennemlæst
+check_image_rights_status: OK
+check_image_rights_notes: Fotografkreditering aftalt
+check_gdpr_status: OK
+check_gdpr_notes: Samtykke fra alle afbildede personer
+check_sponsor_status: OK
+check_sponsor_notes: Kommunevåben anvendt efter retningslinjer
+check_approval_status: OK
+check_approval_notes: Formelt godkendt af samlet bestyrelse
+check_multichannel_status: OK
+check_multichannel_notes: Sendes direkte via Ritzau pressemail
+published_where: Udsendt til lokale og regionale medier
+reaction_result: Forsideartikel i ugeavisen samt omtale i lokalradioen
+removal_update_later: Arkiveres i foreningens historiske scrapbog

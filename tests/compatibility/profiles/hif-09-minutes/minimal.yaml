@@ -1,0 +1,7 @@
+owner_committee: Bestyrelsen
+meeting_title: Bestyrelsesmøde
+meeting_datetime: 14. oktober 2026 kl. 19:00
+meeting_attendees: Formand (Testperson A), Kasserer (Testperson B)
+agenda_items:
+- item_number: '1'
+  topic: Godkendelse af dagsorden

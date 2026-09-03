@@ -1,0 +1,42 @@
+owner_committee: Bestyrelsen
+version_label: '1.0'
+updated_at: '2026-10-15'
+approved_by: Bestyrelsen
+meeting_title: Bestyrelsesmøde i Hashøj IF
+meeting_datetime: Onsdag d. 14. oktober 2026 kl. 19:00 - 21:15
+meeting_location: Klubhusets mødelokale
+meeting_chair: Testperson A
+meeting_scribe: Testperson B
+meeting_attendees: Testperson A, Testperson B, Testperson C, Testperson D, Testperson
+  E
+meeting_absent: Testperson F (arbejde)
+agenda_items:
+- item_number: '1'
+  topic: Godkendelse af dagsorden & forrige referat
+  discussion: Dagsorden gennemgået og godkendt uden ændringer.
+  decision: Godkendt.
+  responsible: Testperson A
+  deadline: '-'
+- item_number: '2'
+  topic: Økonomisk status 3. kvartal
+  discussion: Kassereren orienterede om årets drift. Kontingentindtægter følger budgettet,
+    mens eludgifter er faldet 5%.
+  decision: Regnskabet tages til efterretning.
+  responsible: Testperson B
+  deadline: Løbende
+action_items:
+- action: Indhente tilbud på energirenovering af cafeteria
+  responsible: Testperson E
+  deadline: 1. december
+  status: I gang
+- action: Udsende nyhedsbrev om efterårsaktiviteter
+  responsible: Testperson B
+  deadline: 25. oktober
+  status: Ikke påbegyndt
+logged_decisions:
+- decision: Fastfrysning af kontingentsatser for sæson 2027
+  effective_from: 1. januar 2027
+  log_in_decision_register: Ja
+  consequence: Opdatering af HIF-04 Årshjul og hjemmeside
+next_meeting_datetime: Tirsdag d. 17. november 2026 kl. 19:00
+next_meeting_topics: Budget 2027 og forberedelse af generalforsamling

@@ -1,0 +1,125 @@
+id: hif-05-contact
+version: 1
+enabled: true
+title: HIF-05 Kontaktregister
+category: Organisation & Roller
+description: Fælles kontaktoversigt for eksterne og interne samarbejdspartnere i Hashøj IF.
+steps:
+  - id: basic_info
+    title: 1. Stamdata & Vedligeholdelse
+    description: Grundlæggende information om dokumentejer, versionsstyring og registeransvar.
+    fields:
+      - id: owner_committee
+        type: select
+        label: Dokumentejer / udvalg
+        required: true
+        options:
+          - value: Bestyrelsen
+            label: Bestyrelsen
+          - value: Fodboldudvalget
+            label: Fodboldudvalget
+          - value: Gymnastikudvalget
+            label: Gymnastikudvalget
+          - value: Badmintonudvalget
+            label: Badmintonudvalget
+          - value: E-sport
+            label: E-sport
+          - value: Klubhus & Anlæg
+            label: Klubhus & Anlæg
+          - value: Arrangementsudvalg
+            label: Arrangementsudvalg
+          - value: Fælles / Tværgående
+            label: Fælles / Tværgående
+      - id: version_label
+        type: text
+        label: Version
+        required: false
+        default: "1.0"
+      - id: updated_at
+        type: date
+        label: Senest opdateret
+        required: false
+      - id: approved_by
+        type: text
+        label: Godkendt af
+        required: false
+        placeholder: f.eks. Bestyrelsen / Formand
+      - id: register_responsible
+        type: text
+        label: Ansvarlig for registeret
+        required: false
+        placeholder: Person eller udvalg der vedligeholder registeret
+      - id: verification_frequency
+        type: text
+        label: Hvor ofte verificeres kontaktdata?
+        required: false
+        placeholder: f.eks. Halvårligt / Årligt ved sæsonstart
+      - id: document_location
+        type: text
+        label: Placering af supplerende dokumenter
+        required: false
+        placeholder: f.eks. Google Drev / Kontakter
+      - id: categories_guidance
+        type: info
+        text: >-
+          Eksempler på kategorier: kommune, leverandør, sponsor, håndværker, forbund,
+          forsikring, udlejer, frivillig nøgleperson, presse, myndighed.
+      - id: privacy_notice
+        type: info
+        variant: privacy
+        text: >-
+          Navne, telefonnumre og e-mailadresser på kontaktpersoner behandles af
+          Dokumentbyggeren udelukkende under den aktive session til at generere
+          kontaktregistret og lagres ikke permanent af applikationen.
+
+  - id: contacts_step
+    title: 2. Kontaktoversigt
+    description: Registrering af eksterne og interne kontakter, roller og relationer.
+    fields:
+      - id: contacts
+        type: repeater
+        label: Kontakter
+        required: false
+        fields:
+          - id: category
+            type: text
+            label: Kategori
+            required: false
+            placeholder: f.eks. Kommune, leverandør, sponsor, håndværker...
+          - id: organization_name
+            type: text
+            label: Organisation / navn
+            required: true
+            placeholder: Virksomheds- eller organisationsnavn
+          - id: contact_person
+            type: text
+            label: Kontaktperson
+            required: false
+            placeholder: Navn på primær kontaktperson
+          - id: phone
+            type: text
+            format: tel
+            label: Telefon
+            required: false
+            placeholder: f.eks. 00 00 00 01
+          - id: email
+            type: text
+            format: email
+            label: E-mail
+            required: false
+            placeholder: f.eks. kontakt@example.com
+          - id: purpose_relation
+            type: text
+            label: Formål / relation
+            required: false
+            placeholder: f.eks. Halbooking, banevedligehold, sponsoraftale
+          - id: internal_contact
+            type: text
+            label: Intern kontakt
+            required: false
+            placeholder: Ansvarlig intern person i Hashøj IF
+          - id: last_verified
+            type: text
+            label: Senest verificeret
+            required: false
+            placeholder: f.eks. 15.08.2026

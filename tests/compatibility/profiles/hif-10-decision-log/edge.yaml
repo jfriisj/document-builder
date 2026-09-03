@@ -1,0 +1,27 @@
+owner_committee: Fælles / Tværgående
+version_label: 3.0-final
+updated_at: '2026-12-31'
+approved_by: Formand Testperson Æ-Ø-Å 1 & Næstformand <bestyrelsen@example.com> {{ approval_test
+  }}
+decisions:
+- decision_id: DEC-999-X & Y
+  decision_date: 31.12.2026
+  topic: Principper for håndtering af sponsorater & reklameskilte <Zone A-C>
+  decision: Fastlæggelse af ensartede priser og retningslinjer for skiltestørrelser
+    med specialtegn æ, ø, å og {{ jinja_data }}.
+  justification: Undgå uensartede vilkår og sikre retvisende regnskabsføring på tværs
+    af fodbold & gymnastik.
+  decided_by: Fælles sponsorudvalg v/ Testperson Æ-Ø-Å 2 & Testperson Æ-Ø-Å 3
+  consequence_followup: Opdatering af HIF-19 Sponsorprofil og orientering på næste
+    formandsmøde.
+  revisit_date: Marts 2027
+  document_reference: 'Aftalearkiv / Bilag-42 & Bestyrelsesbeslutning #108'
+- decision_id: DEC-1000-B & C
+  decision_date: 15.01.2027
+  topic: Godkendelse af nyt låsesystem & nøglebrikker for klubhuset <Hoveddør>
+  decision: Udskiftning af mekaniske nøgler til elektroniske brikker med adgangslogning {{ lock_decision }}.
+  justification: Øget sikkerhed og bedre kontrol med adgange efter gentagne bortkomne nøgler.
+  decided_by: Bestyrelsen v/ Formand Testperson Æ-Ø-Å 1
+  consequence_followup: Indkøb iværksættes via HIF-18 og opdatering af HIF-14 Nøgleregister.
+  revisit_date: Juni 2027
+  document_reference: 'Referat Bestyrelsesmøde 15.01.2027 / Sag 4.2'

@@ -1,0 +1,207 @@
+id: hif-09-minutes
+version: 1
+enabled: true
+title: HIF-09 Mødereferat
+category: Møder & Beslutninger
+description: Struktureret mødereferat med fokus på drøftelser, trufne beslutninger,
+  handlingspunkter med ansvarlige og opfølgning i Hashøj IF.
+steps:
+- id: meeting_info
+  title: 1. Mødeoplysninger & Stamdata
+  description: Mødedetaljer, mødeleder, referent samt fremmødte og afbud.
+  fields:
+  - id: owner_committee
+    type: select
+    label: Dokumentejer / udvalg
+    required: true
+    options:
+    - value: Bestyrelsen
+      label: Bestyrelsen
+    - value: Fodboldudvalget
+      label: Fodboldudvalget
+    - value: Gymnastikudvalget
+      label: Gymnastikudvalget
+    - value: Badmintonudvalget
+      label: Badmintonudvalget
+    - value: E-sport
+      label: E-sport
+    - value: Klubhus & Anlæg
+      label: Klubhus & Anlæg
+    - value: Arrangementsudvalg
+      label: Arrangementsudvalg
+    - value: Fælles / Tværgående
+      label: Fælles / Tværgående
+  - id: version_label
+    type: text
+    label: Version
+    required: false
+    default: '1.0'
+  - id: updated_at
+    type: date
+    label: Senest opdateret
+    required: false
+  - id: approved_by
+    type: text
+    label: Godkendt af
+    required: false
+    placeholder: f.eks. Mødedeltagerne / Formanden
+  - id: meeting_title
+    type: text
+    label: Møde / udvalg
+    required: true
+    placeholder: f.eks. Bestyrelsesmøde, Fodboldudvalgsmøde
+  - id: meeting_datetime
+    type: text
+    label: Dato og tidspunkt
+    required: true
+    placeholder: f.eks. Onsdag d. 14. oktober 2026 kl. 19:00 - 21:30
+  - id: meeting_location
+    type: text
+    label: Sted / online
+    required: false
+    placeholder: f.eks. Klubhuset / Mødelokale 1 / Teams
+  - id: meeting_chair
+    type: text
+    label: Mødeleder
+    required: false
+    placeholder: Navn på mødeleder
+  - id: meeting_scribe
+    type: text
+    label: Referent
+    required: false
+    placeholder: Navn på referent
+  - id: meeting_attendees
+    type: textarea
+    label: Deltagere
+    required: true
+    placeholder: Navne på de fremmødte deltagere...
+  - id: meeting_absent
+    type: textarea
+    label: Afbud
+    required: false
+    placeholder: Navne på fraværende...
+  - id: privacy_notice
+    type: info
+    variant: privacy
+    text: Navne på mødedeltagere, fraværende, referent, mødeleder og opgaveansvarlige
+      anvendes udelukkende til foreningsintern mødedokumentation i Hashøj IF. Oplysningerne
+      behandles af Dokumentbyggeren kun under den aktive session og lagres ikke permanent
+      af applikationen.
+- id: agenda_step
+  title: 2. Dagsorden og referat
+  description: Dagsordenspunkter med tilhørende drøftelser, beslutninger og opfølgning.
+  fields:
+  - id: agenda_items
+    type: repeater
+    label: Dagsordenspunkter
+    required: true
+    fields:
+    - id: item_number
+      type: text
+      label: Punkt
+      required: true
+      placeholder: f.eks. 1, 2, Eventuelt
+    - id: topic
+      type: text
+      label: Emne
+      required: true
+      placeholder: f.eks. Godkendelse af dagsorden, Økonomisk status, Sommerfest
+    - id: discussion
+      type: textarea
+      label: Kort referat / drøftelse
+      required: false
+      placeholder: Resumé af drøftelserne under punktet...
+    - id: decision
+      type: textarea
+      label: Beslutning
+      required: false
+      placeholder: Hvad blev der konkluderet eller besluttet?
+    - id: responsible
+      type: text
+      label: Ansvarlig
+      required: false
+      placeholder: Hvem følger op?
+    - id: deadline
+      type: text
+      label: Deadline
+      required: false
+      placeholder: f.eks. Næste møde / 1. november
+- id: actions_and_decisions
+  title: 3-5. Handlinger, Beslutningslog & Næste møde
+  description: Samlet opfølgningsliste, formelle beslutninger til beslutningslog og
+    planlægning af næste møde.
+  fields:
+  - id: action_items
+    type: repeater
+    label: 3. Handlingsliste
+    required: false
+    fields:
+    - id: action
+      type: text
+      label: Handling
+      required: true
+      placeholder: Hvad skal gøres?
+    - id: responsible
+      type: text
+      label: Ansvarlig
+      required: false
+      placeholder: Ansvarlig person
+    - id: deadline
+      type: text
+      label: Deadline
+      required: false
+      placeholder: f.eks. 1. november
+    - id: status
+      type: select
+      label: Status
+      required: false
+      default: Ikke påbegyndt
+      options:
+      - value: Ikke påbegyndt
+        label: Ikke påbegyndt
+      - value: I gang
+        label: I gang
+      - value: Afventer
+        label: Afventer
+      - value: Afsluttet
+        label: Afsluttet
+  - id: logged_decisions
+    type: repeater
+    label: 4. Beslutninger der skal registreres
+    required: false
+    fields:
+    - id: decision
+      type: textarea
+      label: Beslutning
+      required: true
+      placeholder: Formel beslutning som skal i HIF-10 Beslutningslog
+    - id: effective_from
+      type: text
+      label: Gælder fra
+      required: false
+      placeholder: f.eks. Straks / 1. januar 2027
+    - id: log_in_decision_register
+      type: select
+      label: Skal i beslutningslog?
+      required: false
+      default: Ja
+      options:
+      - value: Ja
+        label: Ja
+      - value: Nej
+        label: Nej
+    - id: consequence
+      type: text
+      label: Dokument / konsekvens
+      required: false
+      placeholder: Hvilke retningslinjer eller dokumenter påvirkes?
+  - id: next_meeting_datetime
+    type: text
+    label: Dato / tidspunkt (næste møde)
+    required: false
+    placeholder: f.eks. Tirsdag d. 10. november 2026 kl. 19:00
+  - id: next_meeting_topics
+    type: textarea
+    label: Forventede hovedpunkter (næste møde)
+    required: false
+    placeholder: f.eks. Budgetopfølgning, generalforsamlingsforberedelse...

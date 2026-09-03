@@ -1,0 +1,246 @@
+id: hif-13-volunteer-onboarding
+version: 1
+enabled: true
+title: HIF-13 Introduktion til nye frivillige
+category: Drift & Frivillige
+description: Fast onboarding-forløb, så nye frivillige hurtigt forstår foreningens
+  opbygning, deres rolle og opgaver samt hvor de får hjælp i Hashøj IF.
+steps:
+- id: welcome_step
+  title: 1. Velkommen & Stamdata
+  description: Grundoplysninger om den nye frivillige og kontaktperson.
+  fields:
+  - id: owner_committee
+    type: select
+    label: Dokumentejer / udvalg
+    required: true
+    options:
+    - value: Bestyrelsen
+      label: Bestyrelsen
+    - value: Fodboldudvalget
+      label: Fodboldudvalget
+    - value: Gymnastikudvalget
+      label: Gymnastikudvalget
+    - value: Badmintonudvalget
+      label: Badmintonudvalget
+    - value: E-sport
+      label: E-sport
+    - value: Klubhus & Anlæg
+      label: Klubhus & Anlæg
+    - value: Arrangementsudvalg
+      label: Arrangementsudvalg
+    - value: Fælles / Tværgående
+      label: Fælles / Tværgående
+  - id: version_label
+    type: text
+    label: Version
+    required: false
+    default: '1.0'
+  - id: updated_at
+    type: date
+    label: Senest opdateret
+    required: false
+  - id: approved_by
+    type: text
+    label: Godkendt af
+    required: false
+    placeholder: f.eks. Udvalgsformanden
+  - id: volunteer_name
+    type: text
+    label: Frivilligs navn
+    required: true
+    placeholder: Navn på den nye frivillige
+  - id: volunteer_role
+    type: text
+    label: Rolle / udvalg / hold
+    required: true
+    placeholder: f.eks. Træner U10, Kioskmedhjælper, Webmaster
+  - id: start_date
+    type: date
+    label: Startdato
+    required: true
+  - id: contact_person
+    type: text
+    label: Kontaktperson / makker
+    required: true
+    placeholder: Navn og telefonnummer på makker eller mentor
+  - id: privacy_notice
+    type: info
+    variant: privacy
+    text: Navne og kontaktoplysninger på nye frivillige, makkere og kontaktpersoner
+      anvendes udelukkende til introduktion og onboarding i Hashøj IF. Oplysningerne
+      behandles af Dokumentbyggeren kun under den aktive session og lagres ikke permanent
+      af applikationen.
+- id: club_and_role
+  title: 2-3. Om Hashøj IF & Din rolle
+  description: Vigtig viden om foreningen samt rollens formål og rammer.
+  fields:
+  - id: club_info_topics
+    type: repeater
+    label: 2. Det vigtigste om Hashøj IF
+    required: false
+    fields:
+    - id: topic
+      type: text
+      label: Emne
+      required: true
+      placeholder: f.eks. Værdier, Struktur, Faciliteter
+    - id: what_to_know
+      type: textarea
+      label: Det skal den nye vide
+      required: true
+      placeholder: Kort beskrivelse...
+    - id: where_to_find
+      type: text
+      label: Hvor findes mere information?
+      required: false
+      placeholder: f.eks. hashoej-if.dk / Fællesdrev
+  - id: role_purpose
+    type: textarea
+    label: Formål med rollen
+    required: true
+    placeholder: Hvorfor er denne rolle vigtig for foreningen?
+  - id: key_tasks
+    type: textarea
+    label: Dine vigtigste opgaver
+    required: true
+    placeholder: Beskrivelse af de primære arbejdsopgaver...
+  - id: estimated_time
+    type: text
+    label: Forventet tidsforbrug
+    required: false
+    placeholder: f.eks. 2 timer ugentligt / 1 stævne om måneden
+  - id: collaboration_partners
+    type: textarea
+    label: Hvem samarbejder du med?
+    required: false
+    placeholder: Nøglepersoner, andre frivillige og udvalg...
+- id: practical_step
+  title: 4. Praktiske forhold
+  description: Gennemgang af de 8 faste praktiske emner og adgange.
+  fields:
+  - id: practical_comm_info
+    type: text
+    label: Kommunikationskanaler info
+    required: false
+    placeholder: f.eks. Spond, Facebook-gruppe, Mail
+  - id: practical_comm_reviewed
+    type: checkbox
+    label: Gennemgået [ ] (Kommunikation)
+    required: false
+    default: false
+  - id: practical_keys_info
+    type: text
+    label: Nøgler / adgang info
+    required: false
+    placeholder: f.eks. Nøglebrik udleveret af halinspektør
+  - id: practical_keys_reviewed
+    type: checkbox
+    label: Gennemgået [ ] (Nøgler)
+    required: false
+    default: false
+  - id: practical_systems_info
+    type: text
+    label: Systemer / login info
+    required: false
+    placeholder: f.eks. Conventus / KlubOffice bruger oprettet
+  - id: practical_systems_reviewed
+    type: checkbox
+    label: Gennemgået [ ] (Systemer)
+    required: false
+    default: false
+  - id: practical_docs_info
+    type: text
+    label: Dokumenter / filer info
+    required: false
+    placeholder: f.eks. Link til Google Drev mappe
+  - id: practical_docs_reviewed
+    type: checkbox
+    label: Gennemgået [ ] (Dokumenter)
+    required: false
+    default: false
+  - id: practical_expenses_info
+    type: text
+    label: Udgifter / refusion info
+    required: false
+    placeholder: f.eks. Bilag sendes til kasserer via mail
+  - id: practical_expenses_reviewed
+    type: checkbox
+    label: Gennemgået [ ] (Udgifter)
+    required: false
+    default: false
+  - id: practical_safety_info
+    type: text
+    label: Sikkerhed / beredskab info
+    required: false
+    placeholder: f.eks. Placering af hjertestarter og førstehjælp
+  - id: practical_safety_reviewed
+    type: checkbox
+    label: Gennemgået [ ] (Sikkerhed)
+    required: false
+    default: false
+  - id: practical_gdpr_info
+    type: text
+    label: GDPR / billeder info
+    required: false
+    placeholder: f.eks. Børneattest indhentet, samtykke ved foto
+  - id: practical_gdpr_reviewed
+    type: checkbox
+    label: Gennemgået [ ] (GDPR)
+    required: false
+    default: false
+  - id: practical_contact_info
+    type: text
+    label: Hvem kontaktes ved spørgsmål info
+    required: false
+    placeholder: f.eks. Formand for udvalget tlf. 00 00 00 04
+  - id: practical_contact_reviewed
+    type: checkbox
+    label: Gennemgået [ ] (Spørgsmål)
+    required: false
+    default: false
+- id: onboarding_and_followup
+  title: 5-6. Forløb & Opfølgning
+  description: Introduktionsaktiviteter og opfølgning på trivsel og opgaver.
+  fields:
+  - id: onboarding_activities
+    type: repeater
+    label: 5. Introduktionsforløb
+    required: false
+    fields:
+    - id: activity
+      type: text
+      label: Aktivitet
+      required: true
+      placeholder: f.eks. Rundvisning i klubhus, Første træning sammen med makker
+    - id: with_whom
+      type: text
+      label: Med hvem?
+      required: false
+      placeholder: Navn på kontaktperson
+    - id: activity_date
+      type: text
+      label: Dato
+      required: false
+      placeholder: f.eks. Uge 34 / 20. august
+    - id: is_completed
+      type: checkbox
+      label: Gennemført [ ]
+      required: false
+      default: false
+  - id: followup_period
+    type: text
+    label: Opfølgning efter
+    required: false
+    default: 2-4 uger
+    placeholder: f.eks. 2-4 uger
+  - id: followup_questions_and_needs
+    type: textarea
+    label: Spørgsmål / behov
+    required: false
+    placeholder: Eventuelle spørgsmål eller yderligere oplæringsbehov...
+  - id: followup_volunteer_suggestions
+    type: textarea
+    label: Forslag fra den nye
+    required: false
+    placeholder: Feedback eller forbedringsforslag fra den frivillige...

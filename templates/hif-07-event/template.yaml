@@ -1,0 +1,320 @@
+id: hif-07-event
+version: 1
+enabled: true
+title: "HIF-07 Arrangementsskabelon"
+category: "Arrangementer & Stævner"
+description: "Planlægning, bemanding, økonomi og evaluering af arrangementer i foreningen."
+
+steps:
+  - id: overview
+    title: "1. Arrangementet & Stamdata"
+    description: "Grundlæggende information om arrangementet, dato, sted, formål og tovholder."
+    fields:
+      - id: owner_committee
+        type: select
+        label: "Dokumentejer / udvalg"
+        required: true
+        options:
+          - "Bestyrelsen"
+          - "Fodboldudvalget"
+          - "Gymnastikudvalget"
+          - "Badmintonudvalget"
+          - "E-sport"
+          - "Klubhus & Anlæg"
+          - "Arrangementsudvalg"
+          - "Fælles / Tværgående"
+        help: "Vælg hvilket udvalg der er hovedansvarlig for arrangementet."
+      - id: version_label
+        type: text
+        label: "Version"
+        required: false
+        default: "1.0"
+      - id: updated_at
+        type: date
+        label: "Senest opdateret"
+        required: false
+      - id: approved_by
+        type: text
+        label: "Godkendt af"
+        required: false
+        placeholder: "f.eks. Udvalgsformanden / Bestyrelsen"
+      - id: event_title
+        type: text
+        label: "Arrangementets navn"
+        required: true
+        placeholder: "f.eks. Hashøj Sommerstævne 2026, Fastelavnsfest"
+        help: "Arrangementets officielle titel."
+      - id: date_and_time
+        type: text
+        label: "Dato og tidspunkt"
+        required: true
+        placeholder: "f.eks. Lørdag d. 13. juni 2026 kl. 10:00 - 18:00"
+      - id: location
+        type: text
+        label: "Sted / ramme"
+        required: true
+        placeholder: "f.eks. Hashøj Hallen, Baneanlægget, Klubhuset"
+      - id: purpose
+        type: textarea
+        label: "Formål med arrangementet"
+        required: true
+        placeholder: "Beskriv formålet med arrangementet og hvad det skal bidrage til..."
+      - id: target_audience
+        type: text
+        label: "Målgruppe"
+        required: false
+        placeholder: "f.eks. Børn og unge i lokalområdet, alle medlemmer og familier"
+      - id: expected_participants
+        type: text
+        label: "Forventet antal deltagere"
+        required: false
+        placeholder: "f.eks. 150-200 personer"
+      - id: lead_organizer
+        type: text
+        label: "Arrangementsansvarlig / tovholder"
+        required: true
+        placeholder: "f.eks. Testperson A (tlf. 00 00 00 02)"
+
+  - id: criteria
+    title: "2. Succeskriterier"
+    description: "Opstil målbare succeskriterier for arrangementet."
+    fields:
+      - id: success_criteria
+        type: repeater
+        label: "Succeskriterier"
+        required: false
+        fields:
+          - id: criterion
+            type: text
+            label: "Mål / succeskriterium"
+            required: true
+            placeholder: "f.eks. Minimum 150 deltagere"
+          - id: measurement_method
+            type: text
+            label: "Hvordan måles det?"
+            required: false
+            placeholder: "f.eks. Tilmeldingsliste / optælling ved indgang"
+          - id: target_value
+            type: text
+            label: "Mål"
+            required: false
+            placeholder: "f.eks. 150 personer / Nulunderskud"
+
+  - id: schedule
+    title: "3. Tidsplan"
+    description: "Tidslinje for forberedelse, afvikling og opfølgning."
+    fields:
+      - id: timeline
+        type: repeater
+        label: "Tidsplan og aktiviteter"
+        required: false
+        fields:
+          - id: time_slot
+            type: text
+            label: "Dato / tidspunkt"
+            required: true
+            placeholder: "f.eks. 1. maj, kl. 09:00 på dagen"
+          - id: activity
+            type: text
+            label: "Aktivitet"
+            required: true
+            placeholder: "f.eks. Bestille telt og borde, Klargøring af grill"
+          - id: responsible
+            type: text
+            label: "Ansvarlig"
+            required: false
+            placeholder: "f.eks. Testperson A / Udvalget"
+          - id: dependency
+            type: text
+            label: "Afhængighed"
+            required: false
+            placeholder: "f.eks. Forudsætter halbooking bekræftet"
+          - id: status
+            type: text
+            label: "Status"
+            required: false
+            placeholder: "f.eks. Planlagt, I gang, Udført"
+
+  - id: staffing_step
+    title: "4. Bemanding"
+    description: "Vagtplan, roller og bemandingsbehov."
+    fields:
+      - id: staffing
+        type: repeater
+        label: "Bemandingsposter"
+        required: false
+        fields:
+          - id: role_title
+            type: text
+            label: "Funktion / vagt"
+            required: true
+            placeholder: "f.eks. Grillmester, Kioskbetjening, Parkeringsvagt"
+          - id: count
+            type: text
+            label: "Antal"
+            required: false
+            placeholder: "f.eks. 2 personer"
+          - id: time_slot
+            type: text
+            label: "Tidspunkt"
+            required: false
+            placeholder: "f.eks. 11:30 - 15:00"
+          - id: assigned_person
+            type: text
+            label: "Ansvarlig / tildelt"
+            required: false
+            placeholder: "f.eks. Søren Grillsen"
+          - id: instruction_task_card
+            type: text
+            label: "Instruks / opgavekort"
+            required: false
+            placeholder: "f.eks. HIF-02 Kiosk & Grill"
+      - id: privacy_notice
+        type: info
+        variant: privacy
+        text: "Navne og kontaktoplysninger på arrangører, tildelte frivillige og nødkontakter anvendes udelukkende til planlægning og afvikling af arrangementet. Oplysningerne behandles af Dokumentbyggeren kun under den aktive session og lagres ikke permanent af applikationen."
+
+  - id: logistics_step
+    title: "5. Materialer og logistik"
+    description: "Udstyr, forplejning, lokaler og materielanskaffelse."
+    fields:
+      - id: logistics
+        type: repeater
+        label: "Logistikposter"
+        required: false
+        fields:
+          - id: item_need
+            type: text
+            label: "Behov"
+            required: true
+            placeholder: "f.eks. Grill, Højttaleranlæg, 10 borde"
+          - id: quantity
+            type: text
+            label: "Antal"
+            required: false
+            placeholder: "f.eks. 2 stk., 100 stole"
+          - id: source
+            type: text
+            label: "Hvorfra?"
+            required: false
+            placeholder: "f.eks. Klubhusets depot, Lånes af gymnastik"
+          - id: responsible
+            type: text
+            label: "Ansvarlig"
+            required: false
+            placeholder: "f.eks. Jens / Halinspektør"
+          - id: ready_by
+            type: text
+            label: "Klar senest"
+            required: false
+            placeholder: "f.eks. Dagen før kl. 18:00"
+
+  - id: budget_step
+    title: "6. Økonomi"
+    description: "Budgetposter, forventede indtægter og udgifter."
+    fields:
+      - id: budget_items
+        type: repeater
+        label: "Budget- og regnskabsposter"
+        required: false
+        fields:
+          - id: budget_item
+            type: text
+            label: "Post"
+            required: true
+            placeholder: "f.eks. Indtægt: Salg af mad & drikke, Udgift: Teltleje"
+          - id: budget_amount
+            type: text
+            label: "Budget"
+            required: false
+            placeholder: "f.eks. 5.000 kr."
+          - id: actual_amount
+            type: text
+            label: "Faktisk"
+            required: false
+            placeholder: "f.eks. 5.250 kr."
+          - id: comment
+            type: text
+            label: "Bilag / kommentar"
+            required: false
+            placeholder: "f.eks. Kvittering vedlagt / forhåndsgodkendt"
+
+  - id: comms_step
+    title: "7. Kommunikation"
+    description: "Kommunikationsplan og markedsføring af arrangementet."
+    fields:
+      - id: communications
+        type: repeater
+        label: "Kommunikationsaktiviteter"
+        required: false
+        fields:
+          - id: target_audience
+            type: text
+            label: "Målgruppe"
+            required: true
+            placeholder: "f.eks. Forældre og spillere, Lokalsamfundet"
+          - id: message
+            type: text
+            label: "Budskab"
+            required: false
+            placeholder: "f.eks. Invitation til sommerfest og tilmelding"
+          - id: channel
+            type: text
+            label: "Kanal"
+            required: false
+            placeholder: "f.eks. Facebook, Hjemmeside, Holdsport, Opslag i hal"
+          - id: date_slot
+            type: text
+            label: "Dato"
+            required: false
+            placeholder: "f.eks. 1. maj, Uge 23"
+          - id: responsible
+            type: text
+            label: "Ansvarlig"
+            required: false
+            placeholder: "f.eks. Kommunikationsansvarlig"
+
+  - id: safety_and_eval
+    title: "8-9. Sikkerhed og evaluering"
+    description: "Beredskab, sikkerhed, tilladelser samt opsamling og evaluering."
+    fields:
+      - id: safety_risks
+        type: textarea
+        label: "Risici"
+        required: false
+        placeholder: "Eventuelle risici ved arrangementet (fx vejr, store menneskemængder)..."
+      - id: first_aid_evacuation
+        type: textarea
+        label: "Førstehjælp / brand / evakuering"
+        required: false
+        placeholder: "Placering af førstehjælpskasse, hjertestarter, flugtveje..."
+      - id: permits_authorities
+        type: textarea
+        label: "Tilladelser / myndigheder"
+        required: false
+        placeholder: "Eventuelle tilladelser (lejlighedstilladelse, brandgodkendelse, politi)..."
+      - id: emergency_contacts
+        type: textarea
+        label: "Kontakt ved hændelser"
+        required: false
+        placeholder: "Nøglepersoner, halinspektør, vagthavende..."
+      - id: participant_outcome
+        type: textarea
+        label: "Deltagere / resultat"
+        required: false
+        placeholder: "Faktisk deltagerantal, stemning og overordnet resultat..."
+      - id: what_worked
+        type: textarea
+        label: "Hvad fungerede?"
+        required: false
+        placeholder: "Succeser og ting der kørte rigtig godt..."
+      - id: what_to_change_next_time
+        type: textarea
+        label: "Hvad ændres næste gang?"
+        required: false
+        placeholder: "Læringspunkter og forbedringsforslag til næste afvikling..."
+      - id: financial_result
+        type: textarea
+        label: "Økonomisk resultat"
+        required: false
+        placeholder: "Samlet overskud/underskud og afstemning med kassereren..."

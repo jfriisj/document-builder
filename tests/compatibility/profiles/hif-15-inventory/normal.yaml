@@ -1,0 +1,31 @@
+owner_committee: Klubhus & Anlæg
+version_label: '1.0'
+updated_at: '2026-09-01'
+approved_by: Materialeforvalter (Testperson A)
+inventory_items:
+- item_id: U-01
+  category: Banepleje
+  item_name: Kridtmaskine batteridrevet
+  quantity: 1 stk.
+  location: Materielskur ved Bane 1
+  responsible: Baneformand
+  acquired_year: '2026'
+  condition: Ny
+  service_inspection: Batteritjek halvårligt
+  value_notes: 16.500 kr. ekskl. moms
+- item_id: U-02
+  category: Træningsudstyr
+  item_name: Træningsfodbolde str. 4
+  quantity: 25 stk.
+  location: Boldrum hylde A
+  responsible: Ungdomstræner
+  acquired_year: '2025'
+  condition: God
+  service_inspection: Lufttryk kontrolleres ugentligt
+  value_notes: Sponsoreret af Eksempel Sponsor ApS
+loan_records:
+- equipment_ref: U-01 Kridtmaskine
+  borrower: Eksempel Skoleidrætsdag v/ Testperson B
+  loan_date: 10.05.2026
+  expected_return: 11.05.2026
+  returned: Ja (11.05.2026)

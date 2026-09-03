@@ -1,0 +1,62 @@
+owner_committee: Fælles / Tværgående
+version_label: "3.2-edge"
+updated_at: "2026-12-31"
+approved_by: "Databeskyttelsesudvalget v/ Testperson Æ-Ø-Å 1 & Testperson Æ-Ø-Å 2 <gdpr@example.com> {{ approval_test }}"
+processing_activities:
+  - activity_system: "A & B < C > D {{ example }}"
+    personal_data: "Navn, adresse, cpr-status (ja/nej), telefonnumre, e-mailadresser & nøglekort-ID <Zone Nord> {{ data_categories }}"
+    purpose: "Overordnet styring af klubbens samlede frivilligregister, certifikater, kurser & udvalgsposter"
+    data_subjects: "Frivillige trænere, bestyrelsesmedlemmer, udvalgsmedlemmer & eksterne instruktører"
+    legal_basis: "Legitim interesse & retlig forpligtelse jf. foreningsretlige regler og folkeoplysningsloven"
+    access_roles: "Hovedbestyrelsen og udvalgsformænd med særskilt tildelte adgangsrettigheder"
+    retention_deletion: "Historik arkiveres i henhold til bogføringslovens 5-års krav; øvrige data slettes ved udtræden"
+    data_processor: "Eksempel Foreningsdrift A/S & Eksempel Cloud Ltd <DPA #8812>"
+    responsible_person: "GDPR-koordinator (Testperson Æ-Ø-Å 3)"
+  - activity_system: "Video- og streamingtjeneste til kampe <Opvisningsbane>"
+    personal_data: "Videoptagelser af spillere og dommere under officielle DBU-kampe og stævner"
+    purpose: "Taktisk analyse for trænere samt optagelse af udvalgte kampe til klubbens arkiv"
+    data_subjects: "Spillere (børn og voksne), trænere, dommere og tilskuere i baggrunden"
+    legal_basis: "Legitim interesse (sportslig analyse) samt forudgående orientering ved skiltning"
+    access_roles: "Cheftrænere for relevante årgange samt sportschef"
+    retention_deletion: "Videofiler slettes automatisk efter 60 dage medmindre særskilt arkivering er begrundet"
+    data_processor: "Eksempel Videotjeneste ApS (DPA revideret maj 2026)"
+    responsible_person: "Sportschef (Testperson Æ-Ø-Å 4)"
+consent_records:
+  - consent_type: "Portrætfotografering & personlig profilering på sociale medier <Sponsor & Trænerprofiler>"
+    target_group: "Frivillige trænere og udvalgsmedlemmer der portrætteres på foreningens platforme"
+    purpose: "Synliggørelse af nøglepersoner og ledelse over for forældre og medlemmer i lokalsamfundet"
+    how_obtained: "Skriftlig samtykkeerklæring underskrevet ved onboarding eller udpegning {{ consent_method }}"
+    where_documented: "Digitalt underskrevet i Google Drev GDPR-arkiv / Samtykker 2026"
+    validity_withdrawal: "Gælder for det pågældende foreningsår; kan til enhver tid tilbagekaldes skriftligt"
+    responsible_person: "Kommunikationsansvarlig (Testperson Æ-Ø-Å 5)"
+  - consent_type: "Offentliggørelse af jubilæums- og hæderspriser i lokalavisen (Hashøj Nyt)"
+    target_group: "Medlemmer og frivillige der modtager æresbevisninger ved den årlige generalforsamling"
+    purpose: "Pressemeddelelse og hædring af frivillig indsats i lokalområdet"
+    how_obtained: "Mundtlig accept indhentet forud for pressemeddelelse, bekræftet på skrift"
+    where_documented: "Notat på bestyrelsesreferat for generalforsamlingen"
+    validity_withdrawal: "Engangsudsendelse; kan ikke tilbagetrækkes efter trykning, men fjernes fra web"
+    responsible_person: "Formand (Testperson Æ-Ø-Å 1)"
+check_data_minimization_status: OK
+check_data_minimization_action: "Formularer i foreningssystem og Google Forms trimmet for overflødige felter {{ action_min }}"
+check_data_minimization_resp: "Medlemsansvarlig (Testperson Æ-Ø-Å 6)"
+check_access_updated_status: OK
+check_access_updated_action: "Halvårlig audit af administratorrettigheder til idrætsportal og tilmeldingssystem"
+check_access_updated_resp: "Webmaster (Testperson Æ-Ø-Å 7)"
+check_old_users_status: OK
+check_old_users_action: "Samtlige udmeldte trænere fra forårssæsonen frataget adgange d. 01.07.2026"
+check_old_users_resp: "Fodboldudvalget"
+check_retention_status: OK
+check_retention_action: "Sletteprotokol eksekveret for medlemmer inaktive i mere end 36 måneder"
+check_retention_resp: "Kasserer & Formand"
+check_processors_status: OK
+check_processors_action: "Fortegnelse over databehandlere ajourført med Eksempel Videotjeneste og Grafiktjeneste"
+check_processors_resp: "Bestyrelsen"
+check_consent_doc_status: OK
+check_consent_doc_action: "Alle samtykkeblanketter for portrætfotos scannet og lagret i GDPR-mappe"
+check_consent_doc_resp: "PR-udvalg"
+check_dsr_proc_status: OK
+check_dsr_proc_action: "Standardprocedure for besvarelse af anmodninger om indsigt/sletning inden for 30 dage"
+check_dsr_proc_resp: "Formand (Testperson Æ-Ø-Å 1)"
+check_breach_proc_status: OK
+check_breach_proc_action: "Beredskabsplan for anmeldelse til Datatilsynet inden for 72 timer afprøvet på seminar"
+check_breach_proc_resp: "Hovedbestyrelsen"

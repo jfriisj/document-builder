@@ -1,0 +1,27 @@
+owner_committee: Fælles / Tværgående
+version_label: 2.4-rc (udvidet liste)
+updated_at: '2026-12-31'
+approved_by: Testperson Æ-Ø-Å 1 & Testperson Æ-Ø-Å 2 <bestyrelsen@example.com> {{ edge_run
+  }}
+action_items:
+- item_id: H-99 & SPECIAL
+  task: Genforhandling af energiaftale for Hashøj Hallen & Klubhuset <Bane 1-4> {{
+    energy_tag }}
+  area: Klubhus & Anlæg / Økonomi
+  responsible: Kasserer & Baneudvalg
+  created_date: 01.11.2026
+  deadline: Ultimo januar 2027
+  priority: Høj
+  status: Afventer
+  next_step: Afventer tilbud fra elselskab med æ, ø, å og specialtegn {{ check }}
+  completed_date: ''
+- item_id: H-100 & VEDLIGEHOLD
+  task: Eftersyn af bander & net på kunstgræsbanen før forårssæson <Bane 2> {{ turf_task }}
+  area: Fodbold / Faciliteter
+  responsible: Materialeforvalter Testperson Æ-Ø-Å 1 & Testperson Æ-Ø-Å 3
+  created_date: 05.12.2026
+  deadline: 15.02.2027
+  priority: Normal
+  status: I gang
+  next_step: Bestilling af reservedele og reparationskit fra leverandør & montering
+  completed_date: ''

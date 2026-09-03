@@ -1,0 +1,340 @@
+id: hif-21-gdpr
+version: 1
+enabled: true
+title: HIF-21 GDPR- og samtykkeoversigt
+category: Sikkerhed og GDPR
+description: Praktisk arbejdsoversigt over persondata, behandlingsaktiviteter, samtykker og ansvar i Hashøj IF.
+steps:
+  - id: basic_info
+    title: 1. Stamdata & Vejledning
+    description: Grundlæggende information om dokumentejer, versionsstyring og retningslinjer for databeskyttelse.
+    fields:
+      - id: owner_committee
+        type: select
+        label: Dokumentejer / udvalg
+        required: true
+        options:
+          - value: Bestyrelsen
+            label: Bestyrelsen
+          - value: Fodboldudvalget
+            label: Fodboldudvalget
+          - value: Gymnastikudvalget
+            label: Gymnastikudvalget
+          - value: Badmintonudvalget
+            label: Badmintonudvalget
+          - value: E-sport
+            label: E-sport
+          - value: Klubhus & Anlæg
+            label: Klubhus & Anlæg
+          - value: Arrangementsudvalg
+            label: Arrangementsudvalg
+          - value: Fælles / Tværgående
+            label: Fælles / Tværgående
+      - id: version_label
+        type: text
+        label: Version
+        required: false
+        default: "1.0"
+      - id: updated_at
+        type: date
+        label: Senest opdateret
+        required: false
+      - id: approved_by
+        type: text
+        label: Godkendt af
+        required: false
+        placeholder: f.eks. Bestyrelsen / GDPR-ansvarlig
+      - id: guidance_info
+        type: info
+        text: >-
+          Bemærk: Denne skabelon er en praktisk administrationsoversigt og ikke juridisk
+          rådgivning. Behandlingsgrundlag og lovpligtige dokumentationskrav bør vurderes
+          efter gældende databeskyttelsesregler og relevante vejledninger.
+      - id: privacy_notice
+        type: info
+        variant: privacy
+        text: >-
+          Personnavne på ansvarlige og kontaktpersoner behandles af Dokumentbyggeren
+          udelukkende under den aktive session til at generere oversigten og lagres
+          ikke permanent af applikationen.
+
+  - id: processing_activities_step
+    title: 2. Behandlings-/dataoversigt
+    description: Fortegnelse over foreningens behandlingsaktiviteter, systemer, formål og grundlag.
+    fields:
+      - id: processing_activities
+        type: repeater
+        label: Behandlingsaktiviteter
+        required: false
+        fields:
+          - id: activity_system
+            type: text
+            label: Aktivitet / system
+            required: true
+            placeholder: f.eks. Medlemsadministration / Conventus
+          - id: personal_data
+            type: text
+            label: Persondata
+            required: false
+            placeholder: f.eks. Navn, adresse, fødselsdato, e-mail, tlf.
+          - id: purpose
+            type: text
+            label: Formål
+            required: false
+            placeholder: f.eks. Opkrævning af kontingent og holdtilmelding
+          - id: data_subjects
+            type: text
+            label: Registrerede personer
+            required: false
+            placeholder: f.eks. Medlemmer, forældre, frivillige
+          - id: legal_basis
+            type: text
+            label: Behandlingsgrundlag
+            required: false
+            placeholder: f.eks. Medlemsaftale / Legitim interesse
+          - id: access_roles
+            type: text
+            label: Adgang
+            required: false
+            placeholder: f.eks. Kasserer og udvalgsformænd
+          - id: retention_deletion
+            type: text
+            label: Opbevaring / sletning
+            required: false
+            placeholder: f.eks. Slettes 1 år efter udmeldelse
+          - id: data_processor
+            type: text
+            label: Databehandler / system
+            required: false
+            placeholder: f.eks. Conventus ApS (DPA foreligger)
+          - id: responsible_person
+            type: text
+            label: Ansvarlig
+            required: false
+            placeholder: f.eks. Kasserer
+
+  - id: consent_records_step
+    title: 3. Samtykkeoversigt
+    description: Registrering af konkrete samtykker, indhentningsmetoder, gyldighed og dokumentation.
+    fields:
+      - id: consent_records
+        type: repeater
+        label: Samtykker
+        required: false
+        fields:
+          - id: consent_type
+            type: text
+            label: Type samtykke
+            required: true
+            placeholder: f.eks. Situationsbilleder på sociale medier
+          - id: target_group
+            type: text
+            label: Hvem
+            required: false
+            placeholder: f.eks. Medlemmer / forældre til børn under 15 år
+          - id: purpose
+            type: text
+            label: Formål
+            required: false
+            placeholder: f.eks. Offentliggørelse af stemningsbilleder fra stævner
+          - id: how_obtained
+            type: text
+            label: Hvordan indhentes?
+            required: false
+            placeholder: f.eks. Ved online indmeldelse via tilkrydsning
+          - id: where_documented
+            type: text
+            label: Hvor dokumenteres?
+            required: false
+            placeholder: f.eks. I medlemsdatabasen med tidsstempel
+          - id: validity_withdrawal
+            type: text
+            label: Gyldighed / tilbagetrækning
+            required: false
+            placeholder: f.eks. Gælder indtil skriftlig tilbagetrækning via mail
+          - id: responsible_person
+            type: text
+            label: Ansvarlig
+            required: false
+            placeholder: f.eks. PR-ansvarlig
+
+  - id: checkpoints_step
+    title: 4. Kontrolpunkter
+    description: Årlige og løbende kontrolpunkter for foreningens databeskyttelse.
+    fields:
+      - id: check_data_minimization_status
+        type: select
+        label: Kun nødvendige persondata indsamles (Status)
+        required: false
+        default: OK
+        options:
+          - value: OK
+            label: OK
+          - value: I gang
+            label: I gang
+          - value: Mangler
+            label: Mangler
+          - value: N/A
+            label: N/A
+      - id: check_data_minimization_action
+        type: text
+        label: Kun nødvendige persondata indsamles (Handling / deadline)
+        required: false
+      - id: check_data_minimization_resp
+        type: text
+        label: Kun nødvendige persondata indsamles (Ansvarlig)
+        required: false
+      - id: check_access_updated_status
+        type: select
+        label: Adgange til systemer er ajourført (Status)
+        required: false
+        default: OK
+        options:
+          - value: OK
+            label: OK
+          - value: I gang
+            label: I gang
+          - value: Mangler
+            label: Mangler
+          - value: N/A
+            label: N/A
+      - id: check_access_updated_action
+        type: text
+        label: Adgange til systemer er ajourført (Handling / deadline)
+        required: false
+      - id: check_access_updated_resp
+        type: text
+        label: Adgange til systemer er ajourført (Ansvarlig)
+        required: false
+      - id: check_old_users_status
+        type: select
+        label: Gamle brugere/adgange er fjernet (Status)
+        required: false
+        default: OK
+        options:
+          - value: OK
+            label: OK
+          - value: I gang
+            label: I gang
+          - value: Mangler
+            label: Mangler
+          - value: N/A
+            label: N/A
+      - id: check_old_users_action
+        type: text
+        label: Gamle brugere/adgange er fjernet (Handling / deadline)
+        required: false
+      - id: check_old_users_resp
+        type: text
+        label: Gamle brugere/adgange er fjernet (Ansvarlig)
+        required: false
+      - id: check_retention_status
+        type: select
+        label: Slettefrister er kendt og følges (Status)
+        required: false
+        default: OK
+        options:
+          - value: OK
+            label: OK
+          - value: I gang
+            label: I gang
+          - value: Mangler
+            label: Mangler
+          - value: N/A
+            label: N/A
+      - id: check_retention_action
+        type: text
+        label: Slettefrister er kendt og følges (Handling / deadline)
+        required: false
+      - id: check_retention_resp
+        type: text
+        label: Slettefrister er kendt og følges (Ansvarlig)
+        required: false
+      - id: check_processors_status
+        type: select
+        label: Databehandlere / systemer er kendte (Status)
+        required: false
+        default: OK
+        options:
+          - value: OK
+            label: OK
+          - value: I gang
+            label: I gang
+          - value: Mangler
+            label: Mangler
+          - value: N/A
+            label: N/A
+      - id: check_processors_action
+        type: text
+        label: Databehandlere / systemer er kendte (Handling / deadline)
+        required: false
+      - id: check_processors_resp
+        type: text
+        label: Databehandlere / systemer er kendte (Ansvarlig)
+        required: false
+      - id: check_consent_doc_status
+        type: select
+        label: Samtykker kan dokumenteres hvor nødvendigt (Status)
+        required: false
+        default: OK
+        options:
+          - value: OK
+            label: OK
+          - value: I gang
+            label: I gang
+          - value: Mangler
+            label: Mangler
+          - value: N/A
+            label: N/A
+      - id: check_consent_doc_action
+        type: text
+        label: Samtykker kan dokumenteres hvor nødvendigt (Handling / deadline)
+        required: false
+      - id: check_consent_doc_resp
+        type: text
+        label: Samtykker kan dokumenteres hvor nødvendigt (Ansvarlig)
+        required: false
+      - id: check_dsr_proc_status
+        type: select
+        label: Procedure for indsigt / sletning er kendt (Status)
+        required: false
+        default: OK
+        options:
+          - value: OK
+            label: OK
+          - value: I gang
+            label: I gang
+          - value: Mangler
+            label: Mangler
+          - value: N/A
+            label: N/A
+      - id: check_dsr_proc_action
+        type: text
+        label: Procedure for indsigt / sletning er kendt (Handling / deadline)
+        required: false
+      - id: check_dsr_proc_resp
+        type: text
+        label: Procedure for indsigt / sletning er kendt (Ansvarlig)
+        required: false
+      - id: check_breach_proc_status
+        type: select
+        label: Procedure for databrud er kendt (Status)
+        required: false
+        default: OK
+        options:
+          - value: OK
+            label: OK
+          - value: I gang
+            label: I gang
+          - value: Mangler
+            label: Mangler
+          - value: N/A
+            label: N/A
+      - id: check_breach_proc_action
+        type: text
+        label: Procedure for databrud er kendt (Handling / deadline)
+        required: false
+      - id: check_breach_proc_resp
+        type: text
+        label: Procedure for databrud er kendt (Ansvarlig)
+        required: false

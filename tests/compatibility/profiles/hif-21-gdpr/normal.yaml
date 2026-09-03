@@ -1,0 +1,62 @@
+owner_committee: Bestyrelsen
+version_label: "1.0"
+updated_at: "2026-09-01"
+approved_by: Hovedbestyrelsen
+processing_activities:
+  - activity_system: Medlemsadministration / Foreningssystem
+    personal_data: Navn, adresse, fødselsdato, køn, e-mail, mobilnr., holdtilhørsforhold
+    purpose: Opkrævning af kontingent, holdadministration og medlemskommunikation
+    data_subjects: Medlemmer og forældre
+    legal_basis: Medlemsaftale (GDPR art. 6, stk. 1, litra b)
+    access_roles: Kasserer, medlemsadministrator og udvalgsformænd
+    retention_deletion: Slettes 1 år efter udmeldelse jf. foreningens slettepolitik
+    data_processor: Eksempel Foreningssystem ApS (Databehandleraftale foreligger)
+    responsible_person: Kasserer (Testperson A)
+  - activity_system: Børneattester / Politiets register
+    personal_data: Navn, CPR-nr., godkendelsesdato for børneattest
+    purpose: Lovpligtig indhentelse af børneattester på trænere for børn under 15 år
+    data_subjects: Trænere, holdledere og instruktører
+    legal_basis: Retlig forpligtelse (Børneattestloven)
+    access_roles: Kun formand og formandens udpegede børneattestansvarlige
+    retention_deletion: CPR slettes straks efter attestation; status gemmes under ansættelse
+    data_processor: Rigspolitiet (Digital Post / NemID)
+    responsible_person: Formand (Testperson B)
+consent_records:
+  - consent_type: Situationsbilleder på sociale medier & hjemmeside
+    target_group: Medlemmer og deltagere ved stævner og træning
+    purpose: Formidling af foreningsliv og aktiviteter på Facebook og hashoej-if.dk
+    how_obtained: Oplyses ved tilmelding med mulighed for reservation; samtykke ved portrætfotos
+    where_documented: I foreningssystemets medlemsnotat samt skriftlig blanket for portrætter
+    validity_withdrawal: Gælder indtil skriftlig tilbagetrækning til <kontakt@example.com>
+    responsible_person: PR- og kommunikationsansvarlig
+  - consent_type: Sponsor- og partnernyheder via e-mail
+    target_group: Medlemmer der aktivt har tilvalgt nyhedsbrev
+    purpose: Udsendelse af nyheder om klubtilbud og rabatter fra foreningens sponsorer
+    how_obtained: Aktivt opt-in flueben ved sæsontilmelding i foreningssystemet
+    where_documented: Foreningssystemets samtykkelog med tidsstempel
+    validity_withdrawal: Kan afmeldes med ét klik via afmeldingslink i nyhedsbrevet
+    responsible_person: Kommunikationsudvalget
+check_data_minimization_status: OK
+check_data_minimization_action: Årlig gennemgang af tilmeldingsformularer
+check_data_minimization_resp: Kasserer
+check_access_updated_status: OK
+check_access_updated_action: Kvartalsvis kontrol af foreningssystem- og Google-adgange
+check_access_updated_resp: Webmaster
+check_old_users_status: OK
+check_old_users_action: Fratrådte trænere deaktiveret pr. 1. juli
+check_old_users_resp: Udvalgsformænd
+check_retention_status: OK
+check_retention_action: Sletterutine køres i foreningssystemet hvert efterår
+check_retention_resp: Kasserer
+check_processors_status: OK
+check_processors_action: Fortegnelse over DPA ajourført (Foreningssystem, Idrætsforbund, Betalingsgateway)
+check_processors_resp: Bestyrelsen
+check_consent_doc_status: OK
+check_consent_doc_action: Fotopolitik synlig på opslagstavle og hjemmeside
+check_consent_doc_resp: PR-ansvarlig
+check_dsr_proc_status: OK
+check_dsr_proc_action: Skabelon til besvarelse af indsigtsbegæringer findes i arkiv
+check_dsr_proc_resp: Formand
+check_breach_proc_status: OK
+check_breach_proc_action: Beredskabsplan ved evt. databrud gennemgået på bestyrelsesmøde
+check_breach_proc_resp: Formand

@@ -1,0 +1,88 @@
+owner_committee: "Klubhus & Anlæg"
+version_label: "3.0-final"
+updated_at: "2026-12-31"
+approved_by: "Driftsleder & Sikkerhedsansvarlig <HIF Ledelse>"
+task_title: "Ekstrem & Sikkerhedstest: <Oprydning & Rengøring af Hal A & B> (Årshjul 2026/2027)"
+department: "Klubhus & Anlæg"
+task_type: "Tilbagevendende"
+execution_timing: "Søndag aften efter store weekendstævner kl. 20:00"
+frequency: "Efter arrangementer"
+estimated_duration: "ca. 2 timer og 30 minutter (afhængig af hallens stand)"
+location: "Hal A, Hal B, Depotrum 1-4 samt Omklædningsrum (1-6)"
+responsible_role: "Halvagt / Driftskoordinator"
+purpose: >
+  Test af specialtegn (æ, ø, å, Æ, Ø, Å), XML-tegn (<tag>, &amp;, ", '),
+  samt Jinja-syntaks: {{ template_var }} og {% if condition %}.
+  Lang beskrivelse: Formålet med denne operationelle instruktion er at sikre en udtømmende
+  og fejlfri test af alle grænseværdier i dokumentgeneratoren for Hashøj IF.
+completion_criteria: "Hele hallen er fejet, vasket, affald er sorteret i containerne og alle yderdøre er låst med kodelås."
+
+prerequisites:
+  - prerequisite_item: "Indhent nøglebundt #9 (mærket \"HAL-A&B <Hovednøgle>\")"
+    location: "Nøgleskab i vagtrum"
+    notes: "Pinkode: 9876*# samt chipkort {{ KEY_ID_99 }}"
+  - prerequisite_item: "Afspær indgangspartier mod øst og vest"
+    location: "Forhal"
+    notes: "Opsæt skilte med \"Glat gulv\""
+
+materials:
+  - material_name: "Industristøvsuger & Gulvvasker"
+    quantity_spec: "2 maskiner"
+    location: "Depotrum 2"
+    notes: "Tjek at filterposen er ren"
+  - material_name: "Affaldssække (100L, sorte & gennemsigtige) & mikrofiberklude"
+    quantity_spec: "50 stk. sække, 10 klude"
+    location: "Rengøringsdepot"
+    notes: "Sorter dåser/flasker med pant i særskilte kasser"
+  - material_name: "Desinfektionsmiddel til halgulve (pH ~ 7.0 & < 50ml dosering)"
+    quantity_spec: "5 liters dunk"
+    location: "Kemiskab (låst)"
+    notes: "Må IKKE blandes med syreholdige midler"
+
+task_steps:
+  - step_title: "Trin 1: Indledende inspektion & afspærring <Zone 1>"
+    step_description: "Gennemgå hallen for efterladte genstande, drikkedunke & tøj. Kontrollér at alle nødudgange er ublokerede."
+    step_checkpoint: "Nødudgange mod nord og syd SKAL kunne åbnes frit indefra uden brug af nøgle."
+    is_done: true
+  - step_title: "Trin 2: Opsamling af groft affald & tomme emballager"
+    step_description: "Opsaml alt affald fra tilskuerrækker, dommerborde og udskiftningsbænke. Sorter pant til ungdomsafdelingen."
+    step_checkpoint: "Ingen efterladt emballage under bænkene"
+    is_done: true
+  - step_title: "Trin 3: Fejning og støvsugning af halgulv & redskabsrum"
+    step_description: "Anvend den brede fejekost fra midten og ud mod siderne. Kør industristøvsugeren langs paneler."
+    step_checkpoint: "Tjek at der ikke ligger harpiksrester eller klister"
+    is_done: true
+  - step_title: "Trin 4: Vask af halgulv med godkendt vaskemaskine"
+    step_description: "Kør gulvvaskeren i parallelle baner. Vandtemperatur max 40°C."
+    step_checkpoint: "Gulvet tørrer jævnt uden striber eller vandpytter"
+    is_done: true
+  - step_title: "Trin 5: Rengøring & genopfyldning af omklædningsrum (1-6)"
+    step_description: "Tøm alle skraldespande, rengør håndvaske, spejle og toiletkummer med sanitetsrengøring. Efterfyld toiletpapir og sæbe."
+    step_checkpoint: "Tjek afløb for tilstopning"
+    is_done: false
+  - step_title: "Trin 6: Slutkontrol, låsning & alarmaktivering"
+    step_description: "Sluk alt lys i hal, omklædning og gange. Tjek at alle vinduer er haspet og lukkede. Tast koden på alarmtastaturet."
+    step_checkpoint: "Lysdiode på alarmtastaturet skal lyse konstant rød som bekræftelse på tilkobling"
+    is_done: false
+
+safety_risks: "BEMÆRK: Gulvet kan være ekstremt glat under vask! Skilt med \"Pas på: Glat gulv!\" SKAL opstilles. Ved mistanke om defekte el-installationer må der IKKE anvendes vand."
+protective_equipment: "Gummistøvler, skridsikre såler og kemikalieresistente nitrilhandsker."
+qualification_access_requirements: "Kræver gennemført instruktion i betjening af gulvvasker samt alarmkendskab."
+special_precautions: "Hensyn til rengøringsmidlernes tørretid før næste hold må betræde hallen (min. 30 minutter)."
+
+completion_checks:
+  - checkpoint: "Hoveddøre og nødudgange forsvarligt aflåst"
+    acceptance_criteria: "Alle dørgreb afprøvet udefra"
+    is_checked: true
+  - checkpoint: "Tyverialarm tilkoblet i hele sektion Hal A & B"
+    acceptance_criteria: "Alarmdisplay viser 'TILKOBLKET - ZONE 1-4'"
+    is_checked: true
+  - checkpoint: "Kemikalieskab låst og nøgle returneret"
+    acceptance_criteria: "Skabslåge i hak"
+    is_checked: false
+
+post_task_documentation: "Udfyld driftslog i vagtrum og send bekræftelse via app til halinspektør."
+who_is_informed: "Halinspektør Testperson Æ-Ø-Å / Eksempel Driftsudvalg (tlf. 00 00 00 01)."
+if_defective_or_missing: "Ved skader eller defekter oprettes straks en sag i HIF-17 Hændelses- og skadesrapport."
+deviations_issues: "Vandhane i omklædningsrum 3 drypper og kan ikke lukkes helt."
+improvement_suggestions: "Montering af automatisk sæbedispenser vil mindske spild."

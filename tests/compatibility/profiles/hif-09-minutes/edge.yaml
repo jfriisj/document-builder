@@ -1,0 +1,31 @@
+owner_committee: Fælles / Tværgående
+version_label: 2.0-special
+updated_at: '2026-11-01'
+approved_by: 'Fællesudvalget (Æ, Ø, Å & Specialtegn: < > & " '')'
+meeting_title: Ekstraordinært Fællesmøde om Faciliteter & Beredskab
+meeting_datetime: Mandag d. 2. november 2026 kl. 18:30 - 22:00
+meeting_location: 'Hallen & Videolink: https://example.com/moede?id=123&test=true'
+meeting_chair: Testperson Æ-Ø-Å 1
+meeting_scribe: Testperson Æ-Ø-Å 2
+meeting_attendees: Testperson Æ-Ø-Å 1, Testperson Æ-Ø-Å 2, Eksempelteam & Søn, Testperson
+  C <kontakt@example.com>
+meeting_absent: Ingen (fuldt talstærkt fremmøde)
+agenda_items:
+- item_number: '1'
+  topic: Gennemgang af hændelsesrapporter & sikkerhedsprocedurer {{ probe_tag }}
+  discussion: Drøftelse af glatte trapper ved indgang 2 og brandveje.
+  decision: Der opsættes skridsikre måtter og advarselsskilte.
+  responsible: Baneformand
+  deadline: Hurtigst muligt
+action_items:
+- action: Montering af skridsikre profiler på trappetrin
+  responsible: Driftsteam
+  deadline: 10. november 2026
+  status: I gang
+logged_decisions:
+- decision: Indkøb af ekstra hjertestarter til udendørsareal
+  effective_from: Straks
+  log_in_decision_register: Ja
+  consequence: HIF-17 Hændelsesprocedure opdateres
+next_meeting_datetime: Torsdag d. 10. december 2026 kl. 19:00
+next_meeting_topics: Status på sikkerhedstiltag og afslutning af 2026-aktiviteter

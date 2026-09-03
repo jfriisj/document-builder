@@ -1,0 +1,274 @@
+id: hif-20-communication
+version: 1
+enabled: true
+title: HIF-20 Kommunikationsskabelon
+category: Kommunikation & PR
+description: Planlægning og kvalitetssikring af opslag, nyheder, medlemsinformation,
+  pressemeddelelser og billedrettigheder i Hashøj IF.
+steps:
+- id: basic_info
+  title: 1. Rammer & Stamdata
+  description: Overordnede rammer for kommunikationen samt dokumentstyring.
+  fields:
+  - id: owner_committee
+    type: select
+    label: Dokumentejer / udvalg
+    required: true
+    options:
+    - value: Bestyrelsen
+      label: Bestyrelsen
+    - value: Fodboldudvalget
+      label: Fodboldudvalget
+    - value: Gymnastikudvalget
+      label: Gymnastikudvalget
+    - value: Badmintonudvalget
+      label: Badmintonudvalget
+    - value: E-sport
+      label: E-sport
+    - value: Klubhus & Anlæg
+      label: Klubhus & Anlæg
+    - value: Arrangementsudvalg
+      label: Arrangementsudvalg
+    - value: Fælles / Tværgående
+      label: Fælles / Tværgående
+  - id: version_label
+    type: text
+    label: Version
+    required: false
+    default: '1.0'
+  - id: updated_at
+    type: date
+    label: Senest opdateret
+    required: false
+  - id: approved_by
+    type: text
+    label: Godkendt af
+    required: false
+    placeholder: f.eks. PR-ansvarlig / Udvalgsformand
+  - id: title
+    type: text
+    label: Titel / emne
+    required: true
+    placeholder: f.eks. Tilmelding til forårssæson 2027
+  - id: purpose
+    type: textarea
+    label: Formål
+    required: true
+    placeholder: Hvorfor udsendes dette, og hvad er målet?
+  - id: target_audience
+    type: text
+    label: Målgruppe
+    required: true
+    placeholder: f.eks. Forældre til børnespillere, Lokalsamfundet, Seniorer
+  - id: sender
+    type: text
+    label: Afsender
+    required: true
+    placeholder: f.eks. Fodboldudvalget i Hashøj IF
+  - id: channels
+    type: multiselect
+    label: Kanal
+    required: true
+    options:
+    - value: Hjemmeside
+      label: Hjemmeside
+    - value: Facebook
+      label: Facebook
+    - value: Mail
+      label: Mail
+    - value: Nyhedsbrev
+      label: Nyhedsbrev
+    - value: Presse
+      label: Presse
+    - value: Andet
+      label: Andet
+  - id: publish_date
+    type: date
+    label: Publiceringsdato
+    required: true
+  - id: responsible_person
+    type: text
+    label: Ansvarlig
+    required: true
+    placeholder: Navn på ansvarlig person
+- id: message_and_content
+  title: 2-3. Budskab & Indhold
+  description: Kernebudskab, call to action, brødtekst og grafik.
+  fields:
+  - id: key_message
+    type: textarea
+    label: Det vigtigste modtageren skal vide
+    required: true
+    placeholder: Kort og præcist hovedbudskab...
+  - id: call_to_action
+    type: textarea
+    label: Ønsket handling fra modtageren
+    required: false
+    placeholder: f.eks. Tilmeld dig inden 1. marts via linket...
+  - id: deadline_practical_info
+    type: textarea
+    label: Deadline / praktisk information
+    required: false
+    placeholder: Datoer, tidspunkter, priser og steder...
+  - id: draft_body
+    type: textarea
+    label: Udkast / brødtekst
+    required: true
+    placeholder: Den fulde tekst til opslaget eller artiklen...
+  - id: links_contact_signup
+    type: textarea
+    label: Link / kontakt / tilmelding
+    required: false
+    placeholder: Relevante links, e-mailadresser og kontakttelefoner...
+  - id: media_graphics
+    type: textarea
+    label: Billede / grafik
+    required: false
+    placeholder: Beskrivelse eller filnavn på billede/grafik...
+  - id: sponsor_partner_mention
+    type: textarea
+    label: Sponsor / partner skal nævnes
+    required: false
+    placeholder: f.eks. Tak til Sparekassen Sjælland for støtte...
+- id: quality_control
+  title: 4. Kvalitetskontrol før publicering
+  description: Checkliste til kontrol af sprog, fakta, billedrettigheder og GDPR.
+  fields:
+  - id: check_datetime_status
+    type: select
+    label: Dato, tid og sted status
+    required: false
+    default: OK
+    options:
+    - value: OK
+      label: OK
+    - value: N/A
+      label: N/A
+  - id: check_datetime_notes
+    type: text
+    label: Dato, tid og sted bemærkning
+    required: false
+  - id: check_links_status
+    type: select
+    label: Kontaktoplysninger status
+    required: false
+    default: OK
+    options:
+    - value: OK
+      label: OK
+    - value: N/A
+      label: N/A
+  - id: check_links_notes
+    type: text
+    label: Kontaktoplysninger bemærkning
+    required: false
+  - id: check_spelling_status
+    type: select
+    label: Sprog og stavning status
+    required: false
+    default: OK
+    options:
+    - value: OK
+      label: OK
+    - value: N/A
+      label: N/A
+  - id: check_spelling_notes
+    type: text
+    label: Sprog og stavning bemærkning
+    required: false
+  - id: check_image_rights_status
+    type: select
+    label: Billeder må bruges status
+    required: false
+    default: OK
+    options:
+    - value: OK
+      label: OK
+    - value: N/A
+      label: N/A
+  - id: check_image_rights_notes
+    type: text
+    label: Billeder må bruges bemærkning
+    required: false
+  - id: check_gdpr_status
+    type: select
+    label: Persondata / samtykke status
+    required: false
+    default: OK
+    options:
+    - value: OK
+      label: OK
+    - value: N/A
+      label: N/A
+  - id: check_gdpr_notes
+    type: text
+    label: Persondata / samtykke bemærkning
+    required: false
+  - id: check_sponsor_status
+    type: select
+    label: Sponsor-/partnerkrav status
+    required: false
+    default: OK
+    options:
+    - value: OK
+      label: OK
+    - value: N/A
+      label: N/A
+  - id: check_sponsor_notes
+    type: text
+    label: Sponsor-/partnerkrav bemærkning
+    required: false
+  - id: check_approval_status
+    type: select
+    label: Udvalg / ansvarlig godkendt status
+    required: false
+    default: OK
+    options:
+    - value: OK
+      label: OK
+    - value: N/A
+      label: N/A
+  - id: check_approval_notes
+    type: text
+    label: Udvalg / ansvarlig godkendt bemærkning
+    required: false
+  - id: check_multichannel_status
+    type: select
+    label: Publicering øvrige kanaler status
+    required: false
+    default: OK
+    options:
+    - value: OK
+      label: OK
+    - value: N/A
+      label: N/A
+  - id: check_multichannel_notes
+    type: text
+    label: Publicering øvrige kanaler bemærkning
+    required: false
+  - id: privacy_notice
+    type: info
+    variant: privacy
+    text: Navne og kontaktoplysninger på ansvarlige, afsendere og eventuelle omtalte
+      personer anvendes udelukkende til planlægning og kvalitetssikring af foreningens
+      kommunikation. Oplysningerne behandles af Dokumentbyggeren kun under den aktive
+      session og lagres ikke permanent af applikationen.
+- id: post_publishing
+  title: 5. Efter publicering
+  description: Opfølgning på publicering, modtagelse og fremtidig opdatering.
+  fields:
+  - id: published_where
+    type: textarea
+    label: Hvor er det publiceret?
+    required: false
+    placeholder: f.eks. Facebook side d. 1. marts kl. 10:00
+  - id: reaction_result
+    type: textarea
+    label: Reaktion / resultat
+    required: false
+    placeholder: f.eks. 45 tilmeldinger første uge, mange delinger...
+  - id: removal_update_later
+    type: textarea
+    label: Skal indholdet fjernes / opdateres senere?
+    required: false
+    placeholder: f.eks. Opslag afpubliceres efter tilmeldingsfrist...

@@ -1,0 +1,65 @@
+owner_committee: Bestyrelsen
+version_label: '1.0'
+updated_at: '2026-04-15'
+approved_by: Bestyrelsen
+project_name: Etablering af Padelbane
+project_lead: Testperson A
+sponsor_decision_maker: Formand (Testperson B)
+start_date: '2026-05-01'
+target_end_date: '2026-09-01'
+background_problem: Mange medlemmer efterspørger moderne ketsjersport, og det eksisterende
+  tennisanlæg har ledig kapacitet.
+purpose: At etablere en attraktiv padelbane, der styrker fællesskabet og idrætslivet
+  i Hashøj.
+project_goals: Etablere 1 godkendt udendørs padelbane med belysning og integreret
+  bookingsystem.
+deliverables: Færdigetableret bane, online nøglefrit adgangssystem og åbningsturnering.
+in_scope: Baneunderlag, glasvægge, lysmaster, hegn og integration til foreningens
+  hjemmeside.
+out_of_scope: Indendørs overdækning (udskydes til eventuel fase 2).
+stakeholders:
+- name: Eksempel Kommune
+  needs_interests: Byggetilladelse og lokalplanoverholdelse
+  influence: Høj
+  involvement: Løbende dialog med teknisk forvaltning
+- name: Tennisudvalget
+  needs_interests: Placering på anlægget og banesamarbejde
+  influence: Mellem
+  involvement: Månedlige koordineringsmøder
+milestones:
+- task: Indhentning af byggetilladelse
+  responsible: Testperson A
+  deadline: 1. juni 2026
+  dependency: Tegningsmateriale færdigt
+  status: I gang
+- task: Fundament og jordarbejde
+  responsible: Eksempel Entreprenør ApS
+  deadline: 1. juli 2026
+  dependency: Tilladelse godkendt
+  status: Planlagt
+budget_items:
+- item: Baneanlæg & montering
+  budget: 350.000 kr.
+  approved_by: Bestyrelsen
+  notes: Finansieres via fondsansøgning
+- item: Lysanlæg og el-tilslutning
+  budget: 45.000 kr.
+  approved_by: Kasserer
+  notes: Foreningskassen
+risks:
+- risk: Forsinkelse i kommunal byggetilladelse
+  probability: Mellem
+  impact: Høj
+  mitigation: Tidlig indsendelse og tæt opfølgning
+  responsible: Testperson A
+decision_log:
+- date: 10. april 2026
+  decision_change: Valg af panoramaglas frem for standard hegn
+  justification: Bedre udsyn og længere holdbarhed
+  approved_by: Bestyrelsen
+approval_criteria: Banen er godkendt af Dansk Padel Forbund og sikkerhedsgodkendt
+  til brug.
+handover_to_operations: Tennis- og badmintonudvalget overtager den daglige drift og
+  booking.
+documentation_location: Fællesdrev / Projekter / Padelbane 2026
+evaluation_learnings: God erfaring med tidlig borgerinddragelse til stiftende orienteringsmøde.

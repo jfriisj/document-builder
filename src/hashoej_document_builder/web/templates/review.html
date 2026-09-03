@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+
+{% block title %}Kontrollér oplysninger – {{ template.title }} – Document Builder{% endblock %}
+
+{% block content %}
+<section id="review">
+  <div class="kicker">{{ template.title }}</div>
+  <h1>Kontrollér dine svar</h1>
+  <p class="lead">Gennemse dine indtastede oplysninger, før du ser dokument-previewet. Du kan altid gå tilbage og rette.</p>
+
+  {% if errors %}
+  <div class="warning-box">
+    <strong>Der mangler påkrævede oplysninger:</strong>
+    <ul style="margin: 6px 0 0 18px; padding: 0;">
+      {% for field_id, err_msg in errors.items() %}
+      <li>{{ err_msg }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+
+  <div class="form-card" style="max-width: 820px;">
+    {% for step in template.form_definition.steps %}
+      {% set step_idx = loop.index0 %}
+      <div class="review-section">
+        <div class="review-section-header">
+          <h2 style="margin: 0; font-size: 18px; color: var(--green);">{{ step.title }}</h2>
+          <a href="/journey/step/{{ step_idx }}" class="btn secondary" style="padding: 5px 12px; font-size: 13px;">Ret</a>
+        </div>
+
+        {% for field in step.fields %}
+          {% if active_field_ids is not defined or field.id in active_field_ids %}
+            {% if field.type != 'info' %}
+              <div class="review-row">
+                <div class="review-label">{{ field.label }}</div>
+                <div class="review-value">
+                  {% set val = values.get(field.id) %}
+                  {% if field.type == 'checkbox' %}
+                    {{ 'Ja (markeret)' if val else 'Nej' }}
+                  {% elif field.type == 'repeater' %}
+                    {% if val and val | length > 0 %}
+                      <table class="table-preview">
+                        <thead>
+                          <tr>
+                            {% for child in field.fields if child.type != 'info' %}
+                            <th>{{ child.label }}</th>
+                            {% endfor %}
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {% for row in val %}
+                          <tr>
+                            {% for child in field.fields if child.type != 'info' %}
+                            {% set child_val = row.get(child.id) %}
+                            {% set disp_child_val = get_field_display_label(child, child_val) %}
+                            <td>
+                              {% if child.type == 'checkbox' %}
+                                {{ 'Ja' if child_val else 'Nej' }}
+                              {% elif child.type == 'multiselect' %}
+                                {{ disp_child_val | join(', ') if disp_child_val is iterable and disp_child_val is not string else disp_child_val }}
+                              {% else %}
+                                {{ disp_child_val if disp_child_val is not none else '' }}
+                              {% endif %}
+                            </td>
+                            {% endfor %}
+                          </tr>
+                          {% endfor %}
+                        </tbody>
+                      </table>
+                    {% else %}
+                      <span class="small">Ingen rækker tilføjet</span>
+                    {% endif %}
+                  {% elif field.type in ('select', 'radio') %}
+                    {% set disp_val = get_field_display_label(field, val) %}
+                    {% if disp_val is not none and disp_val != '' %}
+                      {{ disp_val }}
+                    {% else %}
+                      <span class="small">Ikke udfyldt</span>
+                    {% endif %}
+                  {% elif field.type == 'multiselect' %}
+                    {% set disp_val = get_field_display_label(field, val) %}
+                    {% if disp_val and disp_val | length > 0 %}
+                      {{ disp_val | join(', ') }}
+                    {% else %}
+                      <span class="small">Ingen valgt</span>
+                    {% endif %}
+                  {% else %}
+                    {% if val is not none and val != '' %}
+                      {{ val }}
+                    {% else %}
+                      <span class="small">Ikke udfyldt</span>
+                    {% endif %}
+                  {% endif %}
+                </div>
+              </div>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endfor %}
+
+    <div class="toolbar">
+      <a href="/journey/step/{{ template.form_definition.steps | length - 1 }}" class="btn secondary">Tilbage</a>
+      <a href="/journey/preview" class="btn primary">Se preview</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

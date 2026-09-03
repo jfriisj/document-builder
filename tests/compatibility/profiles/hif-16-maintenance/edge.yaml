@@ -1,0 +1,41 @@
+owner_committee: Fælles / Tværgående
+version_label: 3.5-rc (hovedeftersyn)
+updated_at: '2026-12-31'
+approved_by: Testperson Æ-Ø-Å 1 & Testperson Æ-Ø-Å 2 <vedligehold@example.com> {{ approval_edge
+  }}
+maintenance_tasks:
+- object_or_installation: Hovedafbryder & El-tavle <Zone A & B>
+  location: Klubhusets hovedindgang bag låst dør
+  task_or_inspection: Lovpligtigt eftersyn af HPFI-relæer {{ el_check }}
+  interval: Årligt i uge 42
+  last_performed: Oktober 2025
+  next_date: Oktober 2026
+  responsible: Certificeret el-installatør
+  professional_required: Lovpligtigt eftersyn
+  documentation: Attest på inderside af eltavle & PDF i Drev
+- object_or_installation: Ventilationsanlæg & varmegenvinding <Hal 1>
+  location: Teknikrum på 1. sal over omklædningsrum
+  task_or_inspection: Filterskift, rensning af kanaler & kalibrering af termostater {{ vent_check }}
+  interval: Halvårligt (forår/efterår)
+  last_performed: April 2026
+  next_date: Oktober 2026
+  responsible: Halinspektør Testperson Æ-Ø-Å 1 & Eksempel Ventilationsservice ApS
+  professional_required: Autoriseret fagperson påkrævet
+  documentation: Servicerapport i Ringbind Drift / Teknik
+repairs_and_defects:
+- incident_date: 24.12.2026
+  defect_object: Tagrende over indgangsparti med frostsprængning
+  defect_description: Revnet zinktagrende og istapdannelse med risiko for forbipasserende
+  temporary_action: Område afspærret med advarselstrekant & advarselsbånd
+  repair_supplier: Eksempel Blikkenslager & Sønner v/ Testperson Æ-Ø-Å 3
+  closed_status: Afventer tøvejr og reservedele {{ status }}
+- incident_date: 10.01.2027
+  defect_object: Defekt blandingsbatteri & vandlækage i dommerbruser <Zone C>
+  defect_description: Dryppende armatur med kalktæring og reduceret vandtryk {{ leak_probe }}
+  temporary_action: Hovedhane for dommeromklædning midlertidigt lukket
+  repair_supplier: Eksempel VVS-firma v/ Testperson Æ-Ø-Å 4
+  closed_status: Udbedret & trykprøvet den 12.01.2027
+annual_maintenance_budget: Budgetramme ca. 60.000 kr. inkl. buffer til vinterberedskab
+  & saltning
+emergency_contact_person: 'Døgnvagt: Tlf. 00 00 00 01 (Eksempel Skadeservice) & Formand'
+manuals_location: Drev / Drift / Manualer & fysisk arkivskab 4 i dommerrummet

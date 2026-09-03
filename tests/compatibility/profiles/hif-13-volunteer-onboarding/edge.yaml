@@ -1,0 +1,40 @@
+owner_committee: Fælles / Tværgående
+version_label: 2.0-special
+updated_at: '2026-10-01'
+approved_by: Frivilligkoordinator <frivillig@example.com>
+volunteer_name: 'Testperson Æ-Ø-Å 1 (Æ, Ø, Å & Specialtegn: < > & " '')'
+volunteer_role: Klubhusvært & Arrangementstekniker {{ edge_tag }}
+start_date: '2026-10-01'
+contact_person: Testperson Æ-Ø-Å 2 (tlf. 00 00 00 01)
+club_info_topics:
+- topic: Historie & Organisation
+  what_to_know: Grundlagt 1970 med 6 selvstændige afdelinger.
+  where_to_find: Jubilæumsskrift
+role_purpose: Varetage praktisk klargøring af klubhus ved foreningsarrangementer.
+key_tasks: Borde, stole, AV-udstyr og kontrol af lys.
+estimated_time: Varierende efter arrangementskalender
+collaboration_partners: Arrangementsudvalget og bestyrelsen.
+practical_comm_info: Mail og SMS
+practical_comm_reviewed: true
+practical_keys_info: Nøglesæt 3
+practical_keys_reviewed: true
+practical_systems_info: Ingen IT systemer
+practical_systems_reviewed: true
+practical_docs_info: Manual til lydanlæg
+practical_docs_reviewed: true
+practical_expenses_info: Refusionsskabelon HIF-18
+practical_expenses_reviewed: true
+practical_safety_info: Brandinstruks i gangen
+practical_safety_reviewed: true
+practical_gdpr_info: Børneattest tjekket
+practical_gdpr_reviewed: true
+practical_contact_info: Testperson Æ-Ø-Å 2 tlf. 00 00 00 01
+practical_contact_reviewed: true
+onboarding_activities:
+- activity: Gennemgang af lydanlæg og teleslynge
+  with_whom: Tekniker (Testperson C)
+  activity_date: 5. oktober
+  is_completed: true
+followup_period: 1 måned
+followup_questions_and_needs: Ingen udeståender.
+followup_volunteer_suggestions: Alt kører planmæssigt.

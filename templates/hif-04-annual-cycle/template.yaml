@@ -1,0 +1,489 @@
+id: hif-04-annual-cycle
+version: 1
+enabled: true
+title: HIF-04 Årshjul
+category: Drift og opgaver
+description: Samlet oversigt over faste aktiviteter, frister og tilbagevendende opgaver gennem året for Hashøj IF.
+steps:
+  - id: basic_info
+    title: 1. Stamdata & Dokumentstyring
+    description: Grundlæggende information om dokumentejer og versionsstyring.
+    fields:
+      - id: owner_committee
+        type: select
+        label: Dokumentejer / udvalg
+        required: true
+        options:
+          - value: Bestyrelsen
+            label: Bestyrelsen
+          - value: Fodboldudvalget
+            label: Fodboldudvalget
+          - value: Gymnastikudvalget
+            label: Gymnastikudvalget
+          - value: Badmintonudvalget
+            label: Badmintonudvalget
+          - value: E-sport
+            label: E-sport
+          - value: Klubhus & Anlæg
+            label: Klubhus & Anlæg
+          - value: Arrangementsudvalg
+            label: Arrangementsudvalg
+          - value: Fælles / Tværgående
+            label: Fælles / Tværgående
+      - id: version_label
+        type: text
+        label: Version
+        required: false
+        default: "1.0"
+      - id: updated_at
+        type: date
+        label: Senest opdateret
+        required: false
+      - id: approved_by
+        type: text
+        label: Godkendt af
+        required: false
+        placeholder: f.eks. Bestyrelsen / Udvalgsformand
+      - id: privacy_notice
+        type: info
+        variant: privacy
+        text: >-
+          Navne og kontaktoplysninger på ansvarlige personer og godkendere
+          behandles af Dokumentbyggeren kun under den aktive session til at generere
+          årshjulet og lagres ikke permanent af applikationen.
+
+  - id: annual_overview
+    title: 2. Årlig oversigt
+    description: Faste aktiviteter og deadlines fordelt på årets 12 faste måneder.
+    fields:
+      # Januar
+      - id: info_januar
+        type: info
+        label: Januar
+        text: Faste aktiviteter og frister for januar måned.
+      - id: januar_activity
+        type: text
+        label: Januar – Aktivitet / deadline
+        required: false
+        placeholder: Beskrivelse af aktivitet eller frist
+      - id: januar_responsible
+        type: text
+        label: Januar – Ansvarlig
+        required: false
+        placeholder: Ansvarlig person eller rolle
+      - id: januar_prep_starts
+        type: text
+        label: Januar – Forberedelse starter
+        required: false
+        placeholder: f.eks. Primo december / Uge 48
+      - id: januar_relevant_document
+        type: text
+        label: Januar – Relevant dokument / opgavekort
+        required: false
+        placeholder: f.eks. HIF-02 Kontingentopkrævning
+      - id: januar_status
+        type: text
+        label: Januar – Status
+        required: false
+        placeholder: f.eks. Planlagt, I gang, Udført
+
+      # Februar
+      - id: info_februar
+        type: info
+        label: Februar
+        text: Faste aktiviteter og frister for februar måned.
+      - id: februar_activity
+        type: text
+        label: Februar – Aktivitet / deadline
+        required: false
+        placeholder: Beskrivelse af aktivitet eller frist
+      - id: februar_responsible
+        type: text
+        label: Februar – Ansvarlig
+        required: false
+        placeholder: Ansvarlig person eller rolle
+      - id: februar_prep_starts
+        type: text
+        label: Februar – Forberedelse starter
+        required: false
+        placeholder: f.eks. Primo januar / Uge 2
+      - id: februar_relevant_document
+        type: text
+        label: Februar – Relevant dokument / opgavekort
+        required: false
+        placeholder: f.eks. HIF-09 Mødereferat
+      - id: februar_status
+        type: text
+        label: Februar – Status
+        required: false
+        placeholder: f.eks. Planlagt, I gang, Udført
+
+      # Marts
+      - id: info_marts
+        type: info
+        label: Marts
+        text: Faste aktiviteter og frister for marts måned.
+      - id: marts_activity
+        type: text
+        label: Marts – Aktivitet / deadline
+        required: false
+        placeholder: Beskrivelse af aktivitet eller frist
+      - id: marts_responsible
+        type: text
+        label: Marts – Ansvarlig
+        required: false
+        placeholder: Ansvarlig person eller rolle
+      - id: marts_prep_starts
+        type: text
+        label: Marts – Forberedelse starter
+        required: false
+        placeholder: f.eks. Februar
+      - id: marts_relevant_document
+        type: text
+        label: Marts – Relevant dokument / opgavekort
+        required: false
+        placeholder: f.eks. Vedtægter § 6
+      - id: marts_status
+        type: text
+        label: Marts – Status
+        required: false
+        placeholder: f.eks. Planlagt, I gang, Udført
+
+      # April
+      - id: info_april
+        type: info
+        label: April
+        text: Faste aktiviteter og frister for april måned.
+      - id: april_activity
+        type: text
+        label: April – Aktivitet / deadline
+        required: false
+        placeholder: Beskrivelse af aktivitet eller frist
+      - id: april_responsible
+        type: text
+        label: April – Ansvarlig
+        required: false
+        placeholder: Ansvarlig person eller rolle
+      - id: april_prep_starts
+        type: text
+        label: April – Forberedelse starter
+        required: false
+        placeholder: f.eks. Marts / Uge 12
+      - id: april_relevant_document
+        type: text
+        label: April – Relevant dokument / opgavekort
+        required: false
+        placeholder: f.eks. Baneplan
+      - id: april_status
+        type: text
+        label: April – Status
+        required: false
+        placeholder: f.eks. Planlagt, I gang, Udført
+
+      # Maj
+      - id: info_maj
+        type: info
+        label: Maj
+        text: Faste aktiviteter og frister for maj måned.
+      - id: maj_activity
+        type: text
+        label: Maj – Aktivitet / deadline
+        required: false
+        placeholder: Beskrivelse af aktivitet eller frist
+      - id: maj_responsible
+        type: text
+        label: Maj – Ansvarlig
+        required: false
+        placeholder: Ansvarlig person eller rolle
+      - id: maj_prep_starts
+        type: text
+        label: Maj – Forberedelse starter
+        required: false
+        placeholder: f.eks. April / Uge 16
+      - id: maj_relevant_document
+        type: text
+        label: Maj – Relevant dokument / opgavekort
+        required: false
+        placeholder: f.eks. HIF-07 Arrangementsskabelon
+      - id: maj_status
+        type: text
+        label: Maj – Status
+        required: false
+        placeholder: f.eks. Planlagt, I gang, Udført
+
+      # Juni
+      - id: info_juni
+        type: info
+        label: Juni
+        text: Faste aktiviteter og frister for juni måned.
+      - id: juni_activity
+        type: text
+        label: Juni – Aktivitet / deadline
+        required: false
+        placeholder: Beskrivelse af aktivitet eller frist
+      - id: juni_responsible
+        type: text
+        label: Juni – Ansvarlig
+        required: false
+        placeholder: Ansvarlig person eller rolle
+      - id: juni_prep_starts
+        type: text
+        label: Juni – Forberedelse starter
+        required: false
+        placeholder: f.eks. Maj / Uge 20
+      - id: juni_relevant_document
+        type: text
+        label: Juni – Relevant dokument / opgavekort
+        required: false
+        placeholder: f.eks. Turneringsafslutning
+      - id: juni_status
+        type: text
+        label: Juni – Status
+        required: false
+        placeholder: f.eks. Planlagt, I gang, Udført
+
+      # Juli
+      - id: info_juli
+        type: info
+        label: Juli
+        text: Faste aktiviteter og frister for juli måned.
+      - id: juli_activity
+        type: text
+        label: Juli – Aktivitet / deadline
+        required: false
+        placeholder: Beskrivelse af aktivitet eller frist
+      - id: juli_responsible
+        type: text
+        label: Juli – Ansvarlig
+        required: false
+        placeholder: Ansvarlig person eller rolle
+      - id: juli_prep_starts
+        type: text
+        label: Juli – Forberedelse starter
+        required: false
+        placeholder: f.eks. Juni
+      - id: juli_relevant_document
+        type: text
+        label: Juli – Relevant dokument / opgavekort
+        required: false
+        placeholder: f.eks. Sommerferieplan
+      - id: juli_status
+        type: text
+        label: Juli – Status
+        required: false
+        placeholder: f.eks. Planlagt, I gang, Udført
+
+      # August
+      - id: info_august
+        type: info
+        label: August
+        text: Faste aktiviteter og frister for august måned.
+      - id: august_activity
+        type: text
+        label: August – Aktivitet / deadline
+        required: false
+        placeholder: Beskrivelse af aktivitet eller frist
+      - id: august_responsible
+        type: text
+        label: August – Ansvarlig
+        required: false
+        placeholder: Ansvarlig person eller rolle
+      - id: august_prep_starts
+        type: text
+        label: August – Forberedelse starter
+        required: false
+        placeholder: f.eks. Ultimo juli
+      - id: august_relevant_document
+        type: text
+        label: August – Relevant dokument / opgavekort
+        required: false
+        placeholder: f.eks. HIF-13 Introduktion nye frivillige
+      - id: august_status
+        type: text
+        label: August – Status
+        required: false
+        placeholder: f.eks. Planlagt, I gang, Udført
+
+      # September
+      - id: info_september
+        type: info
+        label: September
+        text: Faste aktiviteter og frister for september måned.
+      - id: september_activity
+        type: text
+        label: September – Aktivitet / deadline
+        required: false
+        placeholder: Beskrivelse af aktivitet eller frist
+      - id: september_responsible
+        type: text
+        label: September – Ansvarlig
+        required: false
+        placeholder: Ansvarlig person eller rolle
+      - id: september_prep_starts
+        type: text
+        label: September – Forberedelse starter
+        required: false
+        placeholder: f.eks. August / Uge 34
+      - id: september_relevant_document
+        type: text
+        label: September – Relevant dokument / opgavekort
+        required: false
+        placeholder: f.eks. Holdoversigt
+      - id: september_status
+        type: text
+        label: September – Status
+        required: false
+        placeholder: f.eks. Planlagt, I gang, Udført
+
+      # Oktober
+      - id: info_oktober
+        type: info
+        label: Oktober
+        text: Faste aktiviteter og frister for oktober måned.
+      - id: oktober_activity
+        type: text
+        label: Oktober – Aktivitet / deadline
+        required: false
+        placeholder: Beskrivelse af aktivitet eller frist
+      - id: oktober_responsible
+        type: text
+        label: Oktober – Ansvarlig
+        required: false
+        placeholder: Ansvarlig person eller rolle
+      - id: oktober_prep_starts
+        type: text
+        label: Oktober – Forberedelse starter
+        required: false
+        placeholder: f.eks. September / Uge 38
+      - id: oktober_relevant_document
+        type: text
+        label: Oktober – Relevant dokument / opgavekort
+        required: false
+        placeholder: f.eks. Halfordeling
+      - id: oktober_status
+        type: text
+        label: Oktober – Status
+        required: false
+        placeholder: f.eks. Planlagt, I gang, Udført
+
+      # November
+      - id: info_november
+        type: info
+        label: November
+        text: Faste aktiviteter og frister for november måned.
+      - id: november_activity
+        type: text
+        label: November – Aktivitet / deadline
+        required: false
+        placeholder: Beskrivelse af aktivitet eller frist
+      - id: november_responsible
+        type: text
+        label: November – Ansvarlig
+        required: false
+        placeholder: Ansvarlig person eller rolle
+      - id: november_prep_starts
+        type: text
+        label: November – Forberedelse starter
+        required: false
+        placeholder: f.eks. Oktober / Uge 42
+      - id: november_relevant_document
+        type: text
+        label: November – Relevant dokument / opgavekort
+        required: false
+        placeholder: f.eks. Budgetoplæg
+      - id: november_status
+        type: text
+        label: November – Status
+        required: false
+        placeholder: f.eks. Planlagt, I gang, Udført
+
+      # December
+      - id: info_december
+        type: info
+        label: December
+        text: Faste aktiviteter og frister for december måned.
+      - id: december_activity
+        type: text
+        label: December – Aktivitet / deadline
+        required: false
+        placeholder: Beskrivelse af aktivitet eller frist
+      - id: december_responsible
+        type: text
+        label: December – Ansvarlig
+        required: false
+        placeholder: Ansvarlig person eller rolle
+      - id: december_prep_starts
+        type: text
+        label: December – Forberedelse starter
+        required: false
+        placeholder: f.eks. 1. oktober / November
+      - id: december_relevant_document
+        type: text
+        label: December – Relevant dokument / opgavekort
+        required: false
+        placeholder: f.eks. HIF-07 Arrangementsskabelon
+      - id: december_status
+        type: text
+        label: December – Status
+        required: false
+        placeholder: f.eks. Planlagt, I gang, Udført
+
+  - id: floating_deadlines_step
+    title: 3. Faste frister uden fast måned
+    description: Frister udløst af særlige hændelser eller triggere.
+    fields:
+      - id: floating_deadlines
+        type: repeater
+        label: Flydende frister
+        required: false
+        fields:
+          - id: deadline_trigger
+            type: text
+            label: Frist / trigger
+            required: true
+            placeholder: f.eks. 14 dage før generalforsamling / Ved sæsonafslutning
+          - id: task
+            type: text
+            label: Opgave
+            required: true
+            placeholder: Hvad skal udføres?
+          - id: responsible
+            type: text
+            label: Ansvarlig
+            required: false
+            placeholder: Ansvarlig person eller rolle
+          - id: warning_before
+            type: text
+            label: Varsling før
+            required: false
+            placeholder: f.eks. 3 uger før / 1 måned før
+          - id: notes
+            type: text
+            label: Bemærkning
+            required: false
+            placeholder: Supplerende noter eller afhængigheder
+
+  - id: annual_evaluation
+    title: 4. Årlig evaluering
+    description: Opsamling og erfaringer til næste års planlægning.
+    fields:
+      - id: evaluation_worked_well
+        type: textarea
+        label: Hvad fungerede godt?
+        required: false
+        placeholder: Succeser og velfungerende arbejdsgange...
+      - id: evaluation_next_year_changes
+        type: textarea
+        label: Hvad skal flyttes / ændres næste år?
+        required: false
+        placeholder: Justeringer af tidspunkter eller opgaver...
+      - id: evaluation_new_activities
+        type: textarea
+        label: Nye faste aktiviteter
+        required: false
+        placeholder: Aktiviteter der bør optages i årshjulet fremover...
+      - id: evaluation_retired_activities
+        type: textarea
+        label: Aktiviteter der udgår
+        required: false
+        placeholder: Opgaver eller frister der ikke længere er relevante...

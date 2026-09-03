@@ -1,0 +1,133 @@
+id: hif-14-key-access
+version: 1
+enabled: true
+title: HIF-14 Nøgle- og adgangsregister
+category: Udstyr, bygninger og adgang
+description: Kontrol over fysiske nøgler, brikker, alarm og systemadgange i Hashøj IF.
+steps:
+  - id: basic_info
+    title: 1. Stamdata & Særlige regler
+    description: Grundlæggende information om dokumentejer, versionsstyring og retningslinjer for adgange.
+    fields:
+      - id: owner_committee
+        type: select
+        label: Dokumentejer / udvalg
+        required: true
+        options:
+          - value: Bestyrelsen
+            label: Bestyrelsen
+          - value: Fodboldudvalget
+            label: Fodboldudvalget
+          - value: Gymnastikudvalget
+            label: Gymnastikudvalget
+          - value: Badmintonudvalget
+            label: Badmintonudvalget
+          - value: E-sport
+            label: E-sport
+          - value: Klubhus & Anlæg
+            label: Klubhus & Anlæg
+          - value: Arrangementsudvalg
+            label: Arrangementsudvalg
+          - value: Fælles / Tværgående
+            label: Fælles / Tværgående
+      - id: version_label
+        type: text
+        label: Version
+        required: false
+        default: "1.0"
+      - id: updated_at
+        type: date
+        label: Senest opdateret
+        required: false
+      - id: approved_by
+        type: text
+        label: Godkendt af
+        required: false
+        placeholder: f.eks. Bestyrelsen / Anlægsansvarlig
+      - id: who_approves_access
+        type: text
+        label: Hvem må godkende nye adgange?
+        required: false
+        placeholder: f.eks. Bestyrelsen eller anlægsansvarlig
+      - id: lost_key_procedure
+        type: textarea
+        label: Procedure ved mistet nøgle / brik
+        required: false
+        placeholder: Beskrivelse af omgående spærring, indberetning og evt. omkodning
+      - id: resignation_procedure
+        type: textarea
+        label: Procedure når en person stopper
+        required: false
+        placeholder: Aflevering af fysiske nøgler/brikker samt lukning af systemrettigheder
+      - id: spare_key_location
+        type: text
+        label: Hvor opbevares reservenøgler?
+        required: false
+        placeholder: f.eks. Nøgleskab i depot / hos formand
+      - id: security_guidance
+        type: info
+        text: >-
+          Sikkerhed: Registrér ikke adgangskoder eller PIN-koder i dokumentet. Registrér
+          kun hvem der har adgang og hvordan adgang administreres.
+      - id: privacy_notice
+        type: info
+        variant: privacy
+        text: >-
+          Navne og funktioner på nøgle- og adgangsindehavere behandles af Dokumentbyggeren
+          udelukkende under den aktive session til at generere adgangsregistret og lagres
+          ikke permanent af applikationen.
+
+  - id: access_records_step
+    title: 2. Adgangsoversigt
+    description: Registrering af fysiske nøgler, brikker, alarmer og systemadgange.
+    fields:
+      - id: access_records
+        type: repeater
+        label: Adgange
+        required: false
+        fields:
+          - id: access_id
+            type: text
+            label: ID
+            required: false
+            placeholder: f.eks. N-01, B-12
+          - id: person_role
+            type: text
+            label: Person / funktion
+            required: true
+            placeholder: Navn og funktion i foreningen
+          - id: access_type
+            type: text
+            label: Adgangstype
+            required: false
+            placeholder: f.eks. Fysisk nøgle, Nøglebrik, Alarmkode-tilladelse, DBU, Conventus
+          - id: area_system
+            type: text
+            label: Område / system
+            required: false
+            placeholder: f.eks. Klubhus, Bolddepot, Lysanlæg, Hjemmeside
+          - id: issued_date
+            type: text
+            label: Udleveret
+            required: false
+            placeholder: f.eks. 01.03.2026
+          - id: return_or_expires
+            type: text
+            label: Returneres / udløber
+            required: false
+            placeholder: f.eks. 31.12.2026 / Ved udmeldelse
+          - id: approved_by
+            type: text
+            label: Godkendt af
+            required: false
+            placeholder: Udvalgsformand / Bestyrelse
+          - id: status
+            type: text
+            label: Status
+            required: false
+            placeholder: f.eks. Aktiv, Returneret, Spærret, Mistet
+          - id: note
+            type: text
+            label: Bemærkning
+            required: false
+            placeholder: Evt. nøglenummer eller særlige vilkår

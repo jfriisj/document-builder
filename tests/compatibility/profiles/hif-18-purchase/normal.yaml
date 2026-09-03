@@ -1,0 +1,33 @@
+owner_committee: Fodboldudvalget
+version_label: "1.0"
+updated_at: "2026-09-01"
+approved_by: Bestyrelsen
+ordered_by: Testperson A (Ungdomsformand)
+order_area: Fodbold Ungdom
+order_date: "10.09.2026"
+order_purpose: Indkøb af nye træningsbolde og kegler til U11- og U13-holdene forud for efterårssæsonen.
+desired_delivery_date: "25.09.2026"
+budget_account: Konto 3120 - Materialeanskaffelser
+order_items:
+  - item_description: Træningsfodbolde str. 4
+    quantity: "15 stk."
+    unit_price: "199 kr."
+    expected_total: "2.985 kr."
+    supplier: Eksempel Sport ApS
+  - item_description: Markeringskegler sæt á 40 stk.
+    quantity: "2 sæt"
+    unit_price: "250 kr."
+    expected_total: "500 kr."
+    supplier: Eksempel Sport ApS
+total_expected_price: "3.485 kr. inkl. moms og fragt"
+other_offers_obtained: Ja
+procurement_approved_by: Kasserer (Testperson B)
+approval_date: "12.09.2026"
+order_reference: Ordre #SF-2026-891
+check_quantity_note: OK - alle 15 bolde og 2 sæt kegler leveret
+check_quality_note: OK - bolde leveret pumpet og i godkendt stand
+check_invoice_note: OK - fakturabeløb matcher tilbud
+check_receipt_note: Bilag bogført og uploadet til regnskabsprogram
+check_inventory_note: Registreret i boldrumsdepot (HIF-15)
+discrepancy_details: Ingen afvigelser konstateret ved modtagelsen.
+action_and_responsible: Materialeforvalter har lagt varerne på plads i bolddepot.

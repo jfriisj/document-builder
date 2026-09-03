@@ -1,0 +1,288 @@
+id: hif-03-handover
+version: 1
+enabled: true
+title: HIF-03 Overdragelsesdokument
+category: Organisation & Roller
+description: Sikrer en struktureret overdragelse af opgaver, ansvar, adgange, kontakter
+  og viden ved udskiftning af nøglepersoner i Hashøj IF.
+steps:
+- id: basic_info
+  title: 1. Stamdata & Overdragelsen
+  description: Grundlæggende information om rollen og de involverede personer.
+  fields:
+  - id: owner_committee
+    type: select
+    label: Dokumentejer / udvalg
+    required: true
+    options:
+    - value: Bestyrelsen
+      label: Bestyrelsen
+    - value: Fodboldudvalget
+      label: Fodboldudvalget
+    - value: Gymnastikudvalget
+      label: Gymnastikudvalget
+    - value: Badmintonudvalget
+      label: Badmintonudvalget
+    - value: E-sport
+      label: E-sport
+    - value: Klubhus & Anlæg
+      label: Klubhus & Anlæg
+    - value: Arrangementsudvalg
+      label: Arrangementsudvalg
+    - value: Fælles / Tværgående
+      label: Fælles / Tværgående
+  - id: version_label
+    type: text
+    label: Version
+    required: false
+    default: '1.0'
+  - id: updated_at
+    type: date
+    label: Senest opdateret
+    required: false
+  - id: approved_by
+    type: text
+    label: Godkendt af
+    required: false
+    placeholder: f.eks. Bestyrelsen / Udvalgsformand
+  - id: role_name
+    type: text
+    label: Rolle / ansvarsområde
+    required: true
+    placeholder: f.eks. Kasserer, Ungdomsformand, Materialeforvalter
+  - id: outgoing_person
+    type: text
+    label: Afgående person
+    required: true
+    placeholder: Navn på afgående person
+  - id: incoming_person
+    type: text
+    label: Ny person
+    required: true
+    placeholder: Navn på tiltrædende person
+  - id: handover_date
+    type: date
+    label: Overdragelsesdato
+    required: true
+  - id: contact_after_handover_until
+    type: text
+    label: Kontakt efter overdragelse muligt til
+    required: false
+    placeholder: f.eks. 1. november 2026 / 3 måneder frem
+- id: tasks_step
+  title: 2-3. Igangværende & Faste opgaver
+  description: Aktuelle opgaver under afvikling samt faste cykliske opgaver.
+  fields:
+  - id: ongoing_tasks
+    type: repeater
+    label: 2. Igangværende opgaver
+    required: false
+    fields:
+    - id: task
+      type: text
+      label: Opgave
+      required: true
+      placeholder: Opgavebeskrivelse
+    - id: status
+      type: text
+      label: Status
+      required: false
+      placeholder: f.eks. I gang, Afventer tilbud
+    - id: deadline
+      type: text
+      label: Deadline
+      required: false
+      placeholder: f.eks. 15. oktober
+    - id: next_action
+      type: text
+      label: Næste handling
+      required: false
+      placeholder: Hvad skal gøres næste gang?
+    - id: contact_dependency
+      type: text
+      label: Kontakt / afhængighed
+      required: false
+      placeholder: Hvem er involveret?
+  - id: recurring_tasks
+    type: repeater
+    label: 3. Faste tilbagevendende opgaver
+    required: false
+    fields:
+    - id: task
+      type: text
+      label: Opgave
+      required: true
+      placeholder: Fast opgave
+    - id: frequency
+      type: text
+      label: Hyppighed
+      required: false
+      placeholder: f.eks. Månedligt, Kvartalsvis, Årligt
+    - id: next_date
+      type: text
+      label: Næste dato
+      required: false
+      placeholder: f.eks. 1. december
+    - id: task_card_reference
+      type: text
+      label: Opgavekort / vejledning
+      required: false
+      placeholder: f.eks. HIF-02 Nøgleudlevering
+- id: access_and_assets
+  title: 4-6. Adgange, Kontakter & Filer
+  description: Systemadgange, nøgler, samarbejdspartnere og foreningsdokumenter.
+  fields:
+  - id: access_and_systems
+    type: repeater
+    label: 4. Adgange, nøgler og systemer
+    required: false
+    fields:
+    - id: access_or_key
+      type: text
+      label: Adgang / nøgle
+      required: true
+      placeholder: f.eks. Klubhussystem, DBU KlubOffice, Hovednøgle
+    - id: purpose
+      type: text
+      label: Formål
+      required: false
+      placeholder: f.eks. Medlemsstyring
+    - id: location_or_system
+      type: text
+      label: Placering / system
+      required: false
+      placeholder: f.eks. Online / Fysisk nøgleboks
+    - id: transfer_status
+      type: text
+      label: Overdraget / lukket
+      required: false
+      placeholder: f.eks. Overdraget / Afventer kasserer
+  - id: contacts_and_relations
+    type: repeater
+    label: 5. Kontakter og relationer
+    required: false
+    fields:
+    - id: name_or_org
+      type: text
+      label: Navn / organisation
+      required: true
+      placeholder: f.eks. Slagelse Kommune, Trænerforeningen, DBU
+    - id: role
+      type: text
+      label: Rolle
+      required: false
+      placeholder: f.eks. Kommunal kontaktperson, Dommerkoordinator
+    - id: contact_info
+      type: text
+      label: Kontaktdata
+      required: false
+      placeholder: E-mail eller telefonnummer
+    - id: notes
+      type: text
+      label: Vigtigt at vide
+      required: false
+      placeholder: Særlige aftaler eller kontaktpraksis
+  - id: documents_and_files
+    type: repeater
+    label: 6. Dokumenter og filer
+    required: false
+    fields:
+    - id: document_or_folder
+      type: text
+      label: Dokument / mappe
+      required: true
+      placeholder: f.eks. Regnskabsarkiv, Holdlister
+    - id: location
+      type: text
+      label: Placering
+      required: false
+      placeholder: f.eks. Foreningens fælles Google Drev
+    - id: content_description
+      type: text
+      label: Hvad indeholder den?
+      required: false
+      placeholder: Beskrivelse af indhold
+    - id: notes
+      type: text
+      label: Bemærkning
+      required: false
+      placeholder: f.eks. Skal opdateres årligt
+- id: handover_closing
+  title: 7-8. Erfaringer & Overdragelseskontrol
+  description: Erfaringer, gode råd og afsluttende overdragelseskontrol.
+  fields:
+  - id: essential_knowledge
+    type: textarea
+    label: Det bør den nye vide
+    required: false
+    placeholder: De vigtigste erfaringer og gode råd...
+  - id: typical_pitfalls
+    type: textarea
+    label: Typiske problemer / faldgruber
+    required: false
+    placeholder: Hvad skal den nye passe særligt på?
+  - id: open_decisions
+    type: textarea
+    label: Åbne beslutninger
+    required: false
+    placeholder: Beslutninger der venter på afklaring...
+  - id: improvement_suggestions
+    type: textarea
+    label: Forslag til forbedringer
+    required: false
+    placeholder: Idéer til forbedringer af rollen og arbejdsgangene...
+  - id: checklist_reviewed_together
+    type: select
+    label: Gennemgået sammen
+    required: false
+    default: Ja
+    options:
+    - value: Ja
+      label: Ja
+    - value: Nej
+      label: Nej
+    - value: Ikke relevant
+      label: Ikke relevant
+  - id: checklist_access_handled
+    type: select
+    label: Adgange overdraget / lukket
+    required: false
+    default: Ja
+    options:
+    - value: Ja
+      label: Ja
+    - value: Nej
+      label: Nej
+    - value: Ikke relevant
+      label: Ikke relevant
+  - id: checklist_tasks_assigned
+    type: select
+    label: Åbne opgaver fordelt
+    required: false
+    default: Ja
+    options:
+    - value: Ja
+      label: Ja
+    - value: Nej
+      label: Nej
+    - value: Ikke relevant
+      label: Ikke relevant
+  - id: checklist_documentation_updated
+    type: select
+    label: Dokumentation ajourført
+    required: false
+    default: Ja
+    options:
+    - value: Ja
+      label: Ja
+    - value: Nej
+      label: Nej
+    - value: Ikke relevant
+      label: Ikke relevant
+  - id: privacy_notice
+    type: info
+    variant: privacy
+    text: Navne og kontaktoplysninger på afgående og tiltrædende personer samt samarbejdspartnere
+      anvendes udelukkende til intern overdragelse og rollekoordinering i Hashøj IF.
+      Oplysningerne behandles af Dokumentbyggeren kun under den aktive session og
+      lagres ikke permanent af applikationen.

@@ -1,0 +1,36 @@
+# Git and version control
+.git/
+.gitignore
+
+# Virtual environment and local Python caches
+.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Pytest, coverage and review caches
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+
+# Local build artifacts
+dist/
+build/
+*.egg-info/
+
+# Local IDE metadata
+.idea/
+.vscode/
+.DS_Store
+*:Zone.Identifier
+
+# Local temporary and review artifacts
+/tmp/
+*.tmp
+review/
+scratch/

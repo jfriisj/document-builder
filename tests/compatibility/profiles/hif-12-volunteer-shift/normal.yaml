@@ -1,0 +1,47 @@
+owner_committee: Arrangementsudvalg
+version_label: '1.0'
+updated_at: '2026-05-20'
+approved_by: Arrangementskoordinator
+shift_role: Grillmester & Madudlevering
+event_name: Hashøj Sommerfest 2026
+shift_date: '2026-06-13'
+start_time: '11:30'
+end_time: '15:30'
+meeting_location: Grillteltet foran klubhuset
+shift_supervisor: Testperson A
+supervisor_phone: 00 00 00 01
+task_purpose: At tilberede og servere frisklavede pølser, burgere og brød til arrangementets
+  deltagere med god hygiejne og smil.
+primary_tasks: Optænding af gasgrill, stegning, portionsanretning og løbende rengøring
+  af arbejdsflader.
+completion_criteria: Grillen er slukket, riste rengjort, overskydende råvarer sat
+  på køl og affald tømt.
+procedure_steps:
+- step_number: '1'
+  task_description: Tjek gasflasker og tænd grillen 15 minutter før åbning.
+  important_notes: Brug altid grillhandsker.
+- step_number: '2'
+  task_description: Læg pølser og brød på risten efter forventet efterspørgsel.
+  important_notes: Hold råt og tilberedt kød adskilt.
+- step_number: '3'
+  task_description: Pak sammen og overdrag til næste hold kl. 15:30.
+  important_notes: Gennemgå kødbeholdning med afløser.
+equipment_access:
+- item_name: Grilltænger og stegepaletter
+  location: Plastkasse under bord 1
+  return_to: Vaskes i klubhuskøkkenet
+- item_name: Forklæder og engangshandsker
+  location: Hylde i teltet
+  return_to: Forklæder i vasketøjskurv
+contingency_questions: Kontakt vagtansvarlig Testperson A (tlf. 00 00 00 01).
+contingency_injury: Førstehjælpskasse findes i klubhusets forhal. Brandslukker står
+  ved teltåbningen.
+contingency_technical: Ekstra gasflaske står aflåst i materielskuret (nøgle hos vagtansvarlig).
+contingency_conflict: Henvend rolige forklaringer til gæster eller tilkald vagtansvarlig.
+closing_checks:
+- checkpoint: Gas er slukket på regulator
+  is_completed: true
+- checkpoint: Riste er børstet og rengjort
+  is_completed: true
+- checkpoint: Affaldssække er lukket og båret til container
+  is_completed: false

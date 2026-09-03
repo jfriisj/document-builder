@@ -1,0 +1,287 @@
+{% extends "base.html" %}
+
+{% block title %}{{ step.title }} – {{ template.title }} – Document Builder{% endblock %}
+
+{% macro render_field_input(f, current_val, name_attr, error_key, errors, is_child=false) %}
+  {% if f.type == 'info' %}
+    <div class="{{ 'privacy' if f.variant == 'privacy' else ('warning-box' if f.variant == 'warning' else 'notice') }}" style="{% if is_child %}margin: 4px 0;{% endif %}">
+      {% if f.label %}<strong>{{ f.label }}</strong>{% endif %}
+      <p class="small" style="margin: 0;">{{ f.text }}</p>
+    </div>
+
+  {% elif f.type == 'checkbox' %}
+    <label class="checkbox-label">
+      <input type="checkbox" name="{{ name_attr }}" value="true"
+             {% if current_val %}checked{% endif %}
+             class="{{ 'is-invalid' if errors.get(error_key) else '' }}">
+      <span>
+        {{ f.label }}
+        {% if f.required %}<span class="required">*</span>{% endif %}
+      </span>
+    </label>
+
+  {% elif f.type in ('text', 'textarea', 'number', 'date', 'select', 'radio', 'multiselect') %}
+    <label class="field-label" for="{{ name_attr }}" style="{% if is_child %}font-size: 13px; font-weight: 600; margin-bottom: 4px;{% endif %}">
+      {{ f.label }}
+      {% if f.required %}<span class="required">*</span>{% endif %}
+    </label>
+
+    {% if f.type == 'text' %}
+      <input type="{{ f.format if f.format in ('email', 'tel', 'url') else 'text' }}"
+             id="{{ name_attr }}" name="{{ name_attr }}"
+             value="{{ current_val or '' }}"
+             placeholder="{{ f.placeholder or '' }}"
+             class="{{ 'is-invalid' if errors.get(error_key) else '' }}">
+
+    {% elif f.type == 'textarea' %}
+      <textarea id="{{ name_attr }}" name="{{ name_attr }}"
+                placeholder="{{ f.placeholder or '' }}"
+                class="{{ 'is-invalid' if errors.get(error_key) else '' }}">{{ current_val or '' }}</textarea>
+
+    {% elif f.type == 'number' %}
+      <input type="number" id="{{ name_attr }}" name="{{ name_attr }}"
+             value="{{ current_val if current_val is not none else '' }}"
+             {% if f.min is defined and f.min is not none %}min="{{ f.min }}"{% endif %}
+             {% if f.max is defined and f.max is not none %}max="{{ f.max }}"{% endif %}
+             step="any"
+             placeholder="{{ f.placeholder or '' }}"
+             class="{{ 'is-invalid' if errors.get(error_key) else '' }}">
+
+    {% elif f.type == 'date' %}
+      <input type="date" id="{{ name_attr }}" name="{{ name_attr }}"
+             value="{{ current_val or '' }}"
+             class="{{ 'is-invalid' if errors.get(error_key) else '' }}">
+
+    {% elif f.type == 'select' %}
+      <select id="{{ name_attr }}" name="{{ name_attr }}"
+              data-options='{{ f.options | tojson }}'
+              class="{{ 'is-invalid' if errors.get(error_key) else '' }}">
+        <option value="">Vælg...</option>
+        {% for opt in f.options %}
+        <option value="opt_{{ loop.index0 }}" {% if is_option_match(opt.value, current_val) %}selected{% endif %}>
+          {{ opt.label }}
+        </option>
+        {% endfor %}
+      </select>
+
+    {% elif f.type == 'radio' %}
+      <div class="radio-group" data-options='{{ f.options | tojson }}'>
+        {% for opt in f.options %}
+        <label class="radio-option">
+          <input type="radio" name="{{ name_attr }}" value="opt_{{ loop.index0 }}"
+                 {% if is_option_match(opt.value, current_val) %}checked{% endif %}>
+          <span>{{ opt.label }}</span>
+        </label>
+        {% endfor %}
+      </div>
+
+    {% elif f.type == 'multiselect' %}
+      <div class="multiselect-group" data-options='{{ f.options | tojson }}'>
+        {% for opt in f.options %}
+        <label class="multiselect-option">
+          <input type="checkbox" name="{{ name_attr }}" value="opt_{{ loop.index0 }}"
+                 {% if is_option_match(opt.value, current_val) %}checked{% endif %}>
+          <span>{{ opt.label }}</span>
+        </label>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+  {% endif %}
+
+  {% if errors.get(error_key) %}
+    <div class="error-message">{{ errors.get(error_key) }}</div>
+  {% endif %}
+  {% if f.help %}
+    <div class="help">{{ f.help }}</div>
+  {% endif %}
+  {% if f.example %}
+    <div class="example"><strong>Eksempel:</strong> {{ f.example }}</div>
+  {% endif %}
+{% endmacro %}
+
+{% block content %}
+<section id="wizard">
+  <div class="kicker">{{ template.title }}</div>
+  <h1>{{ step.title }}</h1>
+  {% if step.description %}
+  <p class="lead">{{ step.description }}</p>
+  {% endif %}
+
+  <div class="progress-wrap">
+    <div class="progress-line">
+      <div class="progress" style="width: {{ ((step_index + 1) / total_steps) * 100 }}%;"></div>
+    </div>
+    <div class="progress-meta">
+      <span>Trin {{ step_index + 1 }} af {{ total_steps }}</span>
+      <span>{{ step.title }}</span>
+    </div>
+  </div>
+
+  <div class="form-card">
+    <form method="post" action="/journey/step/{{ step_index }}" id="step-form">
+      {% for field in step.fields %}
+      <div class="field-group" id="group_{{ field.id }}"
+        {% if field.show_when %}
+          data-condition='{{ field.show_when | tojson }}'
+        {% endif %}
+      >
+        {% if field.type == 'repeater' %}
+          <label class="field-label">
+            {{ field.label }}
+            {% if field.required %}<span class="required">*</span>{% endif %}
+          </label>
+
+          {% if errors.get(field.id) %}
+            <div class="error-message">{{ errors.get(field.id) }}</div>
+          {% endif %}
+
+          <div class="repeater-container" id="repeater_{{ field.id }}">
+            {% set rows = values.get(field.id, []) %}
+            {% for row in rows %}
+              {% set row_idx = loop.index0 %}
+              <div class="repeater-row">
+                <!-- Row marker to preserve row existence even if all child controls are empty -->
+                <input type="hidden" name="{{ field.id }}.{{ row_idx }}._row" value="1">
+                <div class="repeater-fields">
+                  {% for child in field.fields %}
+                    {% set child_name = field.id ~ '.' ~ row_idx ~ '.' ~ child.id %}
+                    <div>
+                      {{ render_field_input(child, row.get(child.id), child_name, child_name, errors, true) }}
+                    </div>
+                  {% endfor %}
+                </div>
+                <div class="repeater-actions">
+                  <button type="submit" name="action" value="repeater_remove:{{ field.id }}:{{ row_idx }}" class="ghost" formnovalidate>
+                    Fjern
+                  </button>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+
+          <button type="submit" name="action" value="repeater_add:{{ field.id }}" class="btn secondary" style="margin-top: 8px;" formnovalidate>
+            + Tilføj række
+          </button>
+
+          {% if field.help %}
+            <div class="help">{{ field.help }}</div>
+          {% endif %}
+
+        {% else %}
+          {{ render_field_input(field, values.get(field.id), field.id, field.id, errors, false) }}
+        {% endif %}
+      </div>
+      {% endfor %}
+
+      <div class="toolbar">
+        {% if step_index > 0 %}
+          <button type="submit" name="action" value="prev" class="btn secondary" formnovalidate>Tilbage</button>
+        {% else %}
+          <a href="/templates/{{ template.id }}" class="btn secondary">Tilbage</a>
+        {% endif %}
+        <button type="submit" name="action" value="next" class="btn primary">
+          {{ 'Se oversigt' if (step_index + 1 == total_steps) else 'Næste' }}
+        </button>
+      </div>
+    </form>
+  </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.getElementById('step-form');
+  if (!form) return;
+
+  function parseOptionValue(token, optionsJson) {
+    if (!token || !optionsJson) return token;
+    try {
+      const options = typeof optionsJson === 'string' ? JSON.parse(optionsJson) : optionsJson;
+      if (typeof token === 'string' && token.startsWith('opt_')) {
+        const idx = parseInt(token.replace('opt_', ''), 10);
+        if (idx >= 0 && idx < options.length) {
+          return options[idx].value;
+        }
+      }
+    } catch (e) {}
+    return token;
+  }
+
+  function matchesTypedValue(actual, expected) {
+    if (typeof expected === 'boolean') {
+      return typeof actual === 'boolean' && actual === expected;
+    }
+    if (typeof expected === 'number') {
+      return typeof actual === 'number' && actual === expected;
+    }
+    return String(actual) === String(expected);
+  }
+
+  function evaluateConditions() {
+    const conditionalGroups = form.querySelectorAll('[data-condition]');
+    conditionalGroups.forEach(group => {
+      let cond;
+      try {
+        cond = JSON.parse(group.getAttribute('data-condition'));
+      } catch (e) {
+        return;
+      }
+      if (!cond || !cond.field) return;
+
+      const targetField = cond.field;
+      const inputs = form.querySelectorAll(`[name="${targetField}"]`);
+      let currentVal = null;
+
+      if (inputs.length > 0) {
+        const first = inputs[0];
+        const container = first.closest('[data-options]') || first;
+        const optionsData = container.getAttribute('data-options');
+
+        if (first.type === 'checkbox') {
+          if (inputs.length === 1 && !optionsData) {
+            currentVal = first.checked;
+          } else {
+            // Multiselect group
+            const checkedInputs = Array.from(inputs).filter(i => i.checked);
+            currentVal = checkedInputs.map(i => parseOptionValue(i.value, optionsData));
+          }
+        } else if (first.type === 'radio') {
+          const checked = Array.from(inputs).find(i => i.checked);
+          currentVal = checked ? parseOptionValue(checked.value, optionsData) : null;
+        } else if (first.tagName === 'SELECT') {
+          const selectedOption = first.options[first.selectedIndex];
+          currentVal = selectedOption && selectedOption.value ? parseOptionValue(selectedOption.value, optionsData) : null;
+        } else if (first.type === 'number') {
+          currentVal = first.value === '' ? null : Number(first.value);
+        } else {
+          currentVal = first.value;
+        }
+      }
+
+      let show = true;
+      if ('equals' in cond) {
+        const expected = cond.equals;
+        show = matchesTypedValue(currentVal, expected);
+      } else if ('not_equals' in cond) {
+        const expected = cond.not_equals;
+        show = !matchesTypedValue(currentVal, expected);
+      } else if ('in' in cond) {
+        const list = Array.isArray(cond.in) ? cond.in : [];
+        show = list.some(item => matchesTypedValue(currentVal, item));
+      } else if ('not_in' in cond) {
+        const list = Array.isArray(cond.not_in) ? cond.not_in : [];
+        show = !list.some(item => matchesTypedValue(currentVal, item));
+      }
+
+      group.style.display = show ? '' : 'none';
+    });
+  }
+
+  form.addEventListener('change', evaluateConditions);
+  form.addEventListener('input', evaluateConditions);
+  evaluateConditions();
+});
+</script>
+{% endblock %}

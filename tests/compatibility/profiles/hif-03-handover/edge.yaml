@@ -1,0 +1,48 @@
+owner_committee: Fælles / Tværgående
+version_label: 2.0-beta
+updated_at: '2026-12-31'
+approved_by: Formand & Næstformand <bestyrelsen@example.com>
+role_name: 'Drifts- & Materielansvarlig (Æ, Ø, Å & Specialtegn: < > & " '')'
+outgoing_person: Testperson Æ-Ø-Å 1
+incoming_person: Testperson Æ-Ø-Å 2
+handover_date: '2026-12-31'
+contact_after_handover_until: Hele foråret 2027 (tlf. 00 00 00 01)
+ongoing_tasks:
+- task: Renovering af redskabsskur & maling
+  status: Afventer materialeleverance
+  deadline: 1. november 2026
+  next_action: Modtage leverance
+  contact_dependency: Eksempel Byggemarked (Eksempelteam & Søn)
+- task: Opfølgning på varmeanlæg {{ test_probe }}
+  status: I gang
+  deadline: Omgående
+  next_action: Teknikerbesøg
+  contact_dependency: Eksempel VVS Teknik A/S
+recurring_tasks:
+- task: Årligt sikkerhedseftersyn
+  frequency: Hvert år i april
+  next_date: 15. april 2027
+  task_card_reference: HIF-16 Vedligehold
+access_and_systems:
+- access_or_key: Hovednøglesæt (14 nøgler)
+  purpose: Fuld adgang
+  location_or_system: Nøgleskab kontor
+  transfer_status: Overdraget og kvitteret
+contacts_and_relations:
+- name_or_org: Eksempel Kommune Ejendomsservice
+  role: Driftskoordinator
+  contact_info: ejendom@example.com / 00 00 00 02
+  notes: Varmestyring & belysning
+documents_and_files:
+- document_or_folder: Teknisk dokumentation & serviceaftaler
+  location: Reol 3 dommerrum
+  content_description: Manualer & tegninger
+  notes: Fortrolig
+essential_knowledge: Vandtrykket skal tjekkes ugentligt. Pas på nøgle 7 som binder.
+typical_pitfalls: Sluk aldrig ventilation i kælder.
+open_decisions: LED armaturer i omklædning 3 og 4.
+improvement_suggestions: Robotklipper.
+checklist_reviewed_together: Ja
+checklist_access_handled: Ja
+checklist_tasks_assigned: Ja
+checklist_documentation_updated: Ja

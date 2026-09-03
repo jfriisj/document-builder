@@ -1,0 +1,292 @@
+id: hif-08-project
+version: 1
+enabled: true
+title: HIF-08 Projektbeskrivelse
+category: Ledelse & Projekter
+description: Fast styringsramme for planlægning, eksekvering, økonomi og afslutning
+  af større engangsopgaver og udviklingsprojekter i Hashøj IF.
+steps:
+- id: basis
+  title: 1. Projektgrundlag
+  description: Grundlæggende oplysninger om projektet, baggrund og formål.
+  fields:
+  - id: owner_committee
+    type: select
+    label: Dokumentejer / udvalg
+    required: true
+    options:
+    - value: Bestyrelsen
+      label: Bestyrelsen
+    - value: Fodboldudvalget
+      label: Fodboldudvalget
+    - value: Gymnastikudvalget
+      label: Gymnastikudvalget
+    - value: Badmintonudvalget
+      label: Badmintonudvalget
+    - value: E-sport
+      label: E-sport
+    - value: Klubhus & Anlæg
+      label: Klubhus & Anlæg
+    - value: Arrangementsudvalg
+      label: Arrangementsudvalg
+    - value: Fælles / Tværgående
+      label: Fælles / Tværgående
+  - id: version_label
+    type: text
+    label: Version
+    required: false
+    default: '1.0'
+  - id: updated_at
+    type: date
+    label: Senest opdateret
+    required: false
+  - id: approved_by
+    type: text
+    label: Godkendt af
+    required: false
+    placeholder: f.eks. Bestyrelsen
+  - id: project_name
+    type: text
+    label: Projektnavn
+    required: true
+    placeholder: f.eks. Nyt lysanlæg på bane 2, Etablering af Padelbane
+  - id: project_lead
+    type: text
+    label: Projektansvarlig
+    required: true
+    placeholder: Navn på projektleder
+  - id: sponsor_decision_maker
+    type: text
+    label: Sponsor / beslutningstager
+    required: false
+    placeholder: f.eks. Bestyrelsen v/ Formand
+  - id: start_date
+    type: date
+    label: Startdato
+    required: true
+  - id: target_end_date
+    type: date
+    label: Ønsket slutdato
+    required: false
+  - id: background_problem
+    type: textarea
+    label: Baggrund / problem
+    required: true
+    placeholder: Beskriv baggrunden for projektet og hvad der udløste behovet...
+  - id: purpose
+    type: textarea
+    label: Formål
+    required: true
+    placeholder: Projektets overordnede formål og værdi for Hashøj IF...
+- id: scope
+  title: 2. Mål og afgrænsning
+  description: Projektmål, konkrete leverancer og hvad der er inde og ude af scope.
+  fields:
+  - id: project_goals
+    type: textarea
+    label: Projektmål
+    required: true
+    placeholder: De konkrete mål for projektet...
+  - id: deliverables
+    type: textarea
+    label: Leverancer
+    required: true
+    placeholder: Fysiske eller organisatoriske slutleverancer...
+  - id: in_scope
+    type: textarea
+    label: Inden for scope
+    required: false
+    placeholder: Hvad er omfattet af projektet...
+  - id: out_of_scope
+    type: textarea
+    label: Uden for scope
+    required: false
+    placeholder: Hvad er udtrykkeligt ikke en del af projektet...
+- id: execution
+  title: 3-4. Interessenter & Milepæle
+  description: Interessentinddragelse og tidsplan med milepæle.
+  fields:
+  - id: stakeholders
+    type: repeater
+    label: 3. Interessenter
+    required: false
+    fields:
+    - id: name
+      type: text
+      label: Interessent
+      required: true
+      placeholder: f.eks. Naboer, Kommunen, Trænere
+    - id: needs_interests
+      type: textarea
+      label: Behov / interesse
+      required: false
+      placeholder: Hvad optager interessenten?
+    - id: influence
+      type: text
+      label: Indflydelse
+      required: false
+      placeholder: f.eks. Høj / Mellem / Lav
+    - id: involvement
+      type: text
+      label: Kontakt / involvering
+      required: false
+      placeholder: Hvordan og hvornår involveres interessenten?
+  - id: milestones
+    type: repeater
+    label: 4. Milepæle og opgaver
+    required: false
+    fields:
+    - id: task
+      type: text
+      label: Milepæl / opgave
+      required: true
+      placeholder: f.eks. Tilbudsgodkendelse, Byggestart, Indvielse
+    - id: responsible
+      type: text
+      label: Ansvarlig
+      required: false
+      placeholder: Ansvarlig person
+    - id: deadline
+      type: text
+      label: Deadline
+      required: false
+      placeholder: Dato / periode
+    - id: dependency
+      type: text
+      label: Afhængighed
+      required: false
+      placeholder: Forudsætning for opgaven
+    - id: status
+      type: text
+      label: Status
+      required: false
+      placeholder: f.eks. Ikke startet, I gang, Afsluttet
+- id: finance_risks
+  title: 5-6. Ressourcer, Økonomi & Risici
+  description: Budgetposter, godkendelse, risikovurdering og afbødning.
+  fields:
+  - id: budget_items
+    type: repeater
+    label: 5. Ressourcer og økonomi
+    required: false
+    fields:
+    - id: item
+      type: text
+      label: Ressource / omkostning
+      required: true
+      placeholder: f.eks. Materialer, Håndværker, Fondsmidler
+    - id: budget
+      type: text
+      label: Budget
+      required: false
+      placeholder: f.eks. 45.000 kr.
+    - id: approved_by
+      type: text
+      label: Godkendt af
+      required: false
+      placeholder: f.eks. Kasserer / Bestyrelse
+    - id: notes
+      type: text
+      label: Bemærkning
+      required: false
+      placeholder: f.eks. Ansøgt hos Nordea-fonden
+  - id: risks
+    type: repeater
+    label: 6. Risici
+    required: false
+    fields:
+    - id: risk
+      type: text
+      label: Risiko
+      required: true
+      placeholder: Hvad kan gå galt?
+    - id: probability
+      type: select
+      label: Sandsynlighed
+      required: false
+      default: Mellem
+      options:
+      - value: Lav
+        label: Lav
+      - value: Mellem
+        label: Mellem
+      - value: Høj
+        label: Høj
+    - id: impact
+      type: select
+      label: Konsekvens
+      required: false
+      default: Mellem
+      options:
+      - value: Lav
+        label: Lav
+      - value: Mellem
+        label: Mellem
+      - value: Høj
+        label: Høj
+    - id: mitigation
+      type: textarea
+      label: Tiltag
+      required: false
+      placeholder: Hvordan imødegås risikoen?
+    - id: responsible
+      type: text
+      label: Ansvarlig
+      required: false
+      placeholder: Ansvarlig person
+- id: closing
+  title: 7-8. Beslutningslog & Afslutning
+  description: Beslutningslog, godkendelseskriterier og overdragelse til drift.
+  fields:
+  - id: decision_log
+    type: repeater
+    label: 7. Beslutninger og ændringer
+    required: false
+    fields:
+    - id: date
+      type: text
+      label: Dato
+      required: true
+      placeholder: f.eks. 12. maj 2026
+    - id: decision_change
+      type: textarea
+      label: Beslutning / ændring
+      required: true
+      placeholder: Hvad blev besluttet?
+    - id: justification
+      type: textarea
+      label: Begrundelse
+      required: false
+      placeholder: Hvorfor blev ændringen foretaget?
+    - id: approved_by
+      type: text
+      label: Godkendt af
+      required: false
+      placeholder: Godkender
+  - id: approval_criteria
+    type: textarea
+    label: Godkendelseskriterier
+    required: false
+    placeholder: Hvad skal være opfyldt før projektet godkendes som færdigt?
+  - id: handover_to_operations
+    type: textarea
+    label: Overdragelse til drift / udvalg
+    required: false
+    placeholder: Hvem overtager vedligehold og drift efter afslutning?
+  - id: documentation_location
+    type: text
+    label: Dokumentation placeres
+    required: false
+    placeholder: f.eks. Fællesdrev / Projekter / Lysanlæg
+  - id: evaluation_learnings
+    type: textarea
+    label: Evaluering / læring
+    required: false
+    placeholder: Erfaringer og læringspunkter til kommende projekter...
+  - id: privacy_notice
+    type: info
+    variant: privacy
+    text: Navne og kontaktoplysninger på projektansvarlige, interessenter og opgaveejere
+      anvendes udelukkende til koordinering og gennemførelse af projektet i Hashøj
+      IF. Oplysningerne behandles af Dokumentbyggeren kun under den aktive session
+      og lagres ikke permanent af applikationen.

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}{{ template.title }} – Document Builder{% endblock %}
+
+{% block content %}
+<section id="intro">
+  <div class="kicker">{{ template.category }}</div>
+  <h1>Opret {{ template.title | lower }}</h1>
+  <p class="lead">{{ template.description }}</p>
+
+  <div class="notice">
+    <strong>Sådan fungerer det</strong>
+    <p class="small">
+      Du udfylder ét overskueligt trin ad gangen. Du kan gå frem og tilbage uden at miste dine svar i den aktive session.
+      Til sidst ser du et preview, før du kan downloade dokumentet.
+    </p>
+  </div>
+
+  <form method="post" action="/templates/{{ template.id }}/start">
+    <div class="toolbar">
+      <a href="/" class="btn secondary">Tilbage</a>
+      <button type="submit" class="btn primary">Start</button>
+    </div>
+  </form>
+</section>
+{% endblock %}

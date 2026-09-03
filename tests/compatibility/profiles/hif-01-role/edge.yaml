@@ -1,0 +1,62 @@
+owner_committee: "Fælles / Tværgående"
+version_label: "2.1-beta"
+updated_at: "2026-12-31"
+approved_by: "Hovedbestyrelsen <Formand & Kasserer>"
+role_name: "Specialkonsulent & Koordinator: Ærlig & Åben Foreningsudvikling (Øst/Vest) <HIF-01>"
+role_area: "Fælles / Tværgående"
+role_purpose: >
+  Udtømmende grænsetest af specialtegn: æ, ø, å, Æ, Ø, Å, samt XML-tegn: <tag>, &amp;, ", '
+  og Jinja probes: {{ test_var }} og {% if condition %}.
+  Lang formålsbeskrivelse for at sikre at layoutet ikke knækker ved meget lange tekstblokke med sammensatte ord
+  såsom foreningsudviklingskonsulentbistand og gymnastikopvisningsrekvisitter.
+reports_to: "Bestyrelsesformand / Forretningsudvalg (Ref: {{ REF_999 }})"
+collaboration_partners: "Udvalgsformænd & eksterne rådgivere <info@example.com>"
+estimated_time: "ca. 10-15 timer/måned (afhængig af årshjul & stævner)"
+election_period: "Ubegrænset / konstitueret af bestyrelsen"
+
+responsibilities:
+  - task_name: "Opdatering af IT-systemer & adgangskontrol <Zone 1 & 2>"
+    frequency: "Løbende / efter behov"
+    deadline: "Senest 24 timer efter henvendelse"
+    relevant_task_card: "HIF-02 IT & Adgang"
+  - task_name: "Gennemgang af vedtægter og forretningsorden {{ VEDT_2026 }}"
+    frequency: "Årligt"
+    deadline: "1. december"
+    relevant_task_card: "HIF-05 Vedtægtsrevision"
+  - task_name: "Håndtering af særlige hændelser (afvigelser, skader & akutsager)"
+    frequency: "Akut"
+    deadline: "Straks"
+    relevant_task_card: "HIF-17 Hændelsesrapport"
+
+can_decide_independently: "Må godkende standardoprettelser & redigere interne vejledninger uden forudgående bestyrelsesmøde."
+requires_approval_from: "Alle ændringer i foreningens grundlæggende politikker og budgetoverskridelser > 5.000 kr."
+financial_mandate: "Maks. 5.000 kr. pr. kvartal."
+contract_signing_authority: "Nej (<Kun tegningsberettiget bestyrelse>)"
+
+access_resources:
+  - resource_name: "Fællesdrev Google Workspace (Admin <Root>)"
+    purpose: "Brugeradministration og adgangskontrol"
+    access_procedure: "Tildeles via 2FA af IT-ansvarlig"
+    cessation_responsibility: "Konti deaktiveres og rettigheder overdrages"
+  - resource_name: "Hovednøglebundt (Hal & Klubhus)"
+    purpose: "Fysisk adgang ved arrangementer"
+    access_procedure: "Kvittering i nøgleprotokol"
+    cessation_responsibility: "Afleveres personligt til haludvalget"
+
+annual_cycle:
+  - period: "Primo januar"
+    activity: "Nytårstjek af medlemsdatabase & kontingentsatser"
+    preparation: "Eksportere data fra foreningssystem"
+    recipient_partner: "Kassereren & Revisor"
+  - period: "Medio august"
+    activity: "Sæsonstartskoordinering på tværs af idrætsgrene (Fodbold, Gymnastik, Badminton)"
+    preparation: "Udarbejde hal- og banefordeling"
+    recipient_partner: "Alle afdelingsudvalg"
+
+required_competencies: "Erfaring med digital administration & IT-sikkerhed."
+preferred_competencies: "Kendskab til foreningsret & GDPR."
+onboarding_description: "3 timers sidemandsoplæring med IT-udvalget."
+key_documents: "GDPR-politik, IT-sikkerhedsregulativ & HIF håndbog."
+handover_items: "Master-adgangskoder, 2FA-tokens og hardware."
+documentation_location: "Drev / IT / Dokumentation & Driftsmanualer"
+contact_for_questions: "IT-udvalget (it@example.com)"

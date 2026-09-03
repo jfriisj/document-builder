@@ -1,0 +1,271 @@
+id: hif-02-task
+version: 1
+enabled: true
+title: "HIF-02 Opgavekort"
+category: "Drift & Frivillige"
+description: "Trin-for-trin beskrivelse af en konkret arbejdsopgave i foreningen."
+
+steps:
+  - id: basic_info
+    title: "1-2. Grundoplysninger & Formål"
+    description: "Grundlæggende oplysninger om opgaven, ansvar, hyppighed og formål."
+    fields:
+      - id: owner_committee
+        type: select
+        label: "Dokumentejer / udvalg"
+        required: true
+        options:
+          - "Bestyrelsen"
+          - "Fodboldudvalget"
+          - "Gymnastikudvalget"
+          - "Badmintonudvalget"
+          - "E-sport"
+          - "Klubhus & Anlæg"
+          - "Arrangementsudvalg"
+          - "Fælles / Tværgående"
+        help: "Vælg hvilket udvalg opgaven hører under."
+      - id: version_label
+        type: text
+        label: "Version"
+        required: false
+        default: "1.0"
+        help: "Dokumentversion."
+      - id: updated_at
+        type: date
+        label: "Senest opdateret"
+        required: false
+        help: "Dato for seneste opdatering."
+      - id: approved_by
+        type: text
+        label: "Godkendt af"
+        required: false
+        placeholder: "f.eks. Driftsudvalget / Bestyrelsen"
+      - id: task_title
+        type: text
+        label: "Opgavens navn"
+        required: true
+        placeholder: "f.eks. Kridtning af 11-mandsbaner, Klargøring af kiosk"
+        help: "En præcis og genkendelig titel på opgaven."
+      - id: department
+        type: select
+        label: "Område / udvalg"
+        required: true
+        options:
+          - "Fodbold"
+          - "Gymnastik"
+          - "Badminton"
+          - "E-sport"
+          - "Klubhus & Anlæg"
+          - "Bestyrelse"
+          - "Arrangementsudvalg"
+          - "Fælles / Tværgående"
+        help: "Det organisatoriske område opgaven tilhører."
+      - id: task_type
+        type: select
+        label: "Opgavetype"
+        required: false
+        options:
+          - "Fast"
+          - "Tilbagevendende"
+          - "Enkeltstående"
+          - "Akut"
+        help: "Opgavens karakter og hyppighedstype."
+      - id: execution_timing
+        type: text
+        label: "Hvornår udføres den?"
+        required: false
+        placeholder: "f.eks. Fredag eftermiddag før weekendstævne"
+      - id: frequency
+        type: select
+        label: "Hyppighed"
+        required: false
+        options:
+          - "Efter behov"
+          - "Dagligt"
+          - "Ugentligt"
+          - "Månedligt"
+          - "Kvartalsvis"
+          - "Halvårligt"
+          - "Årligt"
+          - "Før arrangementer"
+          - "Efter arrangementer"
+      - id: estimated_duration
+        type: text
+        label: "Forventet tidsforbrug"
+        required: false
+        placeholder: "f.eks. 45-60 minutter"
+      - id: location
+        type: text
+        label: "Sted"
+        required: false
+        placeholder: "f.eks. Hal A, Klubhuset, Bane 1"
+      - id: responsible_role
+        type: text
+        label: "Ansvarlig funktion"
+        required: false
+        placeholder: "f.eks. Baneformand, Kioskansvarlig, Holdleder"
+      - id: purpose
+        type: textarea
+        label: "Hvorfor udføres opgaven?"
+        required: true
+        placeholder: "Beskriv formålet med opgaven og hvad der opnås ved at udføre den..."
+      - id: completion_criteria
+        type: textarea
+        label: "Opgaven er færdig, når..."
+        required: false
+        placeholder: "Beskriv kriterierne for hvornår opgaven betragtes som korrekt og fuldstændigt udført..."
+
+  - id: prerequisites_and_materials
+    title: "3-4. Før du går i gang & Materialer"
+    description: "Forudsætninger, kontroller, materialer, udstyr og adgangskrav."
+    fields:
+      - id: prerequisites
+        type: repeater
+        label: "Forudsætninger før start"
+        required: false
+        fields:
+          - id: prerequisite_item
+            type: text
+            label: "Forudsætning / kontrol"
+            required: true
+            placeholder: "f.eks. Tjek om banen er tør, Nøgle til materielskur afhentet"
+          - id: location
+            type: text
+            label: "Hvor findes det?"
+            required: false
+            placeholder: "f.eks. Nøgleskab i klubhus"
+          - id: notes
+            type: text
+            label: "Bemærkning"
+            required: false
+            placeholder: "f.eks. Pinkode: 1234"
+      - id: materials
+        type: repeater
+        label: "Materialer, udstyr og adgang"
+        required: false
+        fields:
+          - id: material_name
+            type: text
+            label: "Hvad skal bruges?"
+            required: true
+            placeholder: "f.eks. Kridtvogn, Opmærkningsmaling, Målebånd"
+          - id: quantity_spec
+            type: text
+            label: "Antal / specifikation"
+            required: false
+            placeholder: "f.eks. 1 stk. vogn, 10L hvid maling"
+          - id: location
+            type: text
+            label: "Hvor findes det?"
+            required: false
+            placeholder: "f.eks. Materielskur ved bane 2"
+          - id: notes
+            type: text
+            label: "Bemærkning"
+            required: false
+            placeholder: "f.eks. Rengøres altid efter brug"
+
+  - id: execution_steps
+    title: "5. Sådan udføres opgaven"
+    description: "Trin-for-trin gennemgang af handlinger og kontrolpunkter."
+    fields:
+      - id: task_steps
+        type: repeater
+        label: "Opgavetrin"
+        required: true
+        min_items: 1
+        fields:
+          - id: step_title
+            type: text
+            label: "Hvad skal gøres?"
+            required: true
+            placeholder: "f.eks. Kør sidelinjer op med kridtvogn"
+          - id: step_description
+            type: textarea
+            label: "Instruktion / uddybning"
+            required: false
+            placeholder: "Yderligere detaljer om hvordan trinnet udføres..."
+          - id: step_checkpoint
+            type: text
+            label: "Vigtigt / kontrolpunkt"
+            required: false
+            placeholder: "f.eks. Kontrollér at linjerne er snorlige"
+          - id: is_done
+            type: checkbox
+            label: "Markér som udført [ ]"
+            required: false
+            default: false
+
+  - id: safety_and_followup
+    title: "6-8. Sikkerhed, Afslutning & Erfaringer"
+    description: "Sikkerhedsforanstaltninger, afsluttende kontrolpunkter og opfølgning."
+    fields:
+      - id: safety_risks
+        type: textarea
+        label: "Risici / sikkerhed"
+        required: false
+        placeholder: "Beskriv eventuelle sikkerhedsrisici ved opgaven..."
+      - id: protective_equipment
+        type: text
+        label: "Værnemidler"
+        required: false
+        placeholder: "f.eks. Handsker, sikkerhedsbriller, skridsikre sko"
+      - id: qualification_access_requirements
+        type: text
+        label: "Kompetence- / adgangskrav"
+        required: false
+        placeholder: "f.eks. Kræver instruktion af baneformand"
+      - id: special_precautions
+        type: textarea
+        label: "Særlige hensyn"
+        required: false
+        placeholder: "f.eks. Pas på våde gulve, tag hensyn til igangværende træning..."
+      - id: completion_checks
+        type: repeater
+        label: "Afsluttende kontrolpunkter"
+        required: false
+        fields:
+          - id: checkpoint
+            type: text
+            label: "Kontrolpunkt"
+            required: true
+            placeholder: "f.eks. Materielskur er aflåst og slukket"
+          - id: acceptance_criteria
+            type: text
+            label: "Godkendelseskriterium"
+            required: false
+            placeholder: "f.eks. Hængelås er i indgreb"
+          - id: is_checked
+            type: checkbox
+            label: "Kontrolleret [ ]"
+            required: false
+            default: false
+      - id: post_task_documentation
+        type: text
+        label: "Dokumentation efter opgaven"
+        required: false
+        placeholder: "f.eks. Kvittering i driftslog / besked til baneformand"
+      - id: who_is_informed
+        type: text
+        label: "Hvem informeres?"
+        required: false
+        placeholder: "f.eks. Udvalgsformanden eller halinspektøren"
+      - id: if_defective_or_missing
+        type: textarea
+        label: "Hvis noget mangler / er defekt"
+        required: false
+        placeholder: "Handlingsanvisning hvis udstyr er i stykker eller materialer slipper op..."
+      - id: deviations_issues
+        type: textarea
+        label: "Afvigelser / problemer"
+        required: false
+        placeholder: "Erfaringer med hvad der drillede eller ikke virkede efter hensigten..."
+      - id: improvement_suggestions
+        type: textarea
+        label: "Forslag til forbedring"
+        required: false
+        placeholder: "Idéer til at gøre opgaven lettere, hurtigere eller bedre næste gang..."
+      - id: privacy_notice
+        type: info
+        variant: privacy
+        text: "Navne og kontaktreferencer angivet til godkendelse, ansvar og opfølgning anvendes udelukkende til intern opgavekoordinering i Hashøj IF. Oplysningerne behandles af Dokumentbyggeren kun under den aktive session og lagres ikke permanent af applikationen."

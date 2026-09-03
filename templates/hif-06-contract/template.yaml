@@ -1,0 +1,220 @@
+id: hif-06-contract
+version: 1
+enabled: true
+title: HIF-06 Leverandør- og aftaleregister
+category: Økonomi, indkøb og aftaler
+description: Overblik over foreningens leverandører, kontrakter, bindinger, priser og opsigelsesvarsler i Hashøj IF.
+steps:
+  - id: basic_info
+    title: 1. Stamdata & Dokumentstyring
+    description: Grundlæggende information om dokumentejer og versionsstyring.
+    fields:
+      - id: owner_committee
+        type: select
+        label: Dokumentejer / udvalg
+        required: true
+        options:
+          - value: Bestyrelsen
+            label: Bestyrelsen
+          - value: Fodboldudvalget
+            label: Fodboldudvalget
+          - value: Gymnastikudvalget
+            label: Gymnastikudvalget
+          - value: Badmintonudvalget
+            label: Badmintonudvalget
+          - value: E-sport
+            label: E-sport
+          - value: Klubhus & Anlæg
+            label: Klubhus & Anlæg
+          - value: Arrangementsudvalg
+            label: Arrangementsudvalg
+          - value: Fælles / Tværgående
+            label: Fælles / Tværgående
+      - id: version_label
+        type: text
+        label: Version
+        required: false
+        default: "1.0"
+      - id: updated_at
+        type: date
+        label: Senest opdateret
+        required: false
+      - id: approved_by
+        type: text
+        label: Godkendt af
+        required: false
+        placeholder: f.eks. Bestyrelsen / Kasserer
+      - id: privacy_notice
+        type: info
+        variant: privacy
+        text: >-
+          Navne og kontaktoplysninger på leverandørkontakter og interne aftaleansvarlige
+          behandles af Dokumentbyggeren kun under den aktive session til at generere
+          aftaleregistret og lagres ikke permanent af applikationen.
+
+  - id: contracts_step
+    title: 2. Aftaleoversigt
+    description: Oversigt over løbende leverandøraftaler, kontrakter og abonnementer.
+    fields:
+      - id: contracts
+        type: repeater
+        label: Aftaler
+        required: false
+        fields:
+          - id: supplier
+            type: text
+            label: Leverandør
+            required: true
+            placeholder: Leverandørens navn / virksomhed
+          - id: service_product
+            type: text
+            label: Ydelse / produkt
+            required: false
+            placeholder: f.eks. Boldindkøb, Græsslåning, IT-system
+          - id: contact_person
+            type: text
+            label: Kontakt
+            required: false
+            placeholder: Kontaktperson, tlf. eller e-mail
+          - id: start_date
+            type: text
+            label: Start
+            required: false
+            placeholder: f.eks. 01.01.2025
+          - id: end_date
+            type: text
+            label: Udløb
+            required: false
+            placeholder: f.eks. 31.12.2027 / Løbende
+          - id: notice_period
+            type: text
+            label: Opsigelsesvarsel
+            required: false
+            placeholder: f.eks. 3 måneder til udløb
+          - id: annual_price
+            type: text
+            label: Pris / år
+            required: false
+            placeholder: f.eks. 12.500 kr.
+          - id: auto_renewal
+            type: select
+            label: Auto-fornyelse
+            required: false
+            default: Nej
+            options:
+              - value: Ja
+                label: Ja
+              - value: Nej
+                label: Nej
+              - value: Uafklaret
+                label: Uafklaret
+          - id: responsible
+            type: text
+            label: Ansvarlig
+            required: false
+            placeholder: Intern ansvarlig i foreningen
+          - id: document_location
+            type: text
+            label: Dokumentplacering
+            required: false
+            placeholder: f.eks. Google Drev / Kontrakter
+
+  - id: renewal_checks_step
+    title: 3. Kontrol før fornyelse
+    description: Kontrolpunkter og beslutninger forud for kontraktfornyelser.
+    fields:
+      - id: renewal_checks
+        type: repeater
+        label: Fornyelseskontroller
+        required: false
+        fields:
+          - id: agreement_name
+            type: text
+            label: Aftale
+            required: true
+            placeholder: Navn på aftale / leverandør
+          - id: price_checked
+            type: select
+            label: Pris kontrolleret
+            required: false
+            default: Ja
+            options:
+              - value: Ja
+                label: Ja
+              - value: Nej
+                label: Nej
+              - value: I gang
+                label: I gang
+          - id: need_assessed
+            type: select
+            label: Behov vurderet
+            required: false
+            default: Ja
+            options:
+              - value: Ja
+                label: Ja
+              - value: Nej
+                label: Nej
+              - value: I gang
+                label: I gang
+          - id: alternatives_obtained
+            type: select
+            label: Alternativer indhentet
+            required: false
+            default: Ikke relevant
+            options:
+              - value: Ja
+                label: Ja
+              - value: Nej
+                label: Nej
+              - value: Ikke relevant
+                label: Ikke relevant
+          - id: cancellation_deadline
+            type: text
+            label: Opsigelsesfrist
+            required: false
+            placeholder: f.eks. Senest 1. oktober
+          - id: decision
+            type: text
+            label: Beslutning
+            required: false
+            placeholder: f.eks. Forlænges 1 år / Genforhandles
+
+  - id: general_terms_step
+    title: 4. Aftaleoplysninger
+    description: Fælles vilkår for fakturering, binding, databehandling og garanti.
+    fields:
+      - id: billing_method_ean
+        type: text
+        label: Faktureringsform / EAN
+        required: false
+        placeholder: f.eks. EAN-fakturering / Kvartalsvis faktura via mail
+      - id: special_binding_terms
+        type: textarea
+        label: Særlige bindingsvilkår
+        required: false
+        placeholder: Beskrivelse af uopsigelighed, pristalsregulering eller bod...
+      - id: dpa_relevant
+        type: select
+        label: Databehandleraftale relevant?
+        required: false
+        default: Nej
+        options:
+          - value: Ja
+            label: Ja
+          - value: Nej
+            label: Nej
+          - value: Ikke relevant
+            label: Ikke relevant
+      - id: insurance_warranty_relevant
+        type: select
+        label: Forsikring / garanti relevant?
+        required: false
+        default: Nej
+        options:
+          - value: Ja
+            label: Ja
+          - value: Nej
+            label: Nej
+          - value: Ikke relevant
+            label: Ikke relevant

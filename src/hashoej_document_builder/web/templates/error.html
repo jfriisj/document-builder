@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}{{ error_title | default('Fejl opstod') }} – Document Builder{% endblock %}
+
+{% block content %}
+<section id="error">
+  <div class="kicker">Fejl</div>
+  <h1>{{ error_title | default('Handlingen kunne ikke fuldføres') }}</h1>
+  <p class="lead">{{ error_message | default('Der opstod en uventet fejl.') }}</p>
+
+  <div class="warning-box">
+    <strong>Hvad kan du gøre?</strong>
+    <p class="small" style="margin-top: 4px;">
+      {% if show_docx_fallback %}
+        Dokumentet kan stadig hentes som Word-dokument (DOCX), eller du kan gå tilbage til kontrol og preview.
+      {% else %}
+        Hvis din session er udløbet efter 60 minutters inaktivitet, eller siden er genstartet, skal du starte oprettelsen forfra.
+        Data gemmes af privatlivshensyn kun midlertidigt i serverens arbejdshukommelse.
+      {% endif %}
+    </p>
+  </div>
+
+  <div class="toolbar" style="display: flex; gap: 12px; align-items: center; margin-top: 24px;">
+    {% if show_docx_fallback %}
+      <form method="post" action="/journey/generate/docx" style="margin: 0;">
+        <button type="submit" class="btn primary">Hent DOCX</button>
+      </form>
+      <a href="/journey/preview" class="btn secondary">Tilbage til preview</a>
+      <a href="/" class="btn secondary">Gå til forsiden</a>
+    {% else %}
+      <a href="/" class="btn primary">Gå til forsiden</a>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}

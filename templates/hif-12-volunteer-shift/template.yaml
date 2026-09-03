@@ -1,0 +1,196 @@
+id: hif-12-volunteer-shift
+version: 1
+enabled: true
+title: HIF-12 Frivillig- og vagtinstruks
+category: Drift & Frivillige
+description: Kort, operationel instruktion til direkte udlevering før en vagt eller
+  funktion ved arrangementer og aktiviteter i Hashøj IF.
+steps:
+- id: shift_info
+  title: 1. Vagten & Stamdata
+  description: Grundoplysninger om vagten, tidspunkter og vagtansvarlig.
+  fields:
+  - id: owner_committee
+    type: select
+    label: Dokumentejer / udvalg
+    required: true
+    options:
+    - value: Bestyrelsen
+      label: Bestyrelsen
+    - value: Fodboldudvalget
+      label: Fodboldudvalget
+    - value: Gymnastikudvalget
+      label: Gymnastikudvalget
+    - value: Badmintonudvalget
+      label: Badmintonudvalget
+    - value: E-sport
+      label: E-sport
+    - value: Klubhus & Anlæg
+      label: Klubhus & Anlæg
+    - value: Arrangementsudvalg
+      label: Arrangementsudvalg
+    - value: Fælles / Tværgående
+      label: Fælles / Tværgående
+  - id: version_label
+    type: text
+    label: Version
+    required: false
+    default: '1.0'
+  - id: updated_at
+    type: date
+    label: Senest opdateret
+    required: false
+  - id: approved_by
+    type: text
+    label: Godkendt af
+    required: false
+    placeholder: f.eks. Arrangementsudvalget
+  - id: shift_role
+    type: text
+    label: Funktion / vagt
+    required: true
+    placeholder: f.eks. Grillansvarlig, Dommerbord, Kiosk
+  - id: event_name
+    type: text
+    label: Arrangement / aktivitet
+    required: true
+    placeholder: f.eks. Hashøj Sommerfest 2026, Hjemmestævne
+  - id: shift_date
+    type: date
+    label: Dato
+    required: true
+  - id: start_time
+    type: text
+    label: Mødetid
+    required: true
+    placeholder: f.eks. 11:30
+  - id: end_time
+    type: text
+    label: Sluttid
+    required: false
+    placeholder: f.eks. 16:00
+  - id: meeting_location
+    type: text
+    label: Mødested
+    required: true
+    placeholder: f.eks. Klubhuset ved kioskudlevering
+  - id: shift_supervisor
+    type: text
+    label: Vagtansvarlig
+    required: true
+    placeholder: Navn på ansvarlig
+  - id: supervisor_phone
+    type: text
+    format: tel
+    label: Kontakttelefon
+    required: false
+    placeholder: f.eks. 00 00 00 03
+  - id: privacy_notice
+    type: info
+    variant: privacy
+    text: Navne og kontaktoplysninger på vagtansvarlige og frivillige anvendes udelukkende
+      til afvikling og koordinering af den pågældende vagt i Hashøj IF. Oplysningerne
+      behandles af Dokumentbyggeren kun under den aktive session og lagres ikke permanent
+      af applikationen.
+- id: task_def
+  title: 2. Din opgave
+  description: Formål med opgaven og succeskriterier for vagten.
+  fields:
+  - id: task_purpose
+    type: textarea
+    label: Formål
+    required: true
+    placeholder: Hvorfor udføres vagten, og hvad bidrager den med?
+  - id: primary_tasks
+    type: textarea
+    label: Primære opgaver
+    required: true
+    placeholder: De vigtigste arbejdsopgaver under vagten...
+  - id: completion_criteria
+    type: textarea
+    label: Du er færdig, når ...
+    required: false
+    placeholder: Kriterier for at vagten kan afleveres/afsluttes...
+- id: procedure_and_equipment
+  title: 3-4. Sådan gør du & Udstyr
+  description: Trin-for-trin instruktion samt materialer og adgange.
+  fields:
+  - id: procedure_steps
+    type: repeater
+    label: 3. Sådan gør du
+    required: true
+    fields:
+    - id: step_number
+      type: text
+      label: Trin
+      required: true
+      placeholder: f.eks. 1, 2, 3
+    - id: task_description
+      type: textarea
+      label: Opgave
+      required: true
+      placeholder: Hvad skal gøres?
+    - id: important_notes
+      type: textarea
+      label: Vigtigt at huske
+      required: false
+      placeholder: Særlige tips eller kontrolpunkter
+  - id: equipment_access
+    type: repeater
+    label: 4. Udstyr og adgang
+    required: false
+    fields:
+    - id: item_name
+      type: text
+      label: Udstyr / nøgle / adgang
+      required: true
+      placeholder: f.eks. Grilltænger, Kasseapparat, Nøgle til kiosk
+    - id: location
+      type: text
+      label: Hvor findes det?
+      required: false
+      placeholder: f.eks. Kioskskab, Hylde 2
+    - id: return_to
+      type: text
+      label: Returneres til
+      required: false
+      placeholder: f.eks. Afleveres til vagtansvarlig
+- id: contingencies_and_closing
+  title: 5-6. Beredskab & Afslutning
+  description: Handlingsanvisninger ved uforudsete hændelser og afsluttende kontrolpunkter.
+  fields:
+  - id: contingency_questions
+    type: textarea
+    label: Ved spørgsmål
+    required: false
+    placeholder: Hvem kontaktes ved tvivl under vagten?
+  - id: contingency_injury
+    type: textarea
+    label: Ved skade / ulykke
+    required: false
+    placeholder: Hvor er førstehjælp og hvem tilkaldes?
+  - id: contingency_technical
+    type: textarea
+    label: Ved tekniske problemer
+    required: false
+    placeholder: Handlemåde ved strømsvigt, defekt gasgrill etc...
+  - id: contingency_conflict
+    type: textarea
+    label: Ved konflikter / utilfredse gæster
+    required: false
+    placeholder: Retningslinjer for håndtering af uoverensstemmelser...
+  - id: closing_checks
+    type: repeater
+    label: 6. Afslutning
+    required: false
+    fields:
+    - id: checkpoint
+      type: text
+      label: Kontrol
+      required: true
+      placeholder: f.eks. Grill er slukket og renset
+    - id: is_completed
+      type: checkbox
+      label: Udført [ ]
+      required: false
+      default: false

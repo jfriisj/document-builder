@@ -1,0 +1,49 @@
+owner_committee: Gymnastikudvalget
+version_label: '1.0'
+updated_at: '2026-08-25'
+approved_by: Gymnastikformanden
+volunteer_name: Testperson A
+volunteer_role: Hjælpetræner Tumlegymnastik
+start_date: '2026-09-01'
+contact_person: Testperson B (tlf. 00 00 00 01)
+club_info_topics:
+- topic: Værdier og fællesskab
+  what_to_know: Hashøj IF lægger vægt på glæde, bevægelse og plads til alle.
+  where_to_find: hashoej-if.dk/om-os
+- topic: Klubhus og hallen
+  what_to_know: Koden til redskabsrummet fås af makker. Ryd altid op efter timen.
+  where_to_find: Opslagstavlen i forhallen
+role_purpose: At give børnene en sjov og tryg start på gymnastikken gennem leg og
+  bevægelse.
+key_tasks: Klargøre redskaber, modtage ved springbane, guide børnene og tale med forældre.
+estimated_time: 1,5 time ugentligt (torsdage kl. 16:30 - 18:00)
+collaboration_partners: Cheftræner (Testperson B) og de øvrige børnetrænere i gymnastikudvalget.
+practical_comm_info: Spond gruppe for gymnastiktrænere
+practical_comm_reviewed: true
+practical_keys_info: Nøglebrik til omklædning 1
+practical_keys_reviewed: true
+practical_systems_info: Foreningssystem adgang ikke nødvendig for hjælpetræner
+practical_systems_reviewed: true
+practical_docs_info: 'Fællesdrev: Træningsøvelser & lege'
+practical_docs_reviewed: false
+practical_expenses_info: Udlæg til kurser refunderes af kassereren
+practical_expenses_reviewed: true
+practical_safety_info: Hjertestarter ved halindgang; førstehjælpskasse i redskabsrum
+practical_safety_reviewed: true
+practical_gdpr_info: Børneattest indhentet d. 20. august
+practical_gdpr_reviewed: true
+practical_contact_info: Testperson B (tlf. 00 00 00 01) eller kontakt@example.com
+practical_contact_reviewed: true
+onboarding_activities:
+- activity: Rundvisning i hallen og redskabsgennemgang
+  with_whom: Testperson B
+  activity_date: 28. august
+  is_completed: true
+- activity: Første træningsaften med børnene
+  with_whom: Testperson B
+  activity_date: 3. september
+  is_completed: true
+followup_period: 3 uger
+followup_questions_and_needs: Ønske om deltagelse i DGI hjælpetrænerkursus til foråret.
+followup_volunteer_suggestions: Super god modtagelse! Det ville være rart med en lamineret
+  oversigt over redskabsplacering.

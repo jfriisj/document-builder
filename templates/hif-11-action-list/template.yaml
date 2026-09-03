@@ -1,0 +1,138 @@
+id: hif-11-action-list
+version: 1
+enabled: true
+title: HIF-11 Handlingsliste
+category: Drift og opgaver
+description: Fælles operationel handlings- og opfølgningsliste til samlet styring af åbne opgaver i Hashøj IF.
+steps:
+  - id: basic_info
+    title: 1. Stamdata & Vejledning
+    description: Grundlæggende information om dokumentejer, versionsstyring og statusdefinitioner.
+    fields:
+      - id: owner_committee
+        type: select
+        label: Dokumentejer / udvalg
+        required: true
+        options:
+          - value: Bestyrelsen
+            label: Bestyrelsen
+          - value: Fodboldudvalget
+            label: Fodboldudvalget
+          - value: Gymnastikudvalget
+            label: Gymnastikudvalget
+          - value: Badmintonudvalget
+            label: Badmintonudvalget
+          - value: E-sport
+            label: E-sport
+          - value: Klubhus & Anlæg
+            label: Klubhus & Anlæg
+          - value: Arrangementsudvalg
+            label: Arrangementsudvalg
+          - value: Fælles / Tværgående
+            label: Fælles / Tværgående
+      - id: version_label
+        type: text
+        label: Version
+        required: false
+        default: "1.0"
+      - id: updated_at
+        type: date
+        label: Senest opdateret
+        required: false
+      - id: approved_by
+        type: text
+        label: Godkendt af
+        required: false
+        placeholder: f.eks. Bestyrelsen / Udvalgsformand
+      - id: status_guidance_info
+        type: info
+        text: >-
+          Statusdefinitioner: Ikke startet | I gang | Afventer | Blokeret | Færdig | Annulleret.
+          Prioritet: Høj | Normal | Lav.
+      - id: privacy_notice
+        type: info
+        variant: privacy
+        text: >-
+          Personnavne på opgaveansvarlige og godkendere behandles af Dokumentbyggeren kun
+          under den aktive session til at generere handlingslisten og lagres ikke permanent
+          af applikationen.
+
+  - id: actions_step
+    title: 2. Åbne handlinger
+    description: Registrering af konkrete opgaver, ansvarsfordeling, deadlines og status.
+    fields:
+      - id: action_items
+        type: repeater
+        label: Handlingspunkter
+        required: false
+        fields:
+          - id: item_id
+            type: text
+            label: ID
+            required: false
+            placeholder: f.eks. H-01 eller 1
+          - id: task
+            type: text
+            label: Opgave
+            required: true
+            placeholder: Hvad skal udføres?
+          - id: area
+            type: text
+            label: Område
+            required: false
+            placeholder: f.eks. Klubhuset, Fodbold, Sponsor, Kiosk
+          - id: responsible
+            type: text
+            label: Ansvarlig
+            required: false
+            placeholder: Ansvarlig person eller rolle
+          - id: created_date
+            type: text
+            label: Oprettet
+            required: false
+            placeholder: f.eks. 01.09.2026
+          - id: deadline
+            type: text
+            label: Deadline
+            required: false
+            placeholder: f.eks. 15.10.2026 / Før næste møde
+          - id: priority
+            type: select
+            label: Prioritet
+            required: false
+            default: Normal
+            options:
+              - value: Høj
+                label: Høj
+              - value: Normal
+                label: Normal
+              - value: Lav
+                label: Lav
+          - id: status
+            type: select
+            label: Status
+            required: false
+            default: Ikke startet
+            options:
+              - value: Ikke startet
+                label: Ikke startet
+              - value: I gang
+                label: I gang
+              - value: Afventer
+                label: Afventer
+              - value: Blokeret
+                label: Blokeret
+              - value: Færdig
+                label: Færdig
+              - value: Annulleret
+                label: Annulleret
+          - id: next_step
+            type: text
+            label: Næste skridt
+            required: false
+            placeholder: Hvad er den næste konkrete handling?
+          - id: completed_date
+            type: text
+            label: Afsluttet
+            required: false
+            placeholder: f.eks. Afsluttet d. 12/10

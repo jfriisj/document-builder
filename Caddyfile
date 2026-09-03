@@ -1,0 +1,9 @@
+# Document Builder - Caddy reverse proxy configuration
+#
+# Configurable domain name defaults to localhost for internal TLS smoke testing.
+# In production, set DOMAIN to the actual public domain (e.g. docs.example.com)
+# to enable automatic public ACME TLS via Let's Encrypt / ZeroSSL.
+
+{$DOMAIN:localhost} {
+	reverse_proxy app:8000
+}

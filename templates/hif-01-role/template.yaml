@@ -1,0 +1,257 @@
+id: hif-01-role
+version: 1
+enabled: true
+title: "HIF-01 Rollebeskrivelse"
+category: "Organisation & Roller"
+description: "Beskriver ansvar, mandat og forventninger til en funktion i foreningen."
+
+steps:
+  - id: metadata
+    title: "Stamdata"
+    description: "Angiv dokumentejer, version og godkendelse."
+    fields:
+      - id: owner_committee
+        type: select
+        label: "Dokumentejer / udvalg"
+        required: true
+        options:
+          - "Bestyrelsen"
+          - "Fodboldudvalget"
+          - "Gymnastikudvalget"
+          - "Badmintonudvalget"
+          - "E-sport"
+          - "Klubhus & Anlæg"
+          - "Arrangementsudvalg"
+          - "Fælles / Tværgående"
+        help: "Vælg hvilket udvalg eller organ der ejer og vedligeholder rollebeskrivelsen."
+      - id: version_label
+        type: text
+        label: "Version"
+        required: false
+        default: "1.0"
+        help: "Dokumentets versionsnummer (f.eks. 1.0)."
+      - id: updated_at
+        type: date
+        label: "Senest opdateret"
+        required: false
+        help: "Dato for seneste opdatering af rollebeskrivelsen."
+      - id: approved_by
+        type: text
+        label: "Godkendt af"
+        required: false
+        placeholder: "f.eks. Bestyrelsen / Formanden"
+        help: "Hvem der har godkendt denne version af rollebeskrivelsen."
+
+  - id: role_info
+    title: "1. Rollen"
+    description: "Grundlæggende oplysninger om rollen og dens placering."
+    fields:
+      - id: role_name
+        type: text
+        label: "Rollens navn"
+        required: true
+        placeholder: "f.eks. Ungdomsformand Fodbold, Kasserer, Baneformand"
+        help: "Den officielle titel eller betegnelse for rollen."
+      - id: role_area
+        type: select
+        label: "Område / udvalg"
+        required: true
+        options:
+          - "Fodbold"
+          - "Gymnastik"
+          - "Badminton"
+          - "E-sport"
+          - "Klubhus & Anlæg"
+          - "Bestyrelse"
+          - "Arrangementsudvalg"
+          - "Fælles / Tværgående"
+        help: "Det organisatoriske område i Hashøj IF som rollen er tilknyttet."
+      - id: role_purpose
+        type: textarea
+        label: "Formål med rollen"
+        required: true
+        placeholder: "Beskriv kort rollens overordnede eksistensberettigelse og formål..."
+        help: "Hvorfor rollen findes, og hvad den primært skal udrette i foreningen."
+      - id: reports_to
+        type: text
+        label: "Refererer til"
+        required: false
+        placeholder: "f.eks. Bestyrelsen, Fodboldformanden"
+        help: "Hvem rollen organisatorisk refererer til."
+      - id: collaboration_partners
+        type: text
+        label: "Samarbejder især med"
+        required: false
+        placeholder: "f.eks. Trænere, forældre, kassereren, halinspektøren"
+        help: "De primære interne og eksterne samarbejdspartnere."
+      - id: estimated_time
+        type: text
+        label: "Forventet tidsforbrug"
+        required: false
+        placeholder: "f.eks. 2-3 timer om ugen i sæsonen"
+        help: "Realistisk forventet tidsforbrug for den frivillige."
+      - id: election_period
+        type: text
+        label: "Valg- / udpegningsperiode"
+        required: false
+        placeholder: "f.eks. 2 år (valgt på generalforsamling i lige år)"
+        help: "Hvordan og for hvilken periode rollen besættes."
+
+  - id: responsibilities_step
+    title: "2. Ansvar og faste opgaver"
+    description: "Oplist de vigtigste ansvarsområder, opgaver og rutiner."
+    fields:
+      - id: responsibilities
+        type: repeater
+        label: "Ansvar og faste opgaver"
+        required: false
+        fields:
+          - id: task_name
+            type: text
+            label: "Ansvarsområde / opgave"
+            required: true
+            placeholder: "f.eks. Klargøring af holdkort før kamp"
+          - id: frequency
+            type: text
+            label: "Hyppighed"
+            required: false
+            placeholder: "f.eks. Ugentligt, Månedligt, Ved sæsonstart"
+          - id: deadline
+            type: text
+            label: "Deadline / tidspunkt"
+            required: false
+            placeholder: "f.eks. Fredag kl. 18:00, 1. maj"
+          - id: relevant_task_card
+            type: text
+            label: "Relevant opgavekort"
+            required: false
+            placeholder: "f.eks. HIF-02 Holdkort & Kiosk"
+
+  - id: mandate_step
+    title: "3. Mandat og beslutninger"
+    description: "Rollens beføjelser, beslutningsgrænser og økonomiske rammer."
+    fields:
+      - id: can_decide_independently
+        type: textarea
+        label: "Må beslutte selv"
+        required: false
+        placeholder: "Beskriv hvilke dispositioner og beslutninger rolleindehaveren selvstændigt kan træffe..."
+      - id: requires_approval_from
+        type: textarea
+        label: "Kræver godkendelse fra"
+        required: false
+        placeholder: "Beskriv hvilke beslutninger der skal forelægges bestyrelsen eller udvalget..."
+      - id: financial_mandate
+        type: text
+        label: "Økonomisk mandat / beløbsgrænse"
+        required: false
+        placeholder: "f.eks. Op til 1.000 kr. til løbende driftsindkøb"
+      - id: contract_signing_authority
+        type: text
+        label: "Må indgå aftaler på vegne af foreningen"
+        required: false
+        placeholder: "f.eks. Nej / Kun efter bestyrelsesgodkendelse"
+
+  - id: resources_step
+    title: "4. Adgange, systemer og ressourcer"
+    description: "IT-systemer, nøgler, brikker og konti knyttet til rollen."
+    fields:
+      - id: access_resources
+        type: repeater
+        label: "Adgange og systemer"
+        required: false
+        fields:
+          - id: resource_name
+            type: text
+            label: "System / adgang / nøgle"
+            required: true
+            placeholder: "f.eks. Klubhusnøgle, DBU KlubOffice, Bankadgang"
+          - id: purpose
+            type: text
+            label: "Formål"
+            required: false
+            placeholder: "f.eks. Holdadministration og banebooking"
+          - id: access_procedure
+            type: text
+            label: "Hvordan fås adgang?"
+            required: false
+            placeholder: "f.eks. Udleveres af halinspektør / oprettes af kasserer"
+          - id: cessation_responsibility
+            type: text
+            label: "Ansvar ved ophør"
+            required: false
+            placeholder: "f.eks. Nøgle afleveres til formand; adgang lukkes"
+
+  - id: annual_cycle_step
+    title: "5. Årshjul og vigtige deadlines"
+    description: "Tidslinje for tilbagevendende aktiviteter hen over året."
+    fields:
+      - id: annual_cycle
+        type: repeater
+        label: "Årshjulspunkter"
+        required: false
+        fields:
+          - id: period
+            type: text
+            label: "Periode / dato"
+            required: true
+            placeholder: "f.eks. Januar, Marts, Primo august"
+          - id: activity
+            type: text
+            label: "Aktivitet"
+            required: false
+            placeholder: "f.eks. Holdtilmelding, Trænermøde, Sæsonafslutning"
+          - id: preparation
+            type: text
+            label: "Forberedelse"
+            required: false
+            placeholder: "f.eks. Indhente ønsker fra trænerteam"
+          - id: recipient_partner
+            type: text
+            label: "Modtager / samarbejdspartner"
+            required: false
+            placeholder: "f.eks. DBU Sjælland, Bestyrelsen"
+
+  - id: competencies_and_handover
+    title: "6-7. Kompetencer og overdragelse"
+    description: "Ønskede kvalifikationer, introduktionsproces og overdragelse ved fratrædelse."
+    fields:
+      - id: required_competencies
+        type: textarea
+        label: "Nødvendige kompetencer"
+        required: false
+        placeholder: "Færdigheder eller forudsætninger som er nødvendige for at varetage rollen..."
+      - id: preferred_competencies
+        type: textarea
+        label: "Fordelagtige kompetencer"
+        required: false
+        placeholder: "Gode erfaringer eller kompetencer som er en fordel..."
+      - id: onboarding_description
+        type: textarea
+        label: "Introduktion / oplæring"
+        required: false
+        placeholder: "Hvordan introduceres en ny person til opgaverne og foreningen..."
+      - id: key_documents
+        type: textarea
+        label: "Vigtige dokumenter"
+        required: false
+        placeholder: "Vedtægter, retningslinjer, opgavekort og politikker..."
+      - id: handover_items
+        type: textarea
+        label: "Hvad skal altid overdrages?"
+        required: false
+        placeholder: "Nøgler, koder, adgange, kontaktlister og igangværende sager..."
+      - id: documentation_location
+        type: text
+        label: "Hvor ligger dokumentation?"
+        required: false
+        placeholder: "f.eks. Foreningens fællesdrev / Mappe under Fodbold"
+      - id: contact_for_questions
+        type: text
+        label: "Kontakt ved spørgsmål"
+        required: false
+        placeholder: "f.eks. Udvalgsformanden eller Bestyrelsen"
+      - id: privacy_notice
+        type: info
+        variant: privacy
+        text: "Navne og kontaktreferencer angivet i rollebeskrivelsen anvendes udelukkende til intern opgave- og rollekoordinering i Hashøj IF. Oplysningerne behandles af Dokumentbyggeren kun under den aktive session og lagres ikke permanent af applikationen."

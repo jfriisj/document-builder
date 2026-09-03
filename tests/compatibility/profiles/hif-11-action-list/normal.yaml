@@ -1,0 +1,35 @@
+owner_committee: Bestyrelsen
+version_label: '1.0'
+updated_at: '2026-09-01'
+approved_by: Formand (Testperson A)
+action_items:
+- item_id: H-01
+  task: Indkaldelse til trænermøde for ungdomsfodbold
+  area: Fodbold
+  responsible: Ungdomsformand
+  created_date: 01.09.2026
+  deadline: 15.09.2026
+  priority: Høj
+  status: I gang
+  next_step: Udsend mail med dagsorden til trænere
+  completed_date: ''
+- item_id: H-02
+  task: Bestilling af nye kridtsække til baneanlæg
+  area: Klubhus & Anlæg
+  responsible: Baneformand
+  created_date: 01.09.2026
+  deadline: 10.09.2026
+  priority: Normal
+  status: Færdig
+  next_step: Levering modtaget i materielskur
+  completed_date: 05.09.2026
+- item_id: H-03
+  task: Klargøring af kiosk til gymnastiksæson
+  area: Gymnastik / Kiosk
+  responsible: Kioskansvarlig
+  created_date: 03.09.2026
+  deadline: 01.10.2026
+  priority: Normal
+  status: Ikke startet
+  next_step: Aftale vagtplan med forældre
+  completed_date: ''

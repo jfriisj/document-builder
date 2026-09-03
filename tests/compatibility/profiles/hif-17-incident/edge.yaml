@@ -1,0 +1,44 @@
+owner_committee: Klubhus & Anlæg
+version_label: 2.1-special
+updated_at: '2026-10-15'
+approved_by: Bestyrelsen v/ Formand <sikkerhed@example.com>
+incident_datetime: Lørdag d. 10. oktober 2026 kl. 21:15
+incident_location: Klubhusets cafeteria & trappeopgang
+reported_by: Testperson Æ-Ø-Å (Klubhusvært)
+incident_type: Materiel skade
+incident_description: 'Vandskade efter sprængt vandrør i loftet over cafeteriet under
+  kraftig nattefrost. {{ edge_probe }} (Æ, Ø, Å & Specialtegn: < > & " '')'
+activity_at_time: Ingen aktivitet; opdaget under rutinemæssig aftenlåsning.
+immediate_cause: Frostsprængning på uisoleret rørføring i tagrum.
+involved_persons:
+- name: Testperson Æ-Ø-Å
+  role: Klubhusvært
+  contact_info: kontakt@example.com / 00 00 00 01
+  person_type: Vidne
+injury_symptoms: Ingen personskade opstået.
+material_damage: Ødelagte loftsbeklædningsplader, vandskade på 4 borde og fugt i gulvtæppe
+  i cafeteria.
+first_aid_action: Hovedhane afbrudt omgående, og vand suget op med vandsuger.
+emergency_authorities_contacted: Eksempel Brandvæsen Skadeservice tilkaldt til affugtning
+  kl. 22:00.
+activity_stopped_secured: Cafeteriet afspærret for medlemmer og strøm afbrudt til
+  berørte grupper.
+documentation_items:
+- description: 12 fotos af vandskade og det sprængte rør
+  reference_location: Drev / Skader / 2026-10-10-vandskade/
+  collected_by: Testperson Æ-Ø-Å
+followup_actions:
+- action: VVS-installatør udbedrer rørskade og efterisolerer
+  responsible: Testperson Æ-Ø-Å
+  deadline: 12. oktober
+  status: I gang
+- action: Skadesanmeldelse indsendt til Eksempel Forsikring police 00000
+  responsible: Kassereren
+  deadline: 14. oktober
+  status: Afsluttet
+prevention_prevent_recurrence: Installation af automatisk frostvagt og termostatstyret
+  varmekabel på rør i tagrum.
+prevention_change_instructions: Opdatere HIF-16 Vedligeholdelsesplan med årligt frosteftersyn
+  i oktober.
+prevention_notify_board_insurance: Anmeldt til forsikringsselskab; taksator besigtiger
+  skaden d. 13. oktober.

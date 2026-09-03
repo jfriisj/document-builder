@@ -1,0 +1,190 @@
+id: hif-18-purchase
+version: 1
+enabled: true
+title: HIF-18 Indkøbs- og bestillingsskabelon
+category: Økonomi, indkøb og aftaler
+description: Dokumenterer behov, pris, godkendelse og modtagelse ved indkøb i Hashøj IF.
+steps:
+  - id: basic_info
+    title: 1. Stamdata & Bestilling
+    description: Grundoplysninger om bestillingen, formål, ønsket levering og budget.
+    fields:
+      - id: owner_committee
+        type: select
+        label: Dokumentejer / udvalg
+        required: true
+        options:
+          - value: Bestyrelsen
+            label: Bestyrelsen
+          - value: Fodboldudvalget
+            label: Fodboldudvalget
+          - value: Gymnastikudvalget
+            label: Gymnastikudvalget
+          - value: Badmintonudvalget
+            label: Badmintonudvalget
+          - value: E-sport
+            label: E-sport
+          - value: Klubhus & Anlæg
+            label: Klubhus & Anlæg
+          - value: Arrangementsudvalg
+            label: Arrangementsudvalg
+          - value: Fælles / Tværgående
+            label: Fælles / Tværgående
+      - id: version_label
+        type: text
+        label: Version
+        required: false
+        default: "1.0"
+      - id: updated_at
+        type: date
+        label: Senest opdateret
+        required: false
+      - id: approved_by
+        type: text
+        label: Godkendt af
+        required: false
+        placeholder: f.eks. Bestyrelsen / Kasserer
+      - id: ordered_by
+        type: text
+        label: Bestilt af
+        required: true
+        placeholder: Navn på bestiller
+      - id: order_area
+        type: text
+        label: Område / udvalg
+        required: false
+        placeholder: f.eks. Fodbold ungdom / Kiosk
+      - id: order_date
+        type: text
+        label: Dato
+        required: false
+        placeholder: f.eks. 15.03.2026
+      - id: order_purpose
+        type: textarea
+        label: Behov / formål
+        required: false
+        placeholder: Hvorfor foretages indkøbet og hvad skal det bruges til?
+      - id: desired_delivery_date
+        type: text
+        label: Ønsket leveringsdato
+        required: false
+        placeholder: f.eks. 01.04.2026
+      - id: budget_account
+        type: text
+        label: Budget / konto
+        required: false
+        placeholder: f.eks. Konto 2140 - Materialer
+      - id: privacy_notice
+        type: info
+        variant: privacy
+        text: >-
+          Navne og oplysninger på bestillere og godkendere behandles af Dokumentbyggeren
+          udelukkende under den aktive session til at generere bestillingsskabelonen og
+          lagres ikke permanent af applikationen.
+
+  - id: items_step
+    title: 2. Varer / ydelser & Pris
+    description: Specifikation af varer, antal, priser, leverandør og godkendelse.
+    fields:
+      - id: order_items
+        type: repeater
+        label: Varer / ydelser
+        required: false
+        fields:
+          - id: item_description
+            type: text
+            label: Vare / ydelse
+            required: true
+            placeholder: Beskrivelse af vare eller ydelse
+          - id: quantity
+            type: text
+            label: Antal
+            required: false
+            placeholder: f.eks. 10 stk. / 1 sæt
+          - id: unit_price
+            type: text
+            label: Enhedspris
+            required: false
+            placeholder: f.eks. 250 kr.
+          - id: expected_total
+            type: text
+            label: Forventet total
+            required: false
+            placeholder: f.eks. 2.500 kr.
+          - id: supplier
+            type: text
+            label: Leverandør
+            required: false
+            placeholder: Virksomhedsnavn
+      - id: total_expected_price
+        type: text
+        label: Samlet forventet pris
+        required: false
+        placeholder: f.eks. 2.500 kr. inkl. moms
+      - id: other_offers_obtained
+        type: select
+        label: Andre tilbud indhentet
+        required: false
+        default: Ikke relevant
+        options:
+          - value: Ja
+            label: Ja
+          - value: Nej
+            label: Nej
+          - value: Ikke relevant
+            label: Ikke relevant
+      - id: procurement_approved_by
+        type: text
+        label: Godkendt af
+        required: false
+        placeholder: Hvem har godkendt dispositionen?
+      - id: approval_date
+        type: text
+        label: Godkendelsesdato
+        required: false
+        placeholder: f.eks. 16.03.2026
+      - id: order_reference
+        type: text
+        label: Bestillingsreference
+        required: false
+        placeholder: f.eks. Rekvisition #104 / Ordre #8921
+
+  - id: delivery_and_deviations_step
+    title: 3. Levering, kontrol & afvigelser
+    description: Kontrolpunkter ved modtagelse samt registrering af eventuelle restordrer eller reklamationer.
+    fields:
+      - id: check_quantity_note
+        type: text
+        label: Modtaget korrekt antal (Resultat / bemærkning)
+        required: false
+        placeholder: f.eks. OK - 10 stk. modtaget
+      - id: check_quality_note
+        type: text
+        label: Kvalitet / specifikation korrekt (Resultat / bemærkning)
+        required: false
+        placeholder: f.eks. OK - godkendt af træner
+      - id: check_invoice_note
+        type: text
+        label: Faktura matcher ordre (Resultat / bemærkning)
+        required: false
+        placeholder: f.eks. OK - beløb stemmer
+      - id: check_receipt_note
+        type: text
+        label: Bilag gemt korrekt (Resultat / bemærkning)
+        required: false
+        placeholder: f.eks. Uploadet til bogholderi
+      - id: check_inventory_note
+        type: text
+        label: Udstyr registreret i inventarliste hvis relevant (Resultat / bemærkning)
+        required: false
+        placeholder: f.eks. Registreret i HIF-15 Udstyrsliste
+      - id: discrepancy_details
+        type: textarea
+        label: Restordre / fejl / reklamation
+        required: false
+        placeholder: Eventuelle fejlleverancer, mangler eller reklamationer
+      - id: action_and_responsible
+        type: textarea
+        label: Handling og ansvarlig
+        required: false
+        placeholder: Hvem følger op og hvad gøres der?

@@ -1,0 +1,32 @@
+owner_committee: Bestyrelsen
+version_label: "1.0"
+updated_at: "2026-09-01"
+approved_by: Bestyrelsen
+register_responsible: Kasserer & Formand
+verification_frequency: Halvårligt ved sæsonstart
+document_location: Google Drev / Kontakter
+contacts:
+  - category: Kommune & Faciliteter
+    organization_name: Eksempel Kommune - Fritid & Faciliteter
+    contact_person: Testperson A
+    phone: "00 00 00 01"
+    email: kontakt@example.com
+    purpose_relation: Halbooking og tilskud
+    internal_contact: Formand (Testperson B)
+    last_verified: "15.08.2026"
+  - category: Forbund & Turnering
+    organization_name: Eksempel Idrætsforbund
+    contact_person: Testperson C
+    phone: "00 00 00 02"
+    email: info@example.org
+    purpose_relation: Holdtilmeldinger og dommerpåsætning
+    internal_contact: Ungdomsformand (Testperson D)
+    last_verified: "10.08.2026"
+  - category: Leverandør & Udstyr
+    organization_name: Eksempel Leverandør ApS
+    contact_person: Testperson E
+    phone: "00 00 00 03"
+    email: ordre@example.net
+    purpose_relation: Indkøb af bolde og spillertøj
+    internal_contact: Materialeforvalter
+    last_verified: "01.06.2026"

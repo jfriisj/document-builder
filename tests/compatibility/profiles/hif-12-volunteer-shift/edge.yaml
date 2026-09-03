@@ -1,0 +1,37 @@
+owner_committee: Fælles / Tværgående
+version_label: 2.0-special
+updated_at: '2026-11-01'
+approved_by: Bane- & Sikkerhedsansvarlig <drift@example.com>
+shift_role: 'Parkerings- & Adgangsvagt (Æ, Ø, Å & Specialtegn: < > & " '')'
+event_name: Sjællandsmesterskab & Jubilæumsstævne {{ probe }}
+shift_date: '2026-09-05'
+start_time: 07:45
+end_time: '13:00'
+meeting_location: Baneanlæggets hovedindkørsel v/ Barmosevej
+shift_supervisor: Testperson Æ-Ø-Å
+supervisor_phone: 00 00 00 01
+task_purpose: Sikre tryg og glidende trafikafvikling samt frie redningsveje for ambulance
+  og beredskab.
+primary_tasks: Vise biler til anviste parkeringsbåse og afvise uautoriseret parkering
+  på brandveje.
+completion_criteria: Alle parkeringsarealer afspærret forsvarligt og overdraget til
+  vagthold 2.
+procedure_steps:
+- step_number: Trin 1
+  task_description: Ifør gul refleksvest og tænd walkie-talkie på kanal 4.
+  important_notes: Sikkerhed frem for alt.
+- step_number: Trin 2
+  task_description: Diriger personbiler mod græsparkeringen og busser mod grusarealet.
+  important_notes: Hold midtersporet 100% frit for udrykningskøretøjer.
+equipment_access:
+- item_name: Trafikkegler (20 stk.) & afspærringsbånd
+  location: Skur 4
+  return_to: Stables i skur 4 efter endt vagt
+contingency_questions: Kald vagtleder over radio på kanal 4 eller ring 00 00 00 01.
+contingency_injury: Hjertestarter ved indgang til hallen. Tilkald 112 ved akut fare.
+contingency_technical: Ekstra batterier til radioer ligger i klubhusets dommerrum.
+contingency_conflict: Gå aldrig i fysisk konflikt. Noter bilens registreringsnummer
+  og tilkald vagtleder.
+closing_checks:
+- checkpoint: Redningsveje er tjekket og frie
+  is_completed: true

@@ -1,0 +1,12 @@
+owner_committee: Arrangementsudvalg
+shift_role: Kioskvagt
+event_name: Sommerfest
+shift_date: '2026-06-13'
+start_time: '12:00'
+meeting_location: Klubhus Kiosk
+shift_supervisor: Testperson A
+task_purpose: Sørge for salg af drikkevarer og snacks til gæsterne.
+primary_tasks: Ekspedere kunder og modtage MobilePay.
+procedure_steps:
+- step_number: '1'
+  task_description: Lås kiosken op og tænd køleskabene.

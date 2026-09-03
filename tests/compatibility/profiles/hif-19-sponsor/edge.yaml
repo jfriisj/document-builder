@@ -1,0 +1,56 @@
+owner_committee: Fælles / Tværgående
+version_label: "2.5-edge"
+updated_at: "2026-12-31"
+approved_by: "Sponsorudvalget v/ Testperson Æ-Ø-Å 1 & Testperson Æ-Ø-Å 2 <sponsor@example.com> {{ approval_test }}"
+sponsor_company: "A & B < C > D {{ example }}"
+cvr_number: "00000000"
+industry: "Byggemarked, Trælast & Maskinudlejning <Specialiseret detail>"
+contact_person: "Testperson Æ-Ø-Å 3 & Direktør Testperson Æ-Ø-Å 4"
+contact_details: "+45 00 00 00 01 / kontakt@example.org <Sikker mail>"
+internal_sponsor_lead: "Sponsoransvarlig Testperson Æ-Ø-Å 5 & Formand Testperson Æ-Ø-Å 6"
+sponsor_status: Fornyelse
+start_date: "01.01.2026"
+end_date: "31.12.2028 / 3-årig rammeaftale"
+cash_value: "50.000 kr. årligt (indekseret efter nettoprisindeks) {{ val_note }}"
+in_kind_value: "Materialer til vedligehold af terrasse, hegn & boldfangertråd (værdi ca. 20.000 kr. årligt)"
+cancellation_notice: "Skriftligt varsel på 6 måneder til udgangen af et kalenderår"
+auto_renewal: Ja
+exclusivity: "Eneforhandler inden for byggematerialer og trælast i lokalområdet"
+invoicing_terms: "Elektronisk fakturering via EAN #0000000000000 / Forfald 30 dage netto"
+check_cvr_status: Ja
+check_cvr_note: "Fiktivt CVR 00000000 angivet til testscenario {{ cvr_val }}"
+check_period_status: Ja
+check_period_note: "Tydelig 3-årig bindingsperiode med specificeret forlængelsesvilkår"
+check_amount_status: Ja
+check_amount_note: "Fast kontantbeløb 50.000 kr. + præcis materialeliste specificeret i bilag 1"
+check_deliverables_status: Ja
+check_deliverables_note: "Stadionbande, holdsæt for serie 3, kampprogram-annonce & firmaturnering"
+check_logo_status: Ja
+check_logo_note: "Logoversioner i CMYK, Pantone & negativ hvid til mørk baggrund afleveret"
+check_marketing_status: Ja
+check_marketing_note: "Banner på hjemmeside samt 4 årlige sponsor-shoutouts på Instagram & Facebook"
+check_exclusivity_status: Ja
+check_exclusivity_note: "Branchens afgrænsning accepteret af bestyrelsen uden habilitetskonflikter"
+check_conflict_status: Ja
+check_conflict_note: "Ingen konkurrerende tømmerhandler eller byggemarkeder har aftaler i HIF"
+check_invoicing_status: Ja
+check_invoicing_note: "Bogholderi har modtaget EAN og fast faktureringsplan"
+check_rights_status: Ja
+check_rights_note: "Brugsret til foreningens logo i virksomhedens CSR-markedsføring godkendt"
+check_approval_status: Ja
+check_approval_note: "Aftale enstemmigt godkendt på bestyrelsesmøde d. 10.12.2025"
+check_archived_status: Ja
+check_archived_note: "Fuldmagt og gensidigt underskrevet kontrakt gemt i skyarkiv under /Aftaler/HIF-19"
+deliverables:
+  - deliverable_description: "Dobbelt bandereklame mod sydvendt tilskuerhegn (12 meter) <Specialmål>"
+    deadline_period: "Ultimo marts 2026"
+    responsible: "Anlægsudvalget v/ Testperson Æ-Ø-Å 7"
+    status: "Bestilt hos skiltemaler & godkendt til tryk {{ print_status }}"
+  - deliverable_description: "Firmaturnering for medarbejdere inkl. dommere og grill-arrangement"
+    deadline_period: "Juni 2026 & juni 2027"
+    responsible: "Eventudvalg v/ Testperson Æ-Ø-Å 8"
+    status: "Dato reserveret i årshjulet HIF-04"
+renewal_dialogue_date: "01.07.2028 (6 mdr. før ophør)"
+relationship_satisfaction: "Særdeles stærkt lokalt partnerskab med stor opbakning til klubbens værdier og anlægsudvikling."
+proposal_next_agreement: "Etablering af flerårigt hovedsponsorat med navnerettigheder til stadionopvisningsbanen."
+next_action: "Sponsorudvalg afholder årlig statusevaluering efter forårssæsonen."

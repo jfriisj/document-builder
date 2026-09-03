@@ -1,0 +1,51 @@
+owner_committee: Klubhus & Anlæg
+version_label: 3.1.0-RC
+updated_at: '2026-11-30'
+approved_by: Bestyrelsen v/ Testperson Æ-Ø-Å & Partner (CVR 00000000) <info@example.com>
+project_name: 'Totalrenovering af Driftsanlæg & Boldbaner (Æ, Ø, Å & Specialtegn:
+  < > & " '')'
+project_lead: 'Testperson A (mobil: 00 00 00 01)'
+sponsor_decision_maker: Klubhusudvalget & Eksempel Fonden
+start_date: '2026-08-01'
+target_end_date: '2027-06-30'
+background_problem: Dræningsrør under bane 1 og 2 er over 40 år gamle og kollapser
+  ved kraftig regn. {{ edge_probe }}
+purpose: Sikre helårsanvendelige baner og fremtidssikre klubhusets omklædningsfaciliteter
+  mod oversvømmelse.
+project_goals: Udskiftning af 1.200 meter drænrør, ny pumpestation og etablering af
+  regnvandsbassin.
+deliverables: Fuld funktionsdygtigt drænsystem, ny græsbeklædning og opdateret driftsjournal.
+in_scope: Bane 1, bane 2, lysmaster og rørføring til offentlig kloak.
+out_of_scope: Klubhusets tag og cafeteriaområde.
+stakeholders:
+- name: Eksempel Spildevand A/S & Miljømyndighed
+  needs_interests: Krav til forsinkelsesbassin og udledningstilladelse
+  influence: Høj
+  involvement: Tekniske tilsynsmøder
+milestones:
+- task: Miljøgodkendelse og rørdimensionering
+  responsible: Rådgivende Ingeniør
+  deadline: 15. september 2026
+  dependency: Jordbundsundersøgelse
+  status: Afsluttet
+budget_items:
+- item: Entreprenørarbejde & rørgraving
+  budget: 580.000 kr.
+  approved_by: Ekstraordinær generalforsamling
+  notes: Kombineret lån og tilskud
+risks:
+- risk: Uforudsete forureningsrester i jordlag
+  probability: Lav
+  impact: Høj
+  mitigation: Prøveboringer forud for gravearbejde
+  responsible: Miljørådgiver
+decision_log:
+- date: 1. august 2026
+  decision_change: Udvidet rørkapacitet med 25%
+  justification: Klimasikring mod 100-års hændelser
+  approved_by: Bestyrelsen
+approval_criteria: Afleveringsforretning uden væsentlige mangler samt godkendt trykprøvning.
+handover_to_operations: Baneudvalget overtager ansvaret for løbende filterskift.
+documentation_location: Fysisk arkivskab 2 i klubhuset samt digital tvilling på Google
+  Drev
+evaluation_learnings: Totalentreprise gav bedre budgetkontrol end fagentrepriser.

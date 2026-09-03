@@ -1,0 +1,396 @@
+id: hif-19-sponsor
+version: 1
+enabled: true
+title: HIF-19 Sponsorprofil og aftalecheckliste
+category: Sponsorer og samarbejdspartnere
+description: Supplement til sponsorregisteret ved oprettelse, fornyelse og kvalitetssikring af sponsoraftaler i Hashøj IF.
+steps:
+  - id: basic_info
+    title: 1. Stamdata & Sponsorprofil
+    description: Grundlæggende information om dokumentejer, sponsor og intern kontakt.
+    fields:
+      - id: owner_committee
+        type: select
+        label: Dokumentejer / udvalg
+        required: true
+        options:
+          - value: Bestyrelsen
+            label: Bestyrelsen
+          - value: Fodboldudvalget
+            label: Fodboldudvalget
+          - value: Gymnastikudvalget
+            label: Gymnastikudvalget
+          - value: Badmintonudvalget
+            label: Badmintonudvalget
+          - value: E-sport
+            label: E-sport
+          - value: Klubhus & Anlæg
+            label: Klubhus & Anlæg
+          - value: Arrangementsudvalg
+            label: Arrangementsudvalg
+          - value: Fælles / Tværgående
+            label: Fælles / Tværgående
+      - id: version_label
+        type: text
+        label: Version
+        required: false
+        default: "1.0"
+      - id: updated_at
+        type: date
+        label: Senest opdateret
+        required: false
+      - id: approved_by
+        type: text
+        label: Godkendt af
+        required: false
+        placeholder: f.eks. Bestyrelsen / Sponsoransvarlig
+      - id: sponsor_company
+        type: text
+        label: Sponsor / virksomhed
+        required: true
+        placeholder: Virksomhedens navn
+      - id: cvr_number
+        type: text
+        label: CVR
+        required: false
+        placeholder: f.eks. 00000000
+      - id: industry
+        type: text
+        label: Branche
+        required: false
+        placeholder: f.eks. Detailhandel, Håndværk, Rådgivning
+      - id: contact_person
+        type: text
+        label: Kontaktperson
+        required: false
+        placeholder: Primær kontaktperson hos sponsor
+      - id: contact_details
+        type: text
+        label: Telefon / e-mail
+        required: false
+        placeholder: f.eks. 00 00 00 01 / sponsor@example.com
+      - id: internal_sponsor_lead
+        type: text
+        label: Intern sponsoransvarlig
+        required: false
+        placeholder: Ansvarlig person i Hashøj IF
+      - id: sponsor_status
+        type: select
+        label: Sponsorstatus
+        required: false
+        default: Aktiv
+        options:
+          - value: Lead
+            label: Lead
+          - value: Dialog
+            label: Dialog
+          - value: Aktiv
+            label: Aktiv
+          - value: Fornyelse
+            label: Fornyelse
+          - value: Udløbet
+            label: Udløbet
+      - id: privacy_notice
+        type: info
+        variant: privacy
+        text: >-
+          Navne og kontaktoplysninger på sponsorer og kontaktpersoner behandles af
+          Dokumentbyggeren udelukkende under den aktive session til at generere
+          sponsorprofilen og lagres ikke permanent af applikationen.
+
+  - id: terms_step
+    title: 2. Aftalens hovedpunkter
+    description: Nøgletal, vilkår, perioder, modydelser og fakturering for sponsoraftalen.
+    fields:
+      - id: start_date
+        type: text
+        label: Startdato
+        required: false
+        placeholder: f.eks. 01.01.2026
+      - id: end_date
+        type: text
+        label: Slutdato
+        required: false
+        placeholder: f.eks. 31.12.2027
+      - id: cash_value
+        type: text
+        label: Kontant værdi
+        required: false
+        placeholder: f.eks. 15.000 kr. / årligt
+      - id: in_kind_value
+        type: text
+        label: Naturalier / værdi
+        required: false
+        placeholder: f.eks. Spillertøj til 2 hold (værdi ca. 8.000 kr.)
+      - id: cancellation_notice
+        type: text
+        label: Opsigelsesvarsel
+        required: false
+        placeholder: f.eks. 3 måneder til aftalens udløb
+      - id: auto_renewal
+        type: select
+        label: Automatisk fornyelse
+        required: false
+        default: Nej
+        options:
+          - value: Ja
+            label: Ja
+          - value: Nej
+            label: Nej
+      - id: exclusivity
+        type: text
+        label: Eksklusivitet
+        required: false
+        placeholder: f.eks. Ingen / Hovedsponsor i sin branche
+      - id: invoicing_terms
+        type: text
+        label: Fakturering
+        required: false
+        placeholder: f.eks. Faktureres årligt pr. 1. februar / Netto 30 dage
+
+  - id: checklist_step
+    title: 3. Sponsoraftale-checkliste
+    description: 12 kvalitetssikringspunkter før underskrift og endelig godkendelse.
+    fields:
+      - id: check_cvr_status
+        type: select
+        label: Parter og CVR fremgår korrekt (Status)
+        required: false
+        default: Ja
+        options:
+          - value: Ja
+            label: Ja
+          - value: Nej
+            label: Nej
+          - value: N/A
+            label: N/A
+      - id: check_cvr_note
+        type: text
+        label: Parter og CVR fremgår korrekt (Bemærkning / ref.)
+        required: false
+      - id: check_period_status
+        type: select
+        label: Periode og ophør er tydeligt (Status)
+        required: false
+        default: Ja
+        options:
+          - value: Ja
+            label: Ja
+          - value: Nej
+            label: Nej
+          - value: N/A
+            label: N/A
+      - id: check_period_note
+        type: text
+        label: Periode og ophør er tydeligt (Bemærkning / ref.)
+        required: false
+      - id: check_amount_status
+        type: select
+        label: Sponsorbeløb / naturalier er præcist beskrevet (Status)
+        required: false
+        default: Ja
+        options:
+          - value: Ja
+            label: Ja
+          - value: Nej
+            label: Nej
+          - value: N/A
+            label: N/A
+      - id: check_amount_note
+        type: text
+        label: Sponsorbeløb / naturalier er præcist beskrevet (Bemærkning / ref.)
+        required: false
+      - id: check_deliverables_status
+        type: select
+        label: Hashøj IF's modydelser er konkrete (Status)
+        required: false
+        default: Ja
+        options:
+          - value: Ja
+            label: Ja
+          - value: Nej
+            label: Nej
+          - value: N/A
+            label: N/A
+      - id: check_deliverables_note
+        type: text
+        label: Hashøj IF's modydelser er konkrete (Bemærkning / ref.)
+        required: false
+      - id: check_logo_status
+        type: select
+        label: Placering og brug af logo er aftalt (Status)
+        required: false
+        default: Ja
+        options:
+          - value: Ja
+            label: Ja
+          - value: Nej
+            label: Nej
+          - value: N/A
+            label: N/A
+      - id: check_logo_note
+        type: text
+        label: Placering og brug af logo er aftalt (Bemærkning / ref.)
+        required: false
+      - id: check_marketing_status
+        type: select
+        label: Markedsføringskrav er tydelige (Status)
+        required: false
+        default: Ja
+        options:
+          - value: Ja
+            label: Ja
+          - value: Nej
+            label: Nej
+          - value: N/A
+            label: N/A
+      - id: check_marketing_note
+        type: text
+        label: Markedsføringskrav er tydelige (Bemærkning / ref.)
+        required: false
+      - id: check_exclusivity_status
+        type: select
+        label: Eksklusivitet er forstået og accepteret (Status)
+        required: false
+        default: Ja
+        options:
+          - value: Ja
+            label: Ja
+          - value: Nej
+            label: Nej
+          - value: N/A
+            label: N/A
+      - id: check_exclusivity_note
+        type: text
+        label: Eksklusivitet er forstået og accepteret (Bemærkning / ref.)
+        required: false
+      - id: check_conflict_status
+        type: select
+        label: Konflikt med eksisterende sponsorer er kontrolleret (Status)
+        required: false
+        default: Ja
+        options:
+          - value: Ja
+            label: Ja
+          - value: Nej
+            label: Nej
+          - value: N/A
+            label: N/A
+      - id: check_conflict_note
+        type: text
+        label: Konflikt med eksisterende sponsorer er kontrolleret (Bemærkning / ref.)
+        required: false
+      - id: check_invoicing_status
+        type: select
+        label: Fakturering og betalingsfrist er aftalt (Status)
+        required: false
+        default: Ja
+        options:
+          - value: Ja
+            label: Ja
+          - value: Nej
+            label: Nej
+          - value: N/A
+            label: N/A
+      - id: check_invoicing_note
+        type: text
+        label: Fakturering og betalingsfrist er aftalt (Bemærkning / ref.)
+        required: false
+      - id: check_rights_status
+        type: select
+        label: Rettigheder til billeder / materiale er afklaret (Status)
+        required: false
+        default: Ja
+        options:
+          - value: Ja
+            label: Ja
+          - value: Nej
+            label: Nej
+          - value: N/A
+            label: N/A
+      - id: check_rights_note
+        type: text
+        label: Rettigheder til billeder / materiale er afklaret (Bemærkning / ref.)
+        required: false
+      - id: check_approval_status
+        type: select
+        label: Aftalen er godkendt internt (Status)
+        required: false
+        default: Ja
+        options:
+          - value: Ja
+            label: Ja
+          - value: Nej
+            label: Nej
+          - value: N/A
+            label: N/A
+      - id: check_approval_note
+        type: text
+        label: Aftalen er godkendt internt (Bemærkning / ref.)
+        required: false
+      - id: check_archived_status
+        type: select
+        label: Aftalen er underskrevet og arkiveret (Status)
+        required: false
+        default: Ja
+        options:
+          - value: Ja
+            label: Ja
+          - value: Nej
+            label: Nej
+          - value: N/A
+            label: N/A
+      - id: check_archived_note
+        type: text
+        label: Aftalen er underskrevet og arkiveret (Bemærkning / ref.)
+        required: false
+
+  - id: deliverables_and_renewal_step
+    title: 4-5. Leveranceplan & Fornyelse
+    description: Tidsplan for Hashøj IFs modydelser samt plan for fornyelsesdialog og relation.
+    fields:
+      - id: deliverables
+        type: repeater
+        label: Leveranceplan (modydelser)
+        required: false
+        fields:
+          - id: deliverable_description
+            type: text
+            label: Modydelse
+            required: true
+            placeholder: f.eks. Bandereklame på stadion (6 meter)
+          - id: deadline_period
+            type: text
+            label: Deadline / periode
+            required: false
+            placeholder: f.eks. Sæsonstart april 2026
+          - id: responsible
+            type: text
+            label: Ansvarlig
+            required: false
+            placeholder: Ansvarlig person i foreningen
+          - id: status
+            type: text
+            label: Leveret / status
+            required: false
+            placeholder: f.eks. Bestilt, Monteret, Afventer logo
+      - id: renewal_dialogue_date
+        type: text
+        label: Fornyelsesdialog starter
+        required: false
+        placeholder: f.eks. 01.10.2027 (3 mdr. før udløb)
+      - id: relationship_satisfaction
+        type: textarea
+        label: Relation / tilfredshed
+        required: false
+        placeholder: Noter om samarbejdsklima og sponsors tilfredshed
+      - id: proposal_next_agreement
+        type: textarea
+        label: Forslag til næste aftale
+        required: false
+        placeholder: Eventuelle ønsker om opgradering eller ændrede modydelser
+      - id: next_action
+        type: textarea
+        label: Næste handling
+        required: false
+        placeholder: Hvem gør hvad og hvornår?

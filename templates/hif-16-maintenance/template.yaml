@@ -1,0 +1,177 @@
+id: hif-16-maintenance
+version: 1
+enabled: true
+title: HIF-16 Vedligeholdelsesplan
+category: Udstyr, bygninger og adgang
+description: Plan for eftersyn, service og vedligehold af foreningens bygninger, installationer og udstyr i Hashøj IF.
+steps:
+  - id: basic_info
+    title: 1. Stamdata & Dokumentstyring
+    description: Grundlæggende information om dokumentejer og versionsstyring.
+    fields:
+      - id: owner_committee
+        type: select
+        label: Dokumentejer / udvalg
+        required: true
+        options:
+          - value: Bestyrelsen
+            label: Bestyrelsen
+          - value: Fodboldudvalget
+            label: Fodboldudvalget
+          - value: Gymnastikudvalget
+            label: Gymnastikudvalget
+          - value: Badmintonudvalget
+            label: Badmintonudvalget
+          - value: E-sport
+            label: E-sport
+          - value: Klubhus & Anlæg
+            label: Klubhus & Anlæg
+          - value: Arrangementsudvalg
+            label: Arrangementsudvalg
+          - value: Fælles / Tværgående
+            label: Fælles / Tværgående
+      - id: version_label
+        type: text
+        label: Version
+        required: false
+        default: "1.0"
+      - id: updated_at
+        type: date
+        label: Senest opdateret
+        required: false
+      - id: approved_by
+        type: text
+        label: Godkendt af
+        required: false
+        placeholder: f.eks. Bestyrelsen / Anlægsudvalg
+      - id: privacy_notice
+        type: info
+        variant: privacy
+        text: >-
+          Navne og kontaktoplysninger på ansvarlige, kontaktpersoner og leverandører
+          behandles af Dokumentbyggeren kun under den aktive session til at generere
+          vedligeholdelsesplanen og lagres ikke permanent af applikationen.
+
+  - id: maintenance_step
+    title: 2. Vedligeholdelsesoversigt
+    description: Planlagte eftersyn, faste serviceintervaller og driftskontroller.
+    fields:
+      - id: maintenance_tasks
+        type: repeater
+        label: Vedligeholdelsesopgaver
+        required: false
+        fields:
+          - id: object_or_installation
+            type: text
+            label: Objekt / installation
+            required: true
+            placeholder: f.eks. Varmepumpe, Lysmaster, Tagrender
+          - id: location
+            type: text
+            label: Placering
+            required: false
+            placeholder: f.eks. Klubhus teknikrum / Bane 1
+          - id: task_or_inspection
+            type: text
+            label: Opgave / kontrol
+            required: false
+            placeholder: f.eks. Filterskift, Visuel kontrol, Smøring
+          - id: interval
+            type: text
+            label: Interval
+            required: false
+            placeholder: f.eks. Månedligt, Kvartalsvis, Årligt
+          - id: last_performed
+            type: text
+            label: Sidst udført
+            required: false
+            placeholder: f.eks. 15.04.2026
+          - id: next_date
+            type: text
+            label: Næste dato
+            required: false
+            placeholder: f.eks. 15.10.2026
+          - id: responsible
+            type: text
+            label: Ansvarlig
+            required: false
+            placeholder: Ansvarlig person eller udvalg
+          - id: professional_required
+            type: select
+            label: Fagperson påkrævet?
+            required: false
+            default: Nej
+            options:
+              - value: Nej
+                label: Nej
+              - value: Ja
+                label: Ja
+              - value: Autoriseret fagperson påkrævet
+                label: Autoriseret fagperson påkrævet
+              - value: Lovpligtigt eftersyn
+                label: Lovpligtigt eftersyn
+          - id: documentation
+            type: text
+            label: Dokumentation
+            required: false
+            placeholder: f.eks. Servicerapport i ringbind / Drev
+
+  - id: repairs_step
+    title: 3. Fejl og reparationer
+    description: Log over konstaterede fejl, midlertidige tiltag og udførte reparationer.
+    fields:
+      - id: repairs_and_defects
+        type: repeater
+        label: Fejl og reparationer
+        required: false
+        fields:
+          - id: incident_date
+            type: text
+            label: Dato
+            required: false
+            placeholder: f.eks. 02.05.2026
+          - id: defect_object
+            type: text
+            label: Objekt
+            required: true
+            placeholder: Hvilken genstand / installation har en fejl?
+          - id: defect_description
+            type: text
+            label: Fejl
+            required: false
+            placeholder: Beskrivelse af fejlen / skaden
+          - id: temporary_action
+            type: text
+            label: Midlertidigt tiltag
+            required: false
+            placeholder: f.eks. Afspærret, Slukket på hovedafbryder
+          - id: repair_supplier
+            type: text
+            label: Reparation / leverandør
+            required: false
+            placeholder: Hvem udbedrer fejlen?
+          - id: closed_status
+            type: text
+            label: Afsluttet
+            required: false
+            placeholder: f.eks. Udført d. 05.05.2026 / Afventer reservedel
+
+  - id: planning_step
+    title: 4. Planlægning
+    description: Budget, akut kontaktperson og dokumentplacering for vedligehold.
+    fields:
+      - id: annual_maintenance_budget
+        type: text
+        label: Årligt vedligeholdelsesbudget
+        required: false
+        placeholder: f.eks. 35.000 kr.
+      - id: emergency_contact_person
+        type: text
+        label: Kontaktperson for akutte fejl
+        required: false
+        placeholder: Navn og telefonnummer på vagthavende / halinspektør
+      - id: manuals_location
+        type: text
+        label: Placering af manualer / servicepapirer
+        required: false
+        placeholder: f.eks. Klubhuset hylde 2 / Google Drev Drift

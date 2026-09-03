@@ -1,0 +1,114 @@
+id: hif-10-decision-log
+version: 1
+enabled: true
+title: HIF-10 Beslutningslog
+category: Møder og beslutninger
+description: Sporbar oversigt over væsentlige beslutninger og deres begrundelse i Hashøj IF.
+steps:
+  - id: basic_info
+    title: 1. Stamdata & Vejledning
+    description: Grundlæggende information om dokumentejer, versionsstyring og retningslinjer for logning.
+    fields:
+      - id: owner_committee
+        type: select
+        label: Dokumentejer / udvalg
+        required: true
+        options:
+          - value: Bestyrelsen
+            label: Bestyrelsen
+          - value: Fodboldudvalget
+            label: Fodboldudvalget
+          - value: Gymnastikudvalget
+            label: Gymnastikudvalget
+          - value: Badmintonudvalget
+            label: Badmintonudvalget
+          - value: E-sport
+            label: E-sport
+          - value: Klubhus & Anlæg
+            label: Klubhus & Anlæg
+          - value: Arrangementsudvalg
+            label: Arrangementsudvalg
+          - value: Fælles / Tværgående
+            label: Fælles / Tværgående
+      - id: version_label
+        type: text
+        label: Version
+        required: false
+        default: "1.0"
+      - id: updated_at
+        type: date
+        label: Senest opdateret
+        required: false
+      - id: approved_by
+        type: text
+        label: Godkendt af
+        required: false
+        placeholder: f.eks. Bestyrelsen / Udvalgsformand
+      - id: guidance_info
+        type: info
+        text: >-
+          Hvad bør logges? Væsentlige økonomiske, organisatoriske, kontraktuelle,
+          sikkerhedsrelaterede eller principielle beslutninger - især hvis det senere kan
+          være relevant at forstå hvorfor beslutningen blev taget.
+      - id: privacy_notice
+        type: info
+        variant: privacy
+        text: >-
+          Personnavne på beslutningstagere og godkendere behandles af Dokumentbyggeren kun
+          under den aktive session til at generere beslutningsloggen og lagres ikke permanent
+          af applikationen.
+
+  - id: decisions_step
+    title: 2. Beslutninger
+    description: Log over trufne beslutninger, begrundelser, konsekvenser og referencer.
+    fields:
+      - id: decisions
+        type: repeater
+        label: Beslutninger
+        required: false
+        fields:
+          - id: decision_id
+            type: text
+            label: ID
+            required: false
+            placeholder: f.eks. B-2026-01
+          - id: decision_date
+            type: text
+            label: Dato
+            required: true
+            placeholder: f.eks. 15.01.2026
+          - id: topic
+            type: text
+            label: Emne
+            required: true
+            placeholder: Beslutningens overskrift / emne
+          - id: decision
+            type: textarea
+            label: Beslutning
+            required: true
+            placeholder: Hvad blev der truffet beslutning om?
+          - id: justification
+            type: textarea
+            label: Begrundelse
+            required: false
+            placeholder: Hvorfor blev beslutningen truffet?
+          - id: decided_by
+            type: text
+            label: Besluttet af
+            required: false
+            placeholder: Organ, udvalg eller person
+          - id: consequence_followup
+            type: textarea
+            label: Konsekvens / opfølgning
+            required: false
+            placeholder: Hvilke handlinger og opgaver afstedkommer beslutningen?
+          - id: revisit_date
+            type: text
+            label: Revurderes dato
+            required: false
+            placeholder: f.eks. 01.10.2026 / Efter 6 måneder
+          - id: document_reference
+            type: text
+            label: Dokumentreference
+            required: false
+            placeholder: f.eks. Mødereferat 12.01.2026 / HIF-08 Projektplan

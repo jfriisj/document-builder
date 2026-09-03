@@ -1,0 +1,231 @@
+id: hif-17-incident
+version: 1
+enabled: false
+title: HIF-17 Hændelses- og skadesrapport
+category: Sikkerhed & Faciliteter
+description: Dokumentation, intern registrering og opfølgning på ulykker, personskader,
+  materielle skader og nærved-hændelser i Hashøj IF.
+steps:
+- id: basic_info
+  title: 1. Grundoplysninger & Stamdata
+  description: Tid, sted, anmelder og hændelsestype samt dokumentstyring.
+  fields:
+  - id: owner_committee
+    type: select
+    label: Dokumentejer / udvalg
+    required: true
+    options:
+    - value: Bestyrelsen
+      label: Bestyrelsen
+    - value: Fodboldudvalget
+      label: Fodboldudvalget
+    - value: Gymnastikudvalget
+      label: Gymnastikudvalget
+    - value: Badmintonudvalget
+      label: Badmintonudvalget
+    - value: E-sport
+      label: E-sport
+    - value: Klubhus & Anlæg
+      label: Klubhus & Anlæg
+    - value: Arrangementsudvalg
+      label: Arrangementsudvalg
+    - value: Fælles / Tværgående
+      label: Fælles / Tværgående
+  - id: version_label
+    type: text
+    label: Version
+    required: false
+    default: '1.0'
+  - id: updated_at
+    type: date
+    label: Senest opdateret
+    required: false
+  - id: approved_by
+    type: text
+    label: Godkendt af
+    required: false
+    placeholder: f.eks. Bestyrelsen / Sikkerhedsansvarlig
+  - id: incident_datetime
+    type: text
+    label: Dato og tidspunkt
+    required: true
+    placeholder: f.eks. Tirsdag d. 8. september 2026 kl. 17:45
+  - id: incident_location
+    type: text
+    label: Sted
+    required: true
+    placeholder: f.eks. Bane 2, Klubhuset, Redskabsrum i hallen
+  - id: reported_by
+    type: text
+    label: Rapport udfyldt af
+    required: true
+    placeholder: Navn og rolle på anmelder
+  - id: incident_type
+    type: select
+    label: Type
+    required: true
+    options:
+    - value: Personskade
+      label: Personskade
+    - value: Materiel skade
+      label: Materiel skade
+    - value: Nærved-hændelse
+      label: Nærved-hændelse
+    - value: Andet
+      label: Andet
+  - id: privacy_notice
+    type: info
+    variant: privacy
+    text: Oplysninger om tilskadekomne, vidner, skadesforløb og eventuelle helbredsforhold
+      registreres udelukkende til intern hændelsesopfølgning og forebyggelse i Hashøj
+      IF. Oplysningerne behandles af Dokumentbyggeren fortroligt og kun under den
+      aktive session, og de lagres ikke permanent af applikationen.
+- id: event_description
+  title: 2-3. Hændelsen & Involverede
+  description: Beskrivelse af hændelsesforløbet samt parter og vidner.
+  fields:
+  - id: incident_description
+    type: textarea
+    label: Beskrivelse af hændelsen
+    required: true
+    placeholder: Udførlig beskrivelse af hvad der skete...
+  - id: activity_at_time
+    type: textarea
+    label: Aktivitet på tidspunktet
+    required: true
+    placeholder: f.eks. Træningskamp, opvarmning, redskabsopstilling...
+  - id: immediate_cause
+    type: textarea
+    label: Umiddelbar årsag / observation
+    required: false
+    placeholder: Hvad udløste hændelsen (fx glat underlag, sammenstød, udstyrsfejl)?
+  - id: involved_persons
+    type: repeater
+    label: 3. Involverede og vidner
+    required: false
+    fields:
+    - id: name
+      type: text
+      label: Navn
+      required: true
+      placeholder: Navn
+    - id: role
+      type: text
+      label: Rolle
+      required: false
+      placeholder: f.eks. Spiller, Træner, Tilskuer, Dommer
+    - id: contact_info
+      type: text
+      label: Kontaktoplysning
+      required: false
+      placeholder: Telefon eller e-mail
+    - id: person_type
+      type: select
+      label: Involveret / vidne
+      required: false
+      default: Involveret
+      options:
+      - value: Involveret
+        label: Involveret
+      - value: Vidne
+        label: Vidne
+- id: damage_and_action
+  title: 4-5. Skade, Indsats & Dokumentation
+  description: Personskade, materiel skade, førstehjælp samt fotos og dokumentation.
+  fields:
+  - id: injury_symptoms
+    type: textarea
+    label: Personskade / symptomer
+    required: false
+    placeholder: Beskrivelse af eventuelle skader eller symptomer...
+  - id: material_damage
+    type: textarea
+    label: Materiel skade
+    required: false
+    placeholder: Beskrivelse af eventuelle ødelagte redskaber, inventar eller faciliteter...
+  - id: first_aid_action
+    type: textarea
+    label: Førstehjælp / akut indsats
+    required: false
+    placeholder: Hvilken førstehjælp blev ydet (ispose, forbinding, hjerte-lunge-redning)?
+  - id: emergency_authorities_contacted
+    type: textarea
+    label: 112 / læge / anden myndighed kontaktet
+    required: false
+    placeholder: Blev 112, lægevagt eller skadestue tilkaldt? Noter tidspunkt...
+  - id: activity_stopped_secured
+    type: textarea
+    label: Aktivitet stoppet / område sikret
+    required: false
+    placeholder: Hvordan blev området eller aktiviteten håndteret efter hændelsen?
+  - id: documentation_items
+    type: repeater
+    label: 5. Dokumentation
+    required: false
+    fields:
+    - id: description
+      type: text
+      label: Dokumentation
+      required: true
+      placeholder: f.eks. Foto af ødelagt målramme, Lægevagtskvittering
+    - id: reference_location
+      type: text
+      label: Placering / reference
+      required: false
+      placeholder: f.eks. Google Drev / Skadesbilleder / filnavn.jpg
+    - id: collected_by
+      type: text
+      label: Indsamlet af
+      required: false
+      placeholder: Navn på person der sikrede dokumentationen
+- id: followup_and_prevention
+  title: 6-7. Opfølgning & Forebyggelse
+  description: Opfølgende handlinger, forebyggende tiltag og orientering af bestyrelse/forsikring.
+  fields:
+  - id: followup_actions
+    type: repeater
+    label: 6. Opfølgning
+    required: false
+    fields:
+    - id: action
+      type: text
+      label: Handling
+      required: true
+      placeholder: Hvad skal gøres?
+    - id: responsible
+      type: text
+      label: Ansvarlig
+      required: false
+      placeholder: Ansvarlig person
+    - id: deadline
+      type: text
+      label: Deadline
+      required: false
+      placeholder: f.eks. 15. september
+    - id: status
+      type: select
+      label: Status
+      required: false
+      default: Ikke påbegyndt
+      options:
+      - value: Ikke påbegyndt
+        label: Ikke påbegyndt
+      - value: I gang
+        label: I gang
+      - value: Afsluttet
+        label: Afsluttet
+  - id: prevention_prevent_recurrence
+    type: textarea
+    label: Hvad kan forhindre gentagelse?
+    required: false
+    placeholder: Forslag til tiltag for at undgå lignende hændelser...
+  - id: prevention_change_instructions
+    type: textarea
+    label: Skal opgavekort / instrukser ændres?
+    required: false
+    placeholder: Relevante skabeloner eller instrukser der skal opdateres...
+  - id: prevention_notify_board_insurance
+    type: textarea
+    label: Skal bestyrelse / forsikring / myndighed orienteres?
+    required: false
+    placeholder: Angiv om der er anmeldt til Tryg/forsikring eller Arbejdstilsynet...

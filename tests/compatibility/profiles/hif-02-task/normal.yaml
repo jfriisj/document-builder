@@ -1,0 +1,73 @@
+owner_committee: "Fodboldudvalget"
+version_label: "1.0"
+updated_at: "2026-09-01"
+approved_by: "Baneudvalget / Fodbold"
+task_title: "Kridtning af 11-mandsbane"
+department: "Fodbold"
+task_type: "Fast"
+execution_timing: "Fredag eftermiddag før weekendens kampe"
+frequency: "Ugentligt"
+estimated_duration: "ca. 45 minutter"
+location: "Bane 1 og Bane 2 (Hashøj Stadion)"
+responsible_role: "Baneformand / Banefrivillige"
+purpose: "Sikre tydelige, korrekte og holdbare banemarkeringer på foreningens 11-mands græsbaner forud for turneringskampe."
+completion_criteria: "Alle sidelinjer, mållinjer, midterlinje, midtercirkel og straffesparksfelter er opmærket snorlige og fuldstændigt i overensstemmelse med opmålingspunkterne."
+
+prerequisites:
+  - prerequisite_item: "Tjek at græsset er slået forud for kridtning"
+    location: "Banerne"
+    notes: "Kontakt halinspektør hvis græsset er for højt"
+  - prerequisite_item: "Afhent nøgle til materielskur"
+    location: "Nøgleskab i klubhus"
+    notes: "Kode oplyses af baneformand"
+
+materials:
+  - material_name: "Kridtvogn (batteridrevet sprøjtevogn)"
+    quantity_spec: "1 stk."
+    location: "Materielskur ved bane 2"
+    notes: "Batteri skal være fuldt opladet"
+  - material_name: "Hvid banemaling (miljøgodkendt)"
+    quantity_spec: "10 liter (opblandet 1:4 med vand)"
+    location: "Malerdunk i materielskur"
+    notes: "Brug altid handsker ved opblanding"
+  - material_name: "Målebånd (50 meter)"
+    quantity_spec: "1 stk."
+    location: "Værktøjskasse i skur"
+    notes: "Til kontrolopmåling ved sæsonstart"
+
+task_steps:
+  - step_title: "Klargør kridtvogn og opbland maling"
+    step_description: "Fyld beholderen med 2 liter maling og 8 liter vand. Rør grundigt rundt."
+    step_checkpoint: "Malingen har en ensartet konsistens uden klumper"
+    is_done: true
+  - step_title: "Opmærk yderlinjer (sidelinjer og mållinjer)"
+    step_description: "Følg de faste hjørneflagspunkter i et jævnt gangtempo."
+    step_checkpoint: "Linjebredde skal være præcis 10-12 cm"
+    is_done: true
+  - step_title: "Opmærk felter og midterlinje"
+    step_description: "Træk linjerne for straffesparksfelt, målfelt og midtercirkel."
+    step_checkpoint: "Midterplet og straffesparkspletter markeres tydeligt"
+    is_done: true
+  - step_title: "Rengør og parkér kridtvogn"
+    step_description: "Gennemskyl dyser med rent vand og sæt batteriet til opladning."
+    step_checkpoint: "Dyser er fri for malingrester"
+    is_done: true
+
+safety_risks: "Stænk fra maling i øjne ved opblanding; glatte underlag ved vådt græs."
+protective_equipment: "Arbejdshandsker og beskyttelsesbriller ved opblanding af maling."
+qualification_access_requirements: "Kræver kort introduktion af baneformanden til brug af den batteridrevne sprøjtevogn."
+special_precautions: "Må ikke udføres i kraftigt regnvejr, da malingen vaskes væk før tørring."
+
+completion_checks:
+  - checkpoint: "Materielskur er ryddet og aflåst"
+    acceptance_criteria: "Hængelås i indgreb og lys slukket"
+    is_checked: true
+  - checkpoint: "Kridtvogn sat til opladning"
+    acceptance_criteria: "Ladelampe lyser grønt"
+    is_checked: true
+
+post_task_documentation: "Notér opmærkning i driftsloggen på opslagstavlen i klubhuset."
+who_is_informed: "Send en kort SMS til baneformanden (tlf. 00 00 00 01) med besked om at banen er klar."
+if_defective_or_missing: "Hvis malingbeholdningen er under 2 dunke, eller hvis kridtvognen er defekt, gives straks besked til baneformand."
+deviations_issues: "Dysen stoppede til under opmærkning af bane 2 pga. bundfald i malerdunken."
+improvement_suggestions: "Anskaffelse af en si til maleropblanding vil forhindre dysestop."

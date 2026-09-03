@@ -1,0 +1,35 @@
+owner_committee: Fælles / Tværgående
+version_label: 2.1-beta (revideret efterårsudgave)
+updated_at: '2026-12-31'
+approved_by: Bestyrelsen & Revisor <kontakt@example.com> {{ test_tag }}
+januar_activity: Granskning af vedtægter & budgetoverslag <2027> samt {{ template_test }}
+januar_responsible: Testperson Æ-Ø-Å 1 & Testperson Æ-Ø-Å 2
+januar_prep_starts: Uge 48/49 (tidlig varsling)
+januar_relevant_document: HIF-02 & HIF-10
+januar_status: I gang / afventer godkendelse
+juni_activity: Sommerstævne & afslutningsturnering for ungdomshold med specialtegn æ, ø, å
+juni_responsible: Turneringsudvalg v/ Testperson Æ-Ø-Å 3
+juni_prep_starts: Maj måned (< 3 uger)
+juni_relevant_document: HIF-07 & Turneringsplan
+juni_status: Planlagt
+december_activity: Årets juleafslutning for alle 350+ aktive frivillige i Hashøj Hallen med
+  lang tekst der fylder meget for at teste tabelombrydning i DOCX
+december_responsible: Arrangementsudvalget
+december_prep_starts: 1. oktober
+december_relevant_document: HIF-07 Arrangementsskabelon
+december_status: Planlagt
+floating_deadlines:
+- deadline_trigger: Ved skader eller uheld > 5.000 kr.
+  task: Udfyld HIF-17 & anmeld til forsikring {{ check }}
+  responsible: Baneformand & Kasserer
+  warning_before: Straks (< 24 timer)
+  notes: 'Bemærk: Særlige krav til dokumentation ved personskader'
+- deadline_trigger: 14 dage før generalforsamling & regnskabsaflæggelse <ekstraordinær>
+  task: Udsendelse af revideret årsregnskab & dagsorden til samtlige medlemmer {{ audit_tag }}
+  responsible: Formand Testperson Æ-Ø-Å 1 & Revisor
+  warning_before: 4 uger før mødet
+  notes: Publiceres på hjemmeside samt via direkte mail & opslag i hallen
+evaluation_worked_well: Lange danske tekster med æ, ø, å og Æ, Ø, Å fungerer fejlfrit.
+evaluation_next_year_changes: Husk escape af <vinkler> og & ampersand.
+evaluation_new_activities: Nye faste aktiviteter med {{ jinja_syntax }} og specialtegn.
+evaluation_retired_activities: ''

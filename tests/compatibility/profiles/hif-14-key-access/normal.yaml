@@ -1,0 +1,36 @@
+owner_committee: Klubhus & Anlæg
+version_label: "1.0"
+updated_at: "2026-09-01"
+approved_by: Hovedbestyrelsen
+who_approves_access: Bestyrelsen samt anlægsansvarlig
+lost_key_procedure: Bortkomst meldes straks til anlægsansvarlig. Brik spærres i systemet og der vurderes om cylinder skal omlægges.
+resignation_procedure: Fysiske nøgler og brikker afleveres til udvalgsformand senest på fratrædelsesdato. Systemadgange lukkes samme dag.
+spare_key_location: Aflåst nøgleskab i klubhusets depot med adgang for formand og kasserer.
+access_records:
+  - access_id: N-01
+    person_role: Testperson A (Træner U15)
+    access_type: Fysisk nøgle & brik
+    area_system: Klubhus & Boldrum
+    issued_date: 01.08.2026
+    return_or_expires: 30.06.2027
+    approved_by: Fodboldformand
+    status: Aktiv
+    note: Brik nr. 1042
+  - access_id: S-04
+    person_role: Testperson B (Kasserer)
+    access_type: Systemadgang (Administrator)
+    area_system: Foreningssystem & Netbank
+    issued_date: 01.01.2025
+    return_or_expires: Ved udmeldelse
+    approved_by: Bestyrelsen
+    status: Aktiv
+    note: MitID 2-faktor autentifikation
+  - access_id: A-02
+    person_role: Testperson C (Vicevært)
+    access_type: Alarmkode & Hovednøgle
+    area_system: Hele klubhuset & Teknikrum
+    issued_date: 15.03.2024
+    return_or_expires: Løbende
+    approved_by: Anlægsudvalget
+    status: Aktiv
+    note: Personlig alarmprofil

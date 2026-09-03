@@ -1,0 +1,60 @@
+owner_committee: Arrangementsudvalg
+version_label: "1.0"
+updated_at: "2026-09-01"
+approved_by: Bestyrelsen
+sponsor_company: Eksempel Sponsor ApS
+cvr_number: "00000000"
+industry: Finansiering & Pengeinstitut
+contact_person: Testperson A (Direktør)
+contact_details: "00 00 00 01 / kontakt@example.com"
+internal_sponsor_lead: Formand (Testperson B)
+sponsor_status: Aktiv
+start_date: "01.01.2026"
+end_date: "31.12.2027"
+cash_value: "25.000 kr. årligt"
+in_kind_value: "Frugt og vand til ungdomsstævner (værdi ca. 5.000 kr.)"
+cancellation_notice: 6 måneder før kalenderårets udløb
+auto_renewal: Nej
+exclusivity: Hovedsponsor inden for bank og finansiering
+invoicing_terms: Faktureres i to rater (1. februar og 1. august) - Netto 30 dage
+check_cvr_status: Ja
+check_cvr_note: Fiktivt CVR kontrolleret til testformål
+check_period_status: Ja
+check_period_note: 2-årig fast periode 2026-2027
+check_amount_status: Ja
+check_amount_note: 25.000 kr. kontant + 5.000 kr. naturalier
+check_deliverables_status: Ja
+check_deliverables_note: Bandereklame samt logotryk på U13 spillertøj
+check_logo_status: Ja
+check_logo_note: Vektor-logo modtaget i EPS og SVG
+check_marketing_status: Ja
+check_marketing_note: Logo på hjemmeside og kampprogram
+check_exclusivity_status: Ja
+check_exclusivity_note: Ingen andre banker på stadion
+check_conflict_status: Ja
+check_conflict_note: Ingen konflikt med eksisterende partnere
+check_invoicing_status: Ja
+check_invoicing_note: EAN/CVR oplyst til kasserer
+check_rights_status: Ja
+check_rights_note: Ret til brug af holdsponsor-fotos afklaret
+check_approval_status: Ja
+check_approval_note: Godkendt på bestyrelsesmøde 15.12.2025
+check_archived_status: Ja
+check_archived_note: Underskrevet PDF arkiveret i Google Drev / Sponsorer
+deliverables:
+  - deliverable_description: Bandereklame 6m ved opvisningsbane
+    deadline_period: April 2026
+    responsible: Baneformand
+    status: Monteret
+  - deliverable_description: Logo på hjemmesidens sponsoroversigt
+    deadline_period: Januar 2026
+    responsible: Webmaster
+    status: Aktiv
+  - deliverable_description: Holdsponsoropslag på Facebook før sæsonstart
+    deadline_period: Marts 2026
+    responsible: PR-ansvarlig
+    status: Udført
+renewal_dialogue_date: "01.06.2027"
+relationship_satisfaction: Meget positiv dialog. Sponsoren udtrykker stor glæde ved engagementet i ungdomsfodbolden.
+proposal_next_agreement: Tilbyde navnesponsorat på den årlige sommercup samt udvidelse til gymnastikopvisningen.
+next_action: Formand inviterer direktør til standerhejsning i april 2027.

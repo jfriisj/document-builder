@@ -1,0 +1,166 @@
+id: hif-15-inventory
+version: 1
+enabled: true
+title: HIF-15 Udstyrs- og inventarliste
+category: Udstyr, bygninger og adgang
+description: Overblik over foreningens udstyr, placering, stand og ansvar samt log over udlån og flytning i Hashøj IF.
+steps:
+  - id: basic_info
+    title: 1. Stamdata & Standdefinitioner
+    description: Grundlæggende information om dokumentejer, versionsstyring og retningslinjer for inventarstand.
+    fields:
+      - id: owner_committee
+        type: select
+        label: Dokumentejer / udvalg
+        required: true
+        options:
+          - value: Bestyrelsen
+            label: Bestyrelsen
+          - value: Fodboldudvalget
+            label: Fodboldudvalget
+          - value: Gymnastikudvalget
+            label: Gymnastikudvalget
+          - value: Badmintonudvalget
+            label: Badmintonudvalget
+          - value: E-sport
+            label: E-sport
+          - value: Klubhus & Anlæg
+            label: Klubhus & Anlæg
+          - value: Arrangementsudvalg
+            label: Arrangementsudvalg
+          - value: Fælles / Tværgående
+            label: Fælles / Tværgående
+      - id: version_label
+        type: text
+        label: Version
+        required: false
+        default: "1.0"
+      - id: updated_at
+        type: date
+        label: Senest opdateret
+        required: false
+      - id: approved_by
+        type: text
+        label: Godkendt af
+        required: false
+        placeholder: f.eks. Bestyrelsen / Materialeforvalter
+      - id: condition_guidance_info
+        type: info
+        text: >-
+          Stand forslag: Ny / God / Brugbar / Slidt / Defekt / Udfaset.
+      - id: privacy_notice
+        type: info
+        variant: privacy
+        text: >-
+          Personnavne på lånere, udstyrsansvarlige og godkendere behandles af Dokumentbyggeren
+          kun under den aktive session til at generere inventarlisten og lagres ikke permanent
+          af applikationen.
+
+  - id: inventory_step
+    title: 2. Inventar
+    description: Registrering af foreningens udstyr, placering, mængde og vedligeholdelsesstand.
+    fields:
+      - id: inventory_items
+        type: repeater
+        label: Inventargenstande
+        required: false
+        fields:
+          - id: item_id
+            type: text
+            label: ID
+            required: false
+            placeholder: f.eks. U-101
+          - id: category
+            type: text
+            label: Kategori
+            required: false
+            placeholder: f.eks. Bolde, IT, Maskiner, Redskaber
+          - id: item_name
+            type: text
+            label: Genstand / udstyr
+            required: true
+            placeholder: Hvad er det for udstyr?
+          - id: quantity
+            type: text
+            label: Antal
+            required: false
+            default: "1"
+            placeholder: f.eks. 1 stk. / 20 stk.
+          - id: location
+            type: text
+            label: Placering
+            required: false
+            placeholder: f.eks. Materielskur / Boldrum / Hal
+          - id: responsible
+            type: text
+            label: Ansvarlig
+            required: false
+            placeholder: Ansvarlig person eller udvalg
+          - id: acquired_year
+            type: text
+            label: Anskaffet
+            required: false
+            placeholder: f.eks. 2024 / Forår 2025
+          - id: condition
+            type: select
+            label: Stand
+            required: false
+            default: God
+            options:
+              - value: Ny
+                label: Ny
+              - value: God
+                label: God
+              - value: Brugbar
+                label: Brugbar
+              - value: Slidt
+                label: Slidt
+              - value: Defekt
+                label: Defekt
+              - value: Udfaset
+                label: Udfaset
+          - id: service_inspection
+            type: text
+            label: Service / eftersyn
+            required: false
+            placeholder: f.eks. Årligt eftersyn i oktober
+          - id: value_notes
+            type: text
+            label: Værdi / bemærkning
+            required: false
+            placeholder: f.eks. Nypris 8.500 kr. / Doneret af sponsor
+
+  - id: loans_step
+    title: 3. Udlån & Flytning
+    description: Registrering af udlånt eller midlertidigt flyttet materiel.
+    fields:
+      - id: loan_records
+        type: repeater
+        label: Udlånsregistreringer
+        required: false
+        fields:
+          - id: equipment_ref
+            type: text
+            label: Udstyr / ID
+            required: true
+            placeholder: Hvilket udstyr er udlånt?
+          - id: borrower
+            type: text
+            label: Udlånt til
+            required: false
+            placeholder: Navn på låner eller hold/udvalg
+          - id: loan_date
+            type: text
+            label: Dato ud
+            required: false
+            placeholder: f.eks. 10.05.2026
+          - id: expected_return
+            type: text
+            label: Forventet retur
+            required: false
+            placeholder: f.eks. 15.05.2026
+          - id: returned
+            type: text
+            label: Returneret
+            required: false
+            placeholder: f.eks. Ja (15.05.2026) / Afventer

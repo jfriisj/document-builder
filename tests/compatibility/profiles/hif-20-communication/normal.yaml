@@ -1,0 +1,57 @@
+owner_committee: Arrangementsudvalg
+version_label: '1.0'
+updated_at: '2026-04-20'
+approved_by: Formanden
+title: Hashøj Sommerfest 2026 – Program og Tilmelding
+purpose: At skabe opmærksomhed og sikre bred tilslutning til årets fælles sommerfest
+  for alle aldre i lokalområdet.
+target_audience: Medlemmer, familier, sponsorer og borgere i Hashøj og omegn
+sender: Hashøj IF Arrangementsudvalg
+channels:
+- Hjemmeside
+- Facebook
+- Nyhedsbrev
+publish_date: '2026-05-01'
+responsible_person: Testperson A (tlf. 00 00 00 01)
+key_message: Sæt kryds i kalenderen lørdag d. 13. juni 2026! Stor sommerfest med børnestævne,
+  grillbuffet og fælles hygge for hele familien.
+call_to_action: Tilmeld dig og din familie til aftenens grillbuffet senest d. 1. juni
+  via foreningens hjemmeside.
+deadline_practical_info: 'Lørdag 13. juni kl. 10:00 - 22:00 ved Klubhuset. Tilmeldingsfrist
+  til spisning: 1. juni 2026.'
+draft_body: 'Kære medlemmer og venner af Hashøj IF!
+
+
+  Vi glæder os utrolig meget til at byde jer alle velkommen til årets helt store samlingspunkt
+  – Hashøj Sommerfest 2026.
+
+
+  Dagen byder på masser af idrætsaktiviteter for børn og unge, hoppeborg, kiosk med
+  lækkerier samt en herlig grillbuffet fra kl. 17:30.
+
+
+  Tag naboen under armen og vær med til at fejre fællesskabet!'
+links_contact_signup: 'Tilmelding og program: example.com/sommerfest | Spørgsmål:
+  kontakt@example.com'
+media_graphics: 'Grafisk flyer: sommerfest_banner_2026.png samt foto fra sidste års
+  grillfest.'
+sponsor_partner_mention: Sommerfesten støttes af Eksempel Fonden og Eksempel Dagligvarer.
+check_datetime_status: OK
+check_datetime_notes: Dato og tider afstemt med hallens booking
+check_links_status: OK
+check_links_notes: Tilmeldingslink testet og aktivt
+check_spelling_status: OK
+check_spelling_notes: Korrekturlæst af PR-udvalg
+check_image_rights_status: OK
+check_image_rights_notes: Arkivfoto godkendt til foreningsbrug
+check_gdpr_status: OK
+check_gdpr_notes: Ingen personfølsomme oplysninger i teksten
+check_sponsor_status: OK
+check_sponsor_notes: Sponsorlogoer medtaget i banner
+check_approval_status: OK
+check_approval_notes: Godkendt på bestyrelsesmøde d. 14. april
+check_multichannel_status: OK
+check_multichannel_notes: Planlagt publicering på Facebook kl. 09:00
+published_where: Foreningens officielle Facebook-side samt hashoej-if.dk forsiden
+reaction_result: Over 120 visninger på første døgn og 35 tilmeldinger
+removal_update_later: Tilmeldingslink lukkes d. 1. juni kl. 23:59

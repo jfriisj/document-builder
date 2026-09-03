@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Vælg dokument – Document Builder{% endblock %}
+
+{% block content %}
+<section id="home">
+  <div class="kicker">Forside</div>
+  <h1>Hvad vil du oprette?</h1>
+  <p class="lead">Vælg en dokumenttype. Du bliver guidet trin for trin og kan se resultatet, før du genererer dokumentet.</p>
+
+  {% if templates %}
+  <div class="grid">
+    {% for t in templates %}
+    <div class="card">
+      <div class="card-content">
+        <div class="kicker">{{ t.category }}</div>
+        <h2>{{ t.title }}</h2>
+        <p>{{ t.description }}</p>
+      </div>
+      <a href="/templates/{{ t.id }}" class="btn primary btn-link">Opret {{ t.title | lower }}</a>
+    </div>
+    {% endfor %}
+  </div>
+  {% else %}
+  <div class="notice">
+    <strong>Ingen skabeloner tilgængelige</strong>
+    <p>Der er i øjeblikket ingen aktive dokumentskabeloner installeret i systemet.</p>
+  </div>
+  {% endif %}
+</section>
+{% endblock %}

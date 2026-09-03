@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Document Builder – Prototype</title>
+<style>
+:root{
+  --green:#1f5a3e; --green2:#eaf2ed; --ink:#1f2937; --muted:#667085;
+  --line:#d9e0dc; --bg:#f6f8f7; --white:#fff; --danger:#b42318;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--ink)}
+header{background:var(--white);border-bottom:1px solid var(--line);padding:18px 24px;display:flex;justify-content:space-between;align-items:center}
+.brand{font-weight:750;color:var(--green);font-size:20px}
+.tag{color:var(--muted);font-size:14px}
+main{max-width:1100px;margin:0 auto;padding:28px 20px 60px}
+.screen{display:none}
+.screen.active{display:block}
+h1{font-size:30px;margin:0 0 8px}
+h2{font-size:21px;margin:0 0 10px}
+p{line-height:1.5}
+.lead{color:var(--muted);margin-top:0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-top:22px}
+.card{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:20px;box-shadow:0 1px 2px rgba(0,0,0,.03)}
+.card button{width:100%;margin-top:14px}
+.kicker{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--green);font-weight:700}
+button{border:0;border-radius:9px;padding:11px 16px;font-weight:650;cursor:pointer}
+.primary{background:var(--green);color:white}
+.secondary{background:white;color:var(--green);border:1px solid var(--green)}
+.ghost{background:transparent;color:var(--green)}
+.toolbar{display:flex;justify-content:space-between;gap:12px;margin-top:24px}
+.progress-wrap{margin:8px 0 24px}
+.progress-line{height:8px;background:#e5e7eb;border-radius:999px;overflow:hidden}
+.progress{height:100%;background:var(--green);width:20%}
+.progress-meta{display:flex;justify-content:space-between;color:var(--muted);font-size:13px;margin-top:7px}
+.form-card{background:white;border:1px solid var(--line);border-radius:14px;padding:24px;max-width:760px}
+label{font-weight:650;display:block;margin:18px 0 7px}
+.required{color:var(--danger)}
+input,textarea,select{width:100%;padding:12px;border:1px solid #c9d1cd;border-radius:9px;font:inherit;background:white}
+textarea{min-height:120px;resize:vertical}
+.help{font-size:13px;color:var(--muted);margin-top:6px}
+.example{font-size:13px;background:var(--green2);padding:10px 12px;border-radius:8px;margin-top:8px}
+.privacy{background:#fff8e8;border:1px solid #f0d58a;border-radius:10px;padding:14px;margin:16px 0}
+.repeat-row{display:grid;grid-template-columns:1fr 160px auto;gap:10px;margin:10px 0;align-items:center}
+.a4{background:white;width:min(100%,790px);min-height:900px;margin:18px auto;border:1px solid #ddd;box-shadow:0 5px 24px rgba(0,0,0,.08);padding:48px}
+.doc-title{color:var(--green);font-size:28px;font-weight:750;border-bottom:2px solid var(--green);padding-bottom:10px}
+.doc-section{margin-top:28px}
+.doc-label{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.notice{background:var(--green2);border-radius:10px;padding:14px;margin:16px 0}
+.small{font-size:13px;color:var(--muted)}
+@media(max-width:650px){
+  .repeat-row{grid-template-columns:1fr}
+  .toolbar{flex-direction:column-reverse}
+  .toolbar button{width:100%}
+  .a4{padding:24px;min-height:650px}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">Document Builder</div>
+  <div class="tag">Prototype – ingen data gemmes permanent</div>
+</header>
+<main>
+
+<section id="home" class="screen active">
+  <div class="kicker">Forside</div>
+  <h1>Hvad vil du oprette?</h1>
+  <p class="lead">Vælg en dokumenttype. Du bliver guidet trin for trin og kan se resultatet, før du genererer dokumentet.</p>
+  <div class="grid">
+    <div class="card">
+      <div class="kicker">Organisation</div>
+      <h2>Rollebeskrivelse</h2>
+      <p>Beskriv ansvar, opgaver og forventninger til en rolle i foreningen.</p>
+      <button class="primary" onclick="go('intro')">Opret rollebeskrivelse</button>
+    </div>
+    <div class="card">
+      <div class="kicker">Drift</div>
+      <h2>Opgavekort</h2>
+      <p>Lav en konkret, gentagelig instruktion til en praktisk opgave.</p>
+      <button class="secondary" onclick="alert('I prototypen demonstrerer vi HIF-01 Rollebeskrivelse')">Opret opgavekort</button>
+    </div>
+    <div class="card">
+      <div class="kicker">Arrangement</div>
+      <h2>Arrangementsskabelon</h2>
+      <p>Planlæg ansvar, tidslinje, bemanding, økonomi og opfølgning.</p>
+      <button class="secondary" onclick="alert('I prototypen demonstrerer vi HIF-01 Rollebeskrivelse')">Opret arrangement</button>
+    </div>
+  </div>
+</section>
+
+<section id="intro" class="screen">
+  <div class="kicker">Rollebeskrivelse</div>
+  <h1>Opret rollebeskrivelse</h1>
+  <p class="lead">Det tager ca. 5–10 minutter. Du kan gå frem og tilbage uden at miste dine svar i denne aktive session.</p>
+  <div class="notice">
+    <strong>Sådan fungerer det</strong>
+    <p class="small">Du udfylder ét overskueligt trin ad gangen. Til sidst ser du et preview og kan gå tilbage og rette oplysninger.</p>
+  </div>
+  <div class="toolbar">
+    <button class="secondary" onclick="go('home')">Tilbage</button>
+    <button class="primary" onclick="goStep(1)">Start</button>
+  </div>
+</section>
+
+<section id="wizard" class="screen">
+  <div class="kicker">Rollebeskrivelse</div>
+  <h1 id="stepTitle">Grundoplysninger</h1>
+  <div class="progress-wrap">
+    <div class="progress-line"><div id="progress" class="progress"></div></div>
+    <div class="progress-meta"><span id="stepMeta">Trin 1 af 5</span><span id="stepName">Grundoplysninger</span></div>
+  </div>
+
+  <div class="form-card">
+    <div id="step1" class="step">
+      <label>Hvad hedder rollen? <span class="required">*</span></label>
+      <input id="roleName" placeholder="Fx Sponsoransvarlig">
+      <div class="help">Brug et kort navn, som andre i foreningen vil forstå.</div>
+      <div class="example"><strong>Eksempel:</strong> Sponsoransvarlig, Halansvarlig eller Kampfordeler.</div>
+
+      <label>Hvilket område hører rollen til?</label>
+      <select id="area">
+        <option>Bestyrelse</option><option>Sponsor</option><option>Sport</option><option>Klubhus</option><option>Arrangement</option><option>Administration</option>
+      </select>
+    </div>
+
+    <div id="step2" class="step" hidden>
+      <label>Hvad er formålet med rollen? <span class="required">*</span></label>
+      <textarea id="purpose" placeholder="Beskriv hvorfor rollen findes, og hvilken værdi den skaber for Hashøj IF."></textarea>
+      <div class="help">Hold fokus på formålet – ikke alle de konkrete opgaver endnu.</div>
+      <div class="example"><strong>Eksempel:</strong> Sikre en stabil og professionel kontakt til eksisterende og nye sponsorer.</div>
+    </div>
+
+    <div id="step3" class="step" hidden>
+      <label>Hvilke opgaver hører til rollen?</label>
+      <div id="tasks">
+        <div class="repeat-row">
+          <input class="taskName" placeholder="Fx Kontakte eksisterende sponsorer">
+          <input class="taskFreq" placeholder="Fx Kvartalsvis">
+          <button class="ghost" onclick="this.parentElement.remove()">Fjern</button>
+        </div>
+      </div>
+      <button class="secondary" onclick="addTask()">+ Tilføj opgave</button>
+      <div class="help">Tilføj så mange opgaver som nødvendigt. Det samme mønster kan bruges til tabeller og lister i andre templates.</div>
+    </div>
+
+    <div id="step4" class="step" hidden>
+      <div class="privacy">
+        <strong>Personoplysninger</strong>
+        <p class="small">Denne formular bruger oplysningerne til at generere dokumentet i din aktive session. Oplysningerne gemmes ikke som dokumentarkiv.</p>
+      </div>
+      <label>Kontaktperson</label>
+      <input id="contact" placeholder="Navn">
+      <label>E-mail</label>
+      <input id="email" type="email" placeholder="navn@example.com">
+      <label><input id="ack" type="checkbox" style="width:auto"> Jeg har læst informationen om behandlingen af oplysningerne.</label>
+    </div>
+
+    <div id="step5" class="step" hidden>
+      <h2>Kontrollér dine svar</h2>
+      <p class="lead">Du kan stadig gå tilbage og rette alt, før du ser dokument-previewet.</p>
+      <div id="summary" class="notice"></div>
+    </div>
+  </div>
+
+  <div class="toolbar">
+    <button class="secondary" onclick="prevStep()">Tilbage</button>
+    <button id="nextBtn" class="primary" onclick="nextStep()">Næste</button>
+  </div>
+</section>
+
+<section id="preview" class="screen">
+  <div class="kicker">Preview</div>
+  <h1>Sådan kommer dokumentet til at se ud</h1>
+  <p class="lead">Previewet er læsevenligt HTML. Det endelige filformat besluttes separat.</p>
+
+  <div class="a4">
+    <div class="doc-title">Rollebeskrivelse</div>
+    <div class="doc-section">
+      <div class="doc-label">Rolle</div>
+      <h2 id="pRole">Sponsoransvarlig</h2>
+    </div>
+    <div class="doc-section">
+      <div class="doc-label">Område</div>
+      <p id="pArea"></p>
+    </div>
+    <div class="doc-section">
+      <div class="doc-label">Formål</div>
+      <p id="pPurpose"></p>
+    </div>
+    <div class="doc-section">
+      <div class="doc-label">Opgaver</div>
+      <ul id="pTasks"></ul>
+    </div>
+    <div class="doc-section">
+      <div class="doc-label">Kontakt</div>
+      <p id="pContact"></p>
+    </div>
+  </div>
+
+  <div class="toolbar">
+    <button class="secondary" onclick="goStep(5)">Ret oplysninger</button>
+    <button class="primary" onclick="go('done')">Generér dokument</button>
+  </div>
+</section>
+
+<section id="done" class="screen">
+  <div class="kicker">Færdig</div>
+  <h1>Dokumentet er klar</h1>
+  <div class="notice">
+    <strong>I den rigtige løsning:</strong>
+    <p>Her genereres den valgte fil og sendes direkte til download. Dokumentdata gemmes ikke i et bibliotek.</p>
+  </div>
+  <div class="toolbar">
+    <button class="secondary" onclick="go('home')">Til forsiden</button>
+    <button class="primary" onclick="alert('Filgenerering er bevidst ikke implementeret i UX-prototypen.')">Download dokument</button>
+  </div>
+</section>
+
+</main>
+<script>
+let step = 1;
+const names = ['Grundoplysninger','Formål','Opgaver','Personoplysninger','Kontrol'];
+
+function go(id){
+  document.querySelectorAll('.screen').forEach(x=>x.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo({top:0,behavior:'instant'});
+}
+
+function goStep(n){
+  step=n; go('wizard'); renderStep();
+}
+function renderStep(){
+  document.querySelectorAll('.step').forEach(x=>x.hidden=true);
+  document.getElementById('step'+step).hidden=false;
+  document.getElementById('progress').style.width=(step/5*100)+'%';
+  document.getElementById('stepMeta').textContent='Trin '+step+' af 5';
+  document.getElementById('stepName').textContent=names[step-1];
+  document.getElementById('stepTitle').textContent=names[step-1];
+  document.getElementById('nextBtn').textContent=step===5?'Se preview':'Næste';
+  if(step===5) fillSummary();
+}
+function prevStep(){
+  if(step>1){step--;renderStep()} else go('intro');
+}
+function nextStep(){
+  if(step===1 && !document.getElementById('roleName').value.trim()){
+    alert('Udfyld rollens navn før du fortsætter.'); return;
+  }
+  if(step===2 && !document.getElementById('purpose').value.trim()){
+    alert('Beskriv rollens formål før du fortsætter.'); return;
+  }
+  if(step===5){fillPreview();go('preview');return}
+  step++;renderStep();
+}
+function addTask(){
+  const div=document.createElement('div');
+  div.className='repeat-row';
+  div.innerHTML='<input class="taskName" placeholder="Opgave"><input class="taskFreq" placeholder="Hyppighed"><button class="ghost" onclick="this.parentElement.remove()">Fjern</button>';
+  document.getElementById('tasks').appendChild(div);
+}
+function data(){
+  return {
+    role:document.getElementById('roleName').value||'—',
+    area:document.getElementById('area').value||'—',
+    purpose:document.getElementById('purpose').value||'—',
+    tasks:[...document.querySelectorAll('.repeat-row')].map(r=>({
+      name:r.querySelector('.taskName')?.value||'',
+      freq:r.querySelector('.taskFreq')?.value||''
+    })).filter(x=>x.name),
+    contact:document.getElementById('contact').value||'—',
+    email:document.getElementById('email').value||''
+  }
+}
+function fillSummary(){
+  const d=data();
+  document.getElementById('summary').innerHTML=
+    '<strong>'+d.role+'</strong><br>Område: '+d.area+
+    '<br><br><strong>Formål</strong><br>'+d.purpose+
+    '<br><br><strong>Opgaver</strong><br>'+(d.tasks.length?d.tasks.map(x=>'• '+x.name+(x.freq?' – '+x.freq:'')).join('<br>'):'Ingen opgaver tilføjet');
+}
+function fillPreview(){
+  const d=data();
+  document.getElementById('pRole').textContent=d.role;
+  document.getElementById('pArea').textContent=d.area;
+  document.getElementById('pPurpose').textContent=d.purpose;
+  const ul=document.getElementById('pTasks'); ul.innerHTML='';
+  d.tasks.forEach(x=>{const li=document.createElement('li');li.textContent=x.name+(x.freq?' – '+x.freq:'');ul.appendChild(li)});
+  if(!d.tasks.length){const li=document.createElement('li');li.textContent='Ingen opgaver angivet';ul.appendChild(li)}
+  document.getElementById('pContact').textContent=d.contact+(d.email?' · '+d.email:'');
+}
+</script>
+</body>
+</html>

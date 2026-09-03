@@ -1,0 +1,33 @@
+owner_committee: Klubhus & Anlæg
+version_label: '1.0'
+updated_at: '2026-09-01'
+approved_by: Anlægsudvalgsformand (Testperson A)
+maintenance_tasks:
+- object_or_installation: Varmepumpeanlæg klubhus
+  location: Teknikrum kælderen
+  task_or_inspection: Filterskift og trykkontrol
+  interval: Kvartalsvis
+  last_performed: 15.06.2026
+  next_date: 15.09.2026
+  responsible: Halinspektør
+  professional_required: Autoriseret fagperson påkrævet
+  documentation: Servicebog i teknikrum
+- object_or_installation: Lysmaster på opvisningsbane
+  location: Bane 1
+  task_or_inspection: Kontrol af armaturer og tænd/sluk-ur
+  interval: Halvårligt (før sæson)
+  last_performed: 01.08.2026
+  next_date: 01.03.2027
+  responsible: Baneformand
+  professional_required: Nej
+  documentation: Noteret i driftslog
+repairs_and_defects:
+- incident_date: 12.08.2026
+  defect_object: Bruser i omklædningsrum 2
+  defect_description: Løbende armatur og dryppende rørforbindelse
+  temporary_action: Vand afspærret på lokal hane
+  repair_supplier: Eksempel VVS Teknik ApS
+  closed_status: Udført d. 14.08.2026
+annual_maintenance_budget: 45.000 kr. ekskl. akutte skader
+emergency_contact_person: Halinspektør Testperson B (tlf. 00 00 00 01)
+manuals_location: Teknikrum, ringbind 1 samt Google Drev / Anlæg / Manualer

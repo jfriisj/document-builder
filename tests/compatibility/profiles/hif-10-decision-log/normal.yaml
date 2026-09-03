@@ -1,0 +1,24 @@
+owner_committee: Bestyrelsen
+version_label: '1.0'
+updated_at: '2026-09-01'
+approved_by: Hovedbestyrelsen
+decisions:
+- decision_id: B-2026-01
+  decision_date: 15.01.2026
+  topic: Anskaffelse af ny kridtmaskine til baneanlæg
+  decision: Godkendt indkøb af batteridrevet kridtmaskine op til 18.000 kr.
+  justification: Den gamle benzindrevne maskine er udtjent og medfører høje reparationsudgifter.
+  decided_by: Bestyrelsen
+  consequence_followup: Baneformand gennemfører indkøb og opretter HIF-02 Opgavekort
+    til opladning og rengøring.
+  revisit_date: 01.09.2026
+  document_reference: Mødereferat 15.01.2026 pkt. 4
+- decision_id: B-2026-02
+  decision_date: 20.02.2026
+  topic: Oprettelse af nyt gymnastikhold for forældre/børn
+  decision: Udvalget bevilges haltid tirsdage kl. 16.30-17.30 samt 2.500 kr. til redskaber.
+  justification: Stor efterspørgsel i lokalområdet og ledig haltid konstateret.
+  decided_by: Gymnastikudvalget / Bestyrelsen
+  consequence_followup: Annoncering på Facebook og opslag i Hashøj Hallen.
+  revisit_date: 01.12.2026
+  document_reference: Gymnastikudvalgsmøde referat feb 2026

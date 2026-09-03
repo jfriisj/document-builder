@@ -1,0 +1,37 @@
+owner_committee: Bestyrelsen
+version_label: '1.0'
+updated_at: '2026-09-01'
+approved_by: Kasserer (Testperson A)
+contracts:
+- supplier: Eksempel Sport Leverandør
+  service_product: Træningstøj og bolde
+  contact_person: Testperson B (tlf. 00 00 00 01)
+  start_date: 01.01.2025
+  end_date: 31.12.2026
+  notice_period: 3 mdr. til udløb
+  annual_price: 25.000 kr.
+  auto_renewal: Nej
+  responsible: Materialeforvalter
+  document_location: Google Drev / Aftaler / Leverandoeraftale.pdf
+- supplier: Eksempel Foreningssystem ApS
+  service_product: Medlemsadministration og bogføring
+  contact_person: Support (support@example.org)
+  start_date: 01.07.2023
+  end_date: Løbende
+  notice_period: 1 måned til månedens udgang
+  annual_price: 8.400 kr.
+  auto_renewal: Ja
+  responsible: Kasserer
+  document_location: Google Drev / IT / Eksempelsystem-aftale.pdf
+renewal_checks:
+- agreement_name: Eksempel Sport Leverandør
+  price_checked: Ja
+  need_assessed: Ja
+  alternatives_obtained: Ja
+  cancellation_deadline: 30.09.2026
+  decision: Genforhandles mhp. forbedret rabataftale
+billing_method_ean: Faktura sendes via e-mail til kasserer@example.com; betalingsfrist
+  netto 30 dage.
+special_binding_terms: Eksklusiv ret til logo-tryk på klubbens officielle spillesæt.
+dpa_relevant: Ja
+insurance_warranty_relevant: Nej

@@ -1,0 +1,46 @@
+owner_committee: Fodboldudvalget
+version_label: '1.0'
+updated_at: '2026-09-09'
+approved_by: Sikkerhedsansvarlig
+incident_datetime: Tirsdag d. 8. september 2026 kl. 17:45
+incident_location: Bane 2, sydlige målområde
+reported_by: Testperson A (Træner U15)
+incident_type: Personskade
+incident_description: Under en kontraøvelse trådte en spiller i en fordybning i græsset
+  og vrikkede kraftigt om på venstre ankel med efterfølgende hævelse og smerter.
+activity_at_time: U15 drengetræning, kontraøvelse i højt tempo.
+immediate_cause: Ujævnhed i græstæppet ved målfeltet efter regnvejr.
+involved_persons:
+- name: Fiktiv Spiller (Testperson B)
+  role: Spiller U15
+  contact_info: 'Forældre: 00 00 00 01'
+  person_type: Involveret
+- name: Fiktivt Vidne (Testperson C)
+  role: Hjælpetræner
+  contact_info: vidne@example.com
+  person_type: Vidne
+injury_symptoms: Kraftig hævelse og smerter på ydersiden af venstre ankel. Kunne ikke
+  støtte på foden.
+material_damage: Ingen materiel skade.
+first_aid_action: 'RICE-princippet anvendt med det samme: Ispose anlagt i 20 minutter,
+  kompressionsforbinding og foden hævet.'
+emergency_authorities_contacted: Forældre kontaktet og kørte spilleren til lokal
+  skadestue til røntgen.
+activity_stopped_secured: Øvelsen flyttet til banehalvdel mod nord, og hullet blev
+  markeret med en kegle.
+documentation_items:
+- description: Foto af fordybning ved målfelt
+  reference_location: Drev / Skader / 2026-09-08-bane2.jpg
+  collected_by: Testperson A
+followup_actions:
+- action: Orientere baneformand om opfyldning af hul
+  responsible: Testperson A
+  deadline: 9. september
+  status: Afsluttet
+- action: Opfølgende telefonopkald til forældre om røntgensvar
+  responsible: Testperson A
+  deadline: 10. september
+  status: I gang
+prevention_prevent_recurrence: Ugentligt banecheck af målområder inden kampe og træning.
+prevention_change_instructions: Tilføje banekontrolpunkt til HIF-02 Opgavekort Baneklargøring.
+prevention_notify_board_insurance: Orientering sendt til kassereren mhp. DIF/DGI idrætsforsikring.

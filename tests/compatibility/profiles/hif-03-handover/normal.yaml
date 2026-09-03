@@ -1,0 +1,48 @@
+owner_committee: Fodboldudvalget
+version_label: '1.0'
+updated_at: '2026-09-15'
+approved_by: Fodboldformanden
+role_name: Holdleder U12 Fodbold
+outgoing_person: Testperson A
+incoming_person: Testperson B
+handover_date: '2026-10-01'
+contact_after_handover_until: 1. december 2026
+ongoing_tasks:
+- task: Bestilling af spillesæt til efterårssæson
+  status: I gang
+  deadline: 15. oktober
+  next_action: Rykke leverandør
+  contact_dependency: Eksempel Leverandør A/S v/ Testperson C
+- task: Opdatering af holdkort i DBU App
+  status: Planlagt
+  deadline: Ugentligt
+  next_action: Instruere ny holdleder
+  contact_dependency: Eksempel Idrætsforbund
+recurring_tasks:
+- task: Banefordeling ved sæsonstart
+  frequency: Halvårligt
+  next_date: 1. marts 2027
+  task_card_reference: HIF-02 Baner
+access_and_systems:
+- access_or_key: Nøglebrik til klubhus & boldrum
+  purpose: Adgang til udstyr
+  location_or_system: Fysisk brik nr. 42
+  transfer_status: Overdraget
+contacts_and_relations:
+- name_or_org: Baneformand (Testperson D)
+  role: Baneansvarlig
+  contact_info: kontakt@example.com / 00 00 00 01
+  notes: Kontaktes ved regnvejr
+documents_and_files:
+- document_or_folder: Holdmappe U12 Efterår
+  location: Google Drev / Fodbold
+  content_description: Kontaktliste og kampprogram
+  notes: Fællesdrev
+essential_knowledge: Forældregruppen er meget engageret hvis de får besked i god tid.
+typical_pitfalls: Glem ikke at indberette kampresultater rettidigt.
+open_decisions: Deltagelse i vinterstævne.
+improvement_suggestions: Opret Spond-gruppe.
+checklist_reviewed_together: Ja
+checklist_access_handled: Ja
+checklist_tasks_assigned: Ja
+checklist_documentation_updated: Ja
